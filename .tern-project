@@ -1,0 +1,8 @@
+{
+  "What is this?": "Auto-completion support in Codio powered by http://ternjs.net/.",
+  "Try opening js/main.js": "and begin typing `$.`",
+
+  "libs": [
+    "jquery"
+  ]
+}
