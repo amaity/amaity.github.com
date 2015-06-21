@@ -1,0 +1,11 @@
+{
+    "name": "DVC",
+    "children": [
+        {"name": "GOMD-I"},
+        {"name": "GOMD-II"},
+        {"name": "GOMD-III"},
+        {"name": "GOMD-IV"},
+        {"name": "GOMD-V"},
+        {"name": "GOMD-VI"}
+    ]
+}
