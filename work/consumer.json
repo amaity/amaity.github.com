@@ -17,12 +17,55 @@
              {"name": "Kalipahari"},
              {"name": "Kalyaneswari"},
              {"name": "Kumardubi"},
-             {"name": "Maithon Hydel"}
+             {"name": "Maithon Hydel"},
+             {"name": "Maithon RightBank"},
+             {"name": "Ramkanali"}
          ]
         },
-        {"name": "GOMD-III"},
-        {"name": "GOMD-IV"},
-        {"name": "GOMD-V"},
-        {"name": "GOMD-VI"}
+        {"name": "GOMD-III",
+         "children": [
+             {"name": "Chandil"},
+             {"name": "Jamshedpur"},
+             {"name": "Mosabani"},
+             {"name": "Purulia"}
+         ]
+        },
+        {"name": "GOMD-IV",
+         "children": [
+             {"name": "Biada"},
+             {"name": "CTPS"},
+             {"name": "Dhanbad"},
+             {"name": "Giridih"},
+             {"name": "Patherdih"},
+             {"name": "Putki"},
+             {"name": "Nimiaghat"},
+             {"name": "Sindri"}
+         ]
+        },
+        {"name": "GOMD-V",
+         "children": [
+             {"name": "Barhi"},
+             {"name": "BTPS"},
+             {"name": "Gola"},
+             {"name": "Hazaribagh"},
+             {"name": "Koderma"},
+             {"name": "Koderma New"},
+             {"name": "Konar"},
+             {"name": "North Karanpura"},
+             {"name": "Patratu"},
+             {"name": "Ramgarh"},
+             {"name": "Tilaiya"}
+         ]
+        },
+        {"name": "GOMD-VI",
+         "children": [
+             {"name": "ASP"},
+             {"name": "Barjora"},
+             {"name": "DTPS"},
+             {"name": "Durgapur"},
+             {"name": "MTPS"},
+             {"name": "Parulia"}
+         ]
+        }
     ]
 }
