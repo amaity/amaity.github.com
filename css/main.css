@@ -113,6 +113,11 @@ a {
     padding:2pythonpx;
 }
 
+img.small {
+    width: 100px;
+    height: 100px;
+}
+
 .body nav {
     background-color:#666;
     height:40px;
