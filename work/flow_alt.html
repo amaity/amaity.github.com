@@ -1,0 +1,248 @@
+<!--
+To change this template use Tools | Templates.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style>
+        
+.node {
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
+.link {
+  stroke: #999;
+  stroke-opacity: .6;
+}
+    </style>
+</head>
+<body>
+<script src="d3.min.js"></script>
+    
+<script>
+    var width = 960,
+    height = 500;
+
+var color = d3.scale.category20();
+
+var force = d3.layout.force()
+    .charge(-120)
+    .linkDistance(30)
+    .size([width, height]);
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+var graph = getData();
+
+var nodeMap = {};
+
+graph.nodes.forEach(function(d) { nodeMap[d.bnum] = d; });
+
+graph.links.forEach(function(l) {
+    l.source = nodeMap[l.from];
+    l.target = nodeMap[l.to];
+})
+
+force.nodes(graph.nodes)
+    .links(graph.links)
+    .start();
+
+var link = svg.selectAll(".link")
+    .data(graph.links)
+    .enter().append("line")
+    .attr("class", "link")
+    .style("stroke-width", function(d) {
+        return Math.sqrt(d.nckts)+1;
+    });
+
+var node = svg.selectAll(".node")
+    .data(graph.nodes)
+    .enter().append("circle")
+    .attr("class", "node")
+    .attr("r", 5)
+    .style("fill", function(d) { return color(d.base); })
+    .call(force.drag);
+
+
+node.append("title")
+    .text(function(d) { return d.name; });
+
+force.on("tick", function() {
+    link.attr("x1", function(d) { return d.source.x; })
+        .attr("y1", function(d) { return d.source.y; })
+        .attr("x2", function(d) { return d.target.x; })
+        .attr("y2", function(d) { return d.target.y; });
+
+    node.attr("cx", function(d) { return d.x; })
+        .attr("cy", function(d) { return d.y; });
+});
+
+
+function getData() {
+
+  return {
+"nodes": [
+    {"base": 220.0, "name": "BDNNG2      ", "bnum": 41206}, 
+    {"base": 220.0, "name": "JODA2       ", "bnum": 42212}, 
+    {"base": 132.0, "name": "BOKARO1     ", "bnum": 44100}, 
+    {"base": 132.0, "name": "MOSABANI1   ", "bnum": 44101}, 
+    {"base": 132.0, "name": "BURDWAN1    ", "bnum": 44102}, 
+    {"base": 132.0, "name": "BELMURI1    ", "bnum": 44103}, 
+    {"base": 132.0, "name": "HOWRAH1     ", "bnum": 44104}, 
+    {"base": 132.0, "name": "KGPDVC1     ", "bnum": 44105}, 
+    {"base": 132.0, "name": "CHNDP1      ", "bnum": 44106}, 
+    {"base": 132.0, "name": "KOLAGHT1    ", "bnum": 44107}, 
+    {"base": 132.0, "name": "JMSDPUR1    ", "bnum": 44108}, 
+    {"base": 132.0, "name": "DTPS1       ", "bnum": 44109}, 
+    {"base": 132.0, "name": "BARHI1      ", "bnum": 44110}, 
+    {"base": 132.0, "name": "MTNHYDL1    ", "bnum": 44111}, 
+    {"base": 132.0, "name": "PANCHET1    ", "bnum": 44112}, 
+    {"base": 132.0, "name": "KODRNEW1    ", "bnum": 44113}, 
+    {"base": 132.0, "name": "HZBAG1      ", "bnum": 44114}, 
+    {"base": 132.0, "name": "GOLA1       ", "bnum": 44115}, 
+    {"base": 132.0, "name": "CHANDIL1    ", "bnum": 44116}, 
+    {"base": 132.0, "name": "PUTKI1      ", "bnum": 44117}, 
+    {"base": 132.0, "name": "KLPHRI1     ", "bnum": 44118}, 
+    {"base": 132.0, "name": "ASP1        ", "bnum": 44119}, 
+    {"base": 132.0, "name": "RAMGRH1     ", "bnum": 44120}, 
+    {"base": 132.0, "name": "KALYSN1     ", "bnum": 44121}, 
+    {"base": 132.0, "name": "KUMRDB1     ", "bnum": 44122}, 
+    {"base": 132.0, "name": "PTHRDH1     ", "bnum": 44123}, 
+    {"base": 132.0, "name": "NIMGHT1     ", "bnum": 44124}, 
+    {"base": 132.0, "name": "GIRDIH1     ", "bnum": 44125}, 
+    {"base": 132.0, "name": "SINDRI1     ", "bnum": 44126}, 
+    {"base": 132.0, "name": "RAMKLI1     ", "bnum": 44127}, 
+    {"base": 132.0, "name": "PTRATU1     ", "bnum": 44128}, 
+    {"base": 132.0, "name": "NKPURA1     ", "bnum": 44129}, 
+    {"base": 132.0, "name": "DHANBAD1    ", "bnum": 44130}, 
+    {"base": 132.0, "name": "PURULIA1    ", "bnum": 44133}, 
+    {"base": 132.0, "name": "JMURIA1     ", "bnum": 44134}, 
+    {"base": 132.0, "name": "KONAR1      ", "bnum": 44135}, 
+    {"base": 132.0, "name": "BRJO1       ", "bnum": 44136}, 
+    {"base": 132.0, "name": "KODROLD1    ", "bnum": 44137}, 
+    {"base": 132.0, "name": "BIADA1      ", "bnum": 44138}, 
+    {"base": 220.0, "name": "BKRO2       ", "bnum": 44200}, 
+    {"base": 220.0, "name": "CHNDP2      ", "bnum": 44202}, 
+    {"base": 220.0, "name": "DTPS2       ", "bnum": 44203}, 
+    {"base": 220.0, "name": "KALYN2      ", "bnum": 44204}, 
+    {"base": 220.0, "name": "DGPDVC2     ", "bnum": 44205}, 
+    {"base": 220.0, "name": "DHANBAD2    ", "bnum": 44206}, 
+    {"base": 220.0, "name": "MEJIA2      ", "bnum": 44207}, 
+    {"base": 220.0, "name": "BURN2       ", "bnum": 44208}, 
+    {"base": 220.0, "name": "RAMGARH2    ", "bnum": 44209}, 
+    {"base": 220.0, "name": "JMSDP2      ", "bnum": 44210}, 
+    {"base": 220.0, "name": "BORJORA2    ", "bnum": 44217}, 
+    {"base": 220.0, "name": "PARULIA2    ", "bnum": 44218}, 
+    {"base": 220.0, "name": "GIRIDIH2    ", "bnum": 44220}, 
+    {"base": 220.0, "name": "KODRMA2     ", "bnum": 44223}, 
+    {"base": 400.0, "name": "MTHNRB4     ", "bnum": 44400}, 
+    {"base": 400.0, "name": "KODARM4     ", "bnum": 44402}, 
+    {"base": 400.0, "name": "RAGUPR4     ", "bnum": 44403}, 
+    {"base": 400.0, "name": "DSTPS4      ", "bnum": 44404}, 
+    {"base": 400.0, "name": "BKROA4      ", "bnum": 44405}, 
+    {"base": 400.0, "name": "MEJIAB4     ", "bnum": 44406}, 
+    {"base": 400.0, "name": "BPRS4       ", "bnum": 44407}, 
+    {"base": 220.0, "name": "DRGNT2      ", "bnum": 45201}, 
+    {"base": 220.0, "name": "MATHN2      ", "bnum": 45205}, 
+    {"base": 400.0, "name": "RANCHI4     ", "bnum": 45400}, 
+    {"base": 400.0, "name": "MATHN4      ", "bnum": 45403}, 
+    {"base": 400.0, "name": "JMSDP4      ", "bnum": 45405}, 
+    {"base": 400.0, "name": "BHRSR4      ", "bnum": 45413}, 
+    {"base": 400.0, "name": "BARIP4      ", "bnum": 45416}, 
+    {"base": 400.0, "name": " GAYA4      ", "bnum": 45435}
+], 
+"links": [
+    {"flowdir": -46.44, "to": 44203, "nckts": 2, "from": 41206, "flow": 78}, 
+    {"flowdir": 24.16, "to": 44210, "nckts": 1, "from": 42212, "flow": 29}, 
+    {"flowdir": 3.4, "to": 44110, "nckts": 1, "from": 44100, "flow": 11}, 
+    {"flowdir": 21.61, "to": 44135, "nckts": 1, "from": 44100, "flow": 26}, 
+    {"flowdir": 47.84, "to": 44105, "nckts": 2, "from": 44101, "flow": 49}, 
+    {"flowdir": -72.24, "to": 44108, "nckts": 2, "from": 44101, "flow": 73}, 
+    {"flowdir": 44.82, "to": 44103, "nckts": 2, "from": 44102, "flow": 46}, 
+    {"flowdir": -168.52, "to": 44109, "nckts": 2, "from": 44102, "flow": 169}, 
+    {"flowdir": 1.12, "to": 44104, "nckts": 2, "from": 44103, "flow": 17}, 
+    {"flowdir": -13.96, "to": 44107, "nckts": 2, "from": 44104, "flow": 22}, 
+    {"flowdir": 29.55, "to": 44107, "nckts": 2, "from": 44105, "flow": 32}, 
+    {"flowdir": -4.78, "to": 44109, "nckts": 1, "from": 44106, "flow": 11}, 
+    {"flowdir": 261.86, "to": 44117, "nckts": 4, "from": 44106, "flow": 285}, 
+    {"flowdir": 17.34, "to": 44127, "nckts": 1, "from": 44106, "flow": 28}, 
+    {"flowdir": 48.08, "to": 44133, "nckts": 2, "from": 44106, "flow": 48}, 
+    {"flowdir": 78.03, "to": 44138, "nckts": 2, "from": 44106, "flow": 81}, 
+    {"flowdir": 34.28, "to": 44116, "nckts": 2, "from": 44108, "flow": 36}, 
+    {"flowdir": -29.14, "to": 44133, "nckts": 2, "from": 44108, "flow": 29}, 
+    {"flowdir": 101.81, "to": 44118, "nckts": 2, "from": 44109, "flow": 102}, 
+    {"flowdir": 57.35, "to": 44119, "nckts": 2, "from": 44109, "flow": 58}, 
+    {"flowdir": 80.92, "to": 44134, "nckts": 2, "from": 44109, "flow": 81}, 
+    {"flowdir": -65.68, "to": 44113, "nckts": 2, "from": 44110, "flow": 68}, 
+    {"flowdir": 45.36, "to": 44114, "nckts": 2, "from": 44110, "flow": 45}, 
+    {"flowdir": 3.6, "to": 44135, "nckts": 1, "from": 44110, "flow": 13}, 
+    {"flowdir": 31.02, "to": 44112, "nckts": 1, "from": 44111, "flow": 31}, 
+    {"flowdir": -262.8, "to": 44121, "nckts": 4, "from": 44111, "flow": 263}, 
+    {"flowdir": 85.26, "to": 44122, "nckts": 1, "from": 44111, "flow": 85}, 
+    {"flowdir": 89.52, "to": 44123, "nckts": 2, "from": 44111, "flow": 90}, 
+    {"flowdir": 5.23, "to": 44122, "nckts": 1, "from": 44112, "flow": 9}, 
+    {"flowdir": 8.04, "to": 44127, "nckts": 2, "from": 44112, "flow": 14}, 
+    {"flowdir": 87.79, "to": 44137, "nckts": 2, "from": 44113, "flow": 89}, 
+    {"flowdir": 26.34, "to": 44116, "nckts": 2, "from": 44115, "flow": 28}, 
+    {"flowdir": -26.02, "to": 44120, "nckts": 2, "from": 44115, "flow": 33}, 
+    {"flowdir": -31.92, "to": 44138, "nckts": 2, "from": 44115, "flow": 36}, 
+    {"flowdir": 112.86, "to": 44123, "nckts": 2, "from": 44117, "flow": 127}, 
+    {"flowdir": 9.55, "to": 44124, "nckts": 2, "from": 44117, "flow": 20}, 
+    {"flowdir": -40.87, "to": 44121, "nckts": 2, "from": 44118, "flow": 44}, 
+    {"flowdir": 94.8, "to": 44128, "nckts": 2, "from": 44120, "flow": 96}, 
+    {"flowdir": 28.26, "to": 44126, "nckts": 2, "from": 44123, "flow": 28}, 
+    {"flowdir": -37.07, "to": 44125, "nckts": 2, "from": 44124, "flow": 39}, 
+    {"flowdir": -7.66, "to": 44134, "nckts": 1, "from": 44127, "flow": 9}, 
+    {"flowdir": 45.37, "to": 44129, "nckts": 2, "from": 44128, "flow": 45}, 
+    {"flowdir": 180.31, "to": 44202, "nckts": 2, "from": 44200, "flow": 193}, 
+    {"flowdir": 341.39, "to": 44209, "nckts": 2, "from": 44200, "flow": 354}, 
+    {"flowdir": 199.19, "to": 44210, "nckts": 2, "from": 44200, "flow": 201}, 
+    {"flowdir": -17.89, "to": 44204, "nckts": 2, "from": 44202, "flow": 45}, 
+    {"flowdir": 106.73, "to": 44206, "nckts": 2, "from": 44202, "flow": 115}, 
+    {"flowdir": -255.44, "to": 44207, "nckts": 2, "from": 44203, "flow": 261}, 
+    {"flowdir": -81.9, "to": 44218, "nckts": 2, "from": 44203, "flow": 89}, 
+    {"flowdir": -233.47, "to": 44207, "nckts": 2, "from": 44204, "flow": 239}, 
+    {"flowdir": -29.69, "to": 44208, "nckts": 2, "from": 44204, "flow": 32}, 
+    {"flowdir": -200.28, "to": 45205, "nckts": 2, "from": 44204, "flow": 217}, 
+    {"flowdir": -139.94, "to": 44207, "nckts": 2, "from": 44205, "flow": 141}, 
+    {"flowdir": -51.56, "to": 44218, "nckts": 2, "from": 44205, "flow": 54}, 
+    {"flowdir": 198.63, "to": 44220, "nckts": 2, "from": 44206, "flow": 200}, 
+    {"flowdir": -166.57, "to": 45205, "nckts": 2, "from": 44206, "flow": 167}, 
+    {"flowdir": 200.69, "to": 44208, "nckts": 1, "from": 44207, "flow": 205}, 
+    {"flowdir": 270.83, "to": 44217, "nckts": 2, "from": 44207, "flow": 295}, 
+    {"flowdir": -316.06, "to": 45201, "nckts": 2, "from": 44218, "flow": 325}, 
+    {"flowdir": 353.85, "to": 45400, "nckts": 2, "from": 44400, "flow": 416}, 
+    {"flowdir": -203.85, "to": 45403, "nckts": 2, "from": 44400, "flow": 210}, 
+    {"flowdir": 254.75, "to": 44405, "nckts": 2, "from": 44402, "flow": 287}, 
+    {"flowdir": -99.89, "to": 45413, "nckts": 2, "from": 44402, "flow": 297}, 
+    {"flowdir": 591.46, "to": 45435, "nckts": 2, "from": 44402, "flow": 749}, 
+    {"flowdir": -209.54, "to": 44404, "nckts": 2, "from": 44403, "flow": 210}, 
+    {"flowdir": 304.89, "to": 45400, "nckts": 1, "from": 44403, "flow": 330}, 
+    {"flowdir": 444.66, "to": 45403, "nckts": 1, "from": 44403, "flow": 459}, 
+    {"flowdir": 690.18, "to": 45405, "nckts": 2, "from": 44404, "flow": 716}, 
+    {"flowdir": 626.56, "to": 45403, "nckts": 3, "from": 44406, "flow": 685}, 
+    {"flowdir": 273.44, "to": 45405, "nckts": 1, "from": 44406, "flow": 291}, 
+    {"flowdir": -295.68, "to": 45405, "nckts": 1, "from": 44407, "flow": 299}, 
+    {"flowdir": 145.68, "to": 45416, "nckts": 1, "from": 44407, "flow": 163}, 
+    {"flowdir": -73, "to": 44200, "nckts": 2, "from": 44100, "flow": 81}, 
+    {"flowdir": -440, "to": 44202, "nckts": 3, "from": 44106, "flow": 445}, 
+    {"flowdir": -218, "to": 44210, "nckts": 2, "from": 44108, "flow": 223}, 
+    {"flowdir": -469, "to": 44203, "nckts": 3, "from": 44109, "flow": 473}, 
+    {"flowdir": -153, "to": 44223, "nckts": 2, "from": 44113, "flow": 153}, 
+    {"flowdir": -282, "to": 44209, "nckts": 2, "from": 44120, "flow": 284}, 
+    {"flowdir": -444, "to": 44204, "nckts": 3, "from": 44121, "flow": 446}, 
+    {"flowdir": -176, "to": 44220, "nckts": 2, "from": 44125, "flow": 176}, 
+    {"flowdir": 0, "to": 44206, "nckts": 1, "from": 44130, "flow": 0}, 
+    {"flowdir": -69, "to": 44217, "nckts": 2, "from": 44136, "flow": 70}, 
+    {"flowdir": -253, "to": 44405, "nckts": 1, "from": 44200, "flow": 254}, 
+    {"flowdir": -153, "to": 44402, "nckts": 1, "from": 44223, "flow": 154}
+] };
+}
+    
+</script>    
+</body>
+</html>
