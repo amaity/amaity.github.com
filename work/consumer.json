@@ -1,8 +1,25 @@
 {
     "name": "DVC",
     "children": [
-        {"name": "GOMD-I"},
-        {"name": "GOMD-II"},
+        {"name": "GOMD-I",
+         "children": [
+             {"name": "Belmuri"},
+             {"name": "Burdwan"},
+             {"name": "Howrah"},
+             {"name": "Kharagpur"},
+             {"name": "Kolaghat"}
+         ]
+        },
+        {"name": "GOMD-II",
+         "children": [
+             {"name": "Burnpur"},
+             {"name": "Jamuria"},
+             {"name": "Kalipahari"},
+             {"name": "Kalyaneswari"},
+             {"name": "Kumardubi"},
+             {"name": "Maithon Hydel"}
+         ]
+        },
         {"name": "GOMD-III"},
         {"name": "GOMD-IV"},
         {"name": "GOMD-V"},
