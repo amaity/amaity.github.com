@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+
+<meta charset="utf-8">
+<title>Introduction to DZSlides</title>
+
+<!-- Your Slides -->
+<!-- One section is one slide -->
+
+<section>
+    <h1><strong>Ideation Proposal</strong> </h1>
+    <footer align="right">by Amitava Maity <br> 
+        <font size="5">System Planning &amp Engineering group</font> <br>
+        <a href="http://twitter.com/avamaity">@avamaity</a>
+    </footer>
+</section>
+
+<section>
+    <h1>Visualization of the <strong>DVC network</strong> in your <strong>browser</strong>.</h1>
+</section>
+
+<section class="chapter">
+    <h1>Browser based diagram?</h1>
+</section>
+
+<section>
+    <h2>What will the diagram <strong>consist</strong> of?</h2>
+    <ul>
+        <li>Data
+        <li>Status
+        <li>Elements
+    </ul>
+    <svg>
+        <text x="30" y="70" style="fill: #FFFFFF; stroke: none; font-size: 24px;"> 80MW, 132KV</text>
+        <text x="30" y="108" style="fill: #FFFFFF; stroke: none; font-size: 24px;"> in, out</text>
+        <text x="30" y="148" style="fill: #FFFFFF; stroke: none; font-size: 24px;"> bus, line, transformer</text>
+    </svg>
+    <!-- 
+    <svg>
+        <circle cx="50" cy="50" r="20" style="stroke:none; fill:#0000FF"/>
+        <line x1="80"  y1="50" x2="120"   y2="50" style="stroke:#006600;stroke-width:30"/>
+    </svg> 
+    //-->
+    <h2><strong>HTML5</strong> can do that.</h2>
+</section>
+        
+        
+<section>
+    <h2>How will the diagram <strong>behave</strong>?</h2>
+    <ul>
+        <li>Animated
+        <li>Scalable
+    </ul>
+    <svg xmlns="http://www.w3.org/2000/svg" >
+        <defs>
+            <marker id="arrow" orient="auto" viewBox="0 0 10 10"
+                markerWidth="3" markerHeight="4" markerUnits="strokeWidth"
+                refX="1" refY="5">
+           <polyline points="0,0 10,5 0,10 1,5" fill=#ffffff />
+            </marker>
+        </defs>
+
+        <path id="line" marker-end="url(#arrow)" stroke-width="3" 
+              fill="none" stroke=#ffffff>
+            <animate dur="2s" repeatCount="indefinite" attributeName="d"
+                     values="M30,100 L30,100; M30,100 L100,100;" />
+        </path>
+    </svg>
+    <svg id="mobile" width="32" height="32" viewBox="0 0 48 48">
+        <path d="M23 0h-14c-1.65 0-3 1.35-3 3v26c0 1.65 1.35 3 3 3h14c1.65 0 3-1.35 3-3v-26c0-1.65-1.35-3-3-3zM12 1.5h8v1h-8v-1zM16 30c-1.105 0-2-0.895-2-2s0.895-2 2-2 2 0.895 2 2-0.895 2-2 2zM24 24h-16v-20h16v20z" fill="#ffffff"></path>
+    </svg>
+    <svg id="display" width="32" height="32" viewBox="0 0 32 32">
+        <path d="M0 2v20h32v-20h-32zM30 20h-28v-16h28v16zM21 24h-10l-1 4-2 2h16l-2-2z" fill="#ffffff"></path>
+    </svg>
+    <h2><strong>SVG</strong> can do that.</h2>
+</section>
+
+<section class="chapter">
+    <h1>What is it actually?</h1>
+</section>
+
+<section>
+    <h2><strong>One</strong> single HTML file.</h2>
+    <svg style="margin: 50px auto 0 auto; display: block;" width="200px" height="300px">
+        <path stroke="#FFFFFF" fill="none" stroke-width="5" d="M50 10 h 140 v 280 h -180 v -240 z M 50 10 v 40 h -40 "/>
+    </svg>
+</section>
+
+<section>
+    <h2>A HTML <strong>template.</strong></h2>
+    <p>That brings all the features needed to transform a simple HTML5 page into a view of the transmission network.</p>
+</section>
+
+<section class="chapter">
+    <h1>From a concept sketch ...</h1>
+</section>
+
+<section>
+    <img src="../img/sketch.png" width="800" height="600" />
+</section>
+
+<section class="chapter">
+    <h1> ... to a static model ...</h1>
+</section>
+
+<section>
+    <img src="../img/loadflow.png" width="800" height="600" />
+</section>
+
+<section class="chapter">
+    <h1>... to an interactive viz. finally.</h1>
+</section>
+
+<section class="chapter">
+    <h1>Benefits and Possibilities</h1>
+</section>
+
+<section>
+    <h2>The immediate impact.</h2>
+    <p>It will bring a subset of the DVC transmission data to <strong>every</strong> device with internet access.</p>
+    <p>It will open up new possibilities for network <strong>monitoring</strong>.</p>
+</section>
+
+<section>
+    <h2>Other benefits</h2>
+    <ul>
+        <li>Diagnostics
+        <li>Validation
+        <li>Planning
+        <li>Data
+    </ul>
+</section>
+
+<section>
+    <h2>Some more benefits</h2>
+    <ul>
+        <li>Simple
+        <li>It's cool
+        <li>Hackable
+        <li>It's current
+        <li>Accessible
+    </ul>
+</section>
+
+<section class="chapter">
+    <h1>Future possibilites.</h1>
+</section>
+
+<section>
+    <h2>Information dashboard</h2>
+    <p> Experience from the project can be utilised to build an  
+        information dashboard where the trend and profile
+        of various plant and substation parameters can be displayed.
+    </p>
+</section>
+
+    
+<section class="chapter">
+    <h1>Some prerequisites.</h1>
+</section>
+
+<section>
+    <q>This project cannot take off without <br> 
+        (a) access to SCADA data <br> 
+        (b) access to the DVC web server.
+    </q>
+</section>
+
+<section>
+    <h2>Assistance required.</h2>
+    <p>Need help of the <strong>Communication Dept.</strong> for access to the Load Despatch SCADA data.</p>
+    <p>Need help of the <strong>Information Technology Dept.</strong> for access to and space on the DVC web server.</p>
+</section>
+
+<section>
+    <q>Time required to reach functionality is approximately <strong>eight months</strong> from the date data becomes accessible.</q>
+</section>
+
+
+<section>
+    <h2>Thanks!</h2>
+    <p><a href="https://github.com/paulrouget/dzslides">Credits:</a> I have used the DZSlides template by <a href="http://twitter.com/paulrouget">@paulrouget</a>
+        for this presentation.    
+    </p>
+  
+</section>
+
+<!-- Style -->
+
+<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
+<style>
+  html { background-color: black; }
+  a { color: #FF0066; } a:hover {text-decoration: underline;}
+  footer { position: absolute; bottom: 50px; right: 50px; }
+  strong {color: #FF0066}
+  body {
+      font-family: 'Oswald', arial, serif;
+      background-color: white;
+      color: white;
+      font-size: 2em;
+      background: #1C1C1C;
+  }
+
+
+  /* Transition effect */
+  section {
+      -moz-transition: left 400ms linear 0s;
+      -webkit-transition: left 400ms linear 0s;
+      -ms-transition: left 400ms linear 0s;
+      transition: left 400ms linear 0s;
+      background: #1C1C1C;
+  }
+  section { left: -150%; }
+  section[aria-selected] { left: 0; }
+  section[aria-selected] ~ section { left: +150% }
+
+  .chapter { background-color: black;}
+  .chapter h1 {line-height: 600px; vertical-align: middle; margin: 0; text-align: center; display: block}
+
+  h1 {
+      margin: 50px 100px 0 100px;
+      font-size: 50px;
+      text-shadow: 0px -1px 0px #000;
+      text-align: left;
+  }
+  h2 {
+      color: #FAE50B;
+      margin: 70px 0 0 0;
+      font-size: 40px;
+      text-align: center;
+  }
+  ul {
+      margin-top: 70px;
+      font-size: 35px;
+      text-align: right;
+      border-right: 4px solid white;
+      padding-right: 40px;
+      min-width: 310px;
+      margin-left: 50px;
+      display: inline-block;
+  }
+  q, p {
+      margin: 50px auto 0 auto;
+      width: 500px;
+  }
+  q:after {content: ""}
+  q:before {content: ""}
+  q {
+      display: block;
+      margin-top: 140px;
+  }
+  video {
+      position: absolute;
+      top: 210px;
+      width: 260px;
+      left: 445px;
+      box-shadow: 0 0 10px black;
+  }
+  #arrow {
+      position: absolute;
+      top: 165px;
+      left: 460px;
+      font-size: 100px;
+      color: white;
+  }
+  li {list-style-type: none}
+
+    #line
+        {
+            stroke-dasharray: 5;
+            stroke-dashoffset: 10;
+            -webkit-animation: draw 1s linear infinite;
+        }
+        @-webkit-keyframes draw
+        {
+            to { stroke-dashoffset: 0;}
+        }
+    #mobile {
+        position: absolute;
+        top: 245px;
+        left: 435px;
+    }
+    #display {
+        position: absolute;
+        top: 238px;
+        left: 485px;
+    }
+</style>
+
+<!-- {{{{ *****************  DZSlides CORE 2.0b1 *************************** -->
+<!-- *********************************************************************** -->
+<!-- *********************************************************************** -->
+<!-- *********************************************************************** -->
+<!-- *********************************************************************** -->
+
+<!-- This block of code is not supposed to be edited, but if you want to change the behavior of the slides, feel free to hack it ;) -->
+
+<!-- Default Style -->
+<style>
+  * { margin: 0; padding: 0; }
+  details {display: none;}
+  body {
+    width: 800px; height: 600px;
+    margin-left: -400px; margin-top: -300px;
+    position: absolute; top: 50%; left: 50%;
+    overflow: hidden;
+  }
+  html {
+    overflow: hidden;
+  }
+  section {
+    position: absolute;
+    pointer-events: none;
+    width: 100%; height: 100%;
+  }
+  section[aria-selected] { pointer-events: auto;}
+  body {display: none}
+  body.loaded {display: block}
+</style>
+
+<script>
+  var friendWindows = [];
+  var idx = 1;
+  var slides;
+
+  /* main() */
+
+  window.onload = function() {
+    slides = document.querySelectorAll("body > section");
+    onhashchange();
+    setSlide();
+    document.body.className = "loaded";
+    setupTouchEvents();
+    onresize();
+  }
+
+  /* Handle keys */
+
+  window.onkeydown = function(e) {
+    // Don't intercept keyboard shortcuts
+    if (e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) {
+      return;
+    }
+    if ( e.keyCode == 37 // left arrow
+      || e.keyCode == 38 // up arrow
+      || e.keyCode == 33 // page up
+    ) {
+      e.preventDefault();
+      back();
+    }
+    if ( e.keyCode == 39 // right arrow
+      || e.keyCode == 40 // down arrow
+      || e.keyCode == 34 // page down
+    ) {
+      e.preventDefault();
+      forward();
+    }
+
+    if ( e.keyCode == 32) { // space
+        e.preventDefault();
+        toggleContent();
+    }
+  }
+
+  /* Touch Events */
+
+  function setupTouchEvents() {
+    var orgX, newX;
+    var tracking = false;
+
+    var body = document.body;
+    body.addEventListener("touchstart", start, false);
+    body.addEventListener("touchmove", move, false);
+
+    function start(e) {
+      e.preventDefault();
+      tracking = true;
+      orgX = e.changedTouches[0].pageX;
+    }
+
+    function move(e) {
+      if (!tracking) return;
+      newX = e.changedTouches[0].pageX;
+      if (orgX - newX > 100) {
+        tracking = false;
+        forward();
+      } else {
+        if (orgX - newX < -100) {
+          tracking = false;
+          back();
+        }
+      }
+    }
+  }
+
+  /* Adapt the size of the slides to the window */
+
+  window.onresize = function() {
+    var sx = document.body.clientWidth / window.innerWidth;
+    var sy = document.body.clientHeight / window.innerHeight;
+    var transform = "scale(" + (1/Math.max(sx, sy)) + ")";
+    document.body.style.MozTransform = transform;
+    document.body.style.WebkitTransform = transform;
+    document.body.style.OTransform = transform;
+    document.body.style.msTransform = transform;
+    document.body.style.transform = transform;
+  }
+  function getDetails(idx) {
+    var s = document.querySelector("section:nth-of-type("+ idx +")");
+    var d = s.querySelector("details");
+    return d?d.innerHTML:"";
+  }
+  window.onmessage = function(e) {
+    msg = e.data;
+    win = e.source;
+    if (msg === "register") {
+      friendWindows.push(win);
+      win.postMessage(JSON.stringify({method: "registered", title: document.title, count: slides.length}), "*");
+      win.postMessage(JSON.stringify({method: "newslide", details: getDetails(idx), idx: idx}), "*");
+      return;
+    }
+    if (msg === "back") back();
+    if (msg === "forward") forward();
+    if (msg === "toggleContent") toggleContent();
+    // setSlide(42)
+    var r = /setSlide\((\d+)\)/.exec(msg);
+    if (r) {
+        idx = r[1];
+        setSlide();
+    }
+  }
+
+  /* If a Video is present in this new slide, play it.
+     If a Video is present in the previous slide, stop it. */
+
+  function toggleContent() {
+    var s = document.querySelector("section[aria-selected]");
+    if (s) {
+        var video = s.querySelector("video");
+        if (video) {
+            if (video.ended || video.paused) {
+                video.play();
+            } else {
+                video.pause();
+            }
+        }
+    }
+  }
+
+  /* If the user change the slide number in the URL bar, jump
+     to this slide. */
+
+  window.onhashchange = function(e) {
+    var newidx = ~~window.location.hash.split("#")[1];
+    if (!newidx) newidx = 1;
+    if (newidx == idx) return;
+    idx = newidx;
+    setSlide();
+  }
+
+  /* Slide controls */
+
+  function back() {
+    if (idx == 1) return;
+    idx--;
+    setSlide();
+  }
+  function forward() {
+    if (idx >= slides.length) return;
+    idx++;
+    setSlide();
+  }
+  function setSlide() {
+    var old = document.querySelector("section[aria-selected]");
+    var next = document.querySelector("section:nth-of-type("+ idx +")");
+    if (old) {
+      old.removeAttribute("aria-selected");
+      var video = old.querySelector("video");
+      if (video) { video.pause(); }
+    }
+    if (next) {
+      next.setAttribute("aria-selected", "true");
+      var video = next.querySelector("video");
+      if (video) { video.play(); }
+    } else {
+      console.warn("No such slide: " + idx);
+      idx = 0;
+      for (var i = 0; i < slides.length; i++) {
+          if (slides[i].hasAttribute("aria-selected")) {
+              idx = i + 1;
+          }
+      }
+    }
+    window.location.hash = idx;
+    for (var i = 0; i < friendWindows.length; i++) {
+        friendWindows[i].postMessage(JSON.stringify({method: "newslide", details: getDetails(idx), idx: idx}), "*");
+    }
+  }
+</script>
