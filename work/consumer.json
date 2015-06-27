@@ -3,7 +3,21 @@
     "children": [
         {"name": "GOMD-I",
          "children": [
-             {"name": "Belmuri"},
+             {"name": "Belmuri",
+              "children": [
+                  {"name": "132KV",
+                   "children": [
+                       {"name": "Fdr: Eastern Railway"}
+                   ]
+                  },
+                  {"name": "33KV",
+                   "children": [
+                       {"name": "Bay1"},
+                       {"name": "Bay2"}
+                   ]
+                  }
+              ]
+             },
              {"name": "Burdwan"},
              {"name": "Howrah"},
              {"name": "Kharagpur"},
