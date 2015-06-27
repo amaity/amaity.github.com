@@ -36,13 +36,13 @@
                   },
                   {"name": "33KV",
                    "children": [
-                       {"name": "Bay1",
+                       {"name": "Fdr1",
                         "children": [
                             {"name": "Howrah Gas Ltd [6.4MVA]"}
                         ]
                        },
-                       {"name": "Bay2"},
-                       {"name": "Bay3",
+                       {"name": "Fdr2"},
+                       {"name": "Fdr3",
                         "children": [
                             {"name": "BRGD Ingot [6MVA]"},
                             {"name": "Mansarover [3.2MVA]"},
@@ -50,28 +50,28 @@
                             {"name": "NN Ispat [13.2MVA]"}
                         ]
                        },
-                       {"name": "Bay4",
+                       {"name": "Fdr4",
                         "children": [
                             {"name": "Shyam Ferro [16 MVA]"},
                             {"name": "Shyam Sel [2.8 MVA]"}
                         ]
                        },
-                       {"name": "Tie-1",
+                       {"name": "Bay5",
                         "children": [
                             {"name": "WBSEB-1"}
                         ]
                        },
-                       {"name": "Tie-2",
+                       {"name": "Bay6",
                         "children": [
                             {"name": "WBSEB-2"}
                         ]
                        },
-                       {"name": "Tie-3",
+                       {"name": "Bay9",
                         "children": [
                             {"name": "WBSEB-3"}
                         ]
                        },
-                       {"name": "Tie-4",
+                       {"name": "Bay10",
                         "children": [
                             {"name": "WBSEB-4"}
                         ]
@@ -89,7 +89,15 @@
                   }
               ]
              },
-             {"name": "Kharagpur"},
+             {"name": "Kharagpur",
+              "children": [
+                  {"name": "132KV",
+                   "children": [
+                       {"name": "WBSEB-Tie"}
+                   ]
+                  }
+              ]
+             },
              {"name": "Kolaghat",
               "children": [
                   {"name": "132KV",
@@ -103,8 +111,28 @@
         },
         {"name": "GOMD-II",
          "children": [
-             {"name": "Burnpur"},
-             {"name": "Jamuria"},
+             {"name": "Burnpur",
+              "children": [
+                  {"name": "220KV",
+                   "children": [
+                       {"Fdr1": "IISCO [160 MVA]"},
+                       {"Fdr2": "IISCO"}
+                   ]
+                  },
+                  {"name": "33KV",
+                   "children": [
+                       {"Fdr1": "IISCO [30 MVA]"},
+                       {"Fdr2": "IISCO"}
+                   ]
+                  }
+              ]
+             },
+             {"name": "Jamuria",
+              "children": [
+                  {"name": "132KV"},
+                  {"name": "33KV"}
+              ]
+             },
              {"name": "Kalipahari"},
              {"name": "Kalyaneswari"},
              {"name": "Kumardubi"},
@@ -152,10 +180,39 @@
          "children": [
              {"name": "ASP"},
              {"name": "Barjora"},
-             {"name": "DTPS"},
-             {"name": "Durgapur"},
-             {"name": "MTPS"},
-             {"name": "Parulia"}
+             {"name": "DTPS",
+              "children": [
+                  {"name": "132KV",
+                   "children": [
+                       {"name": "Eastern Railway [25MVA]"}
+                   ]
+                  },
+                  {"name": "33KV",
+                   "children": [
+                       {"name": "Durgapur Cement [8.2MVA]"},
+                       {"name": "Durga Hi-tech Cement [6MVA]"}
+                   ]
+                  }
+              ]
+             },
+             {"name": "Durgapur",
+              "children": [
+                  {"name": "220KV"},
+                  {"name": "33KV"}
+              ]
+             },
+             {"name": "MTPS",
+              "children": [
+                  {"name": "220KV"},
+                  {"name": "33KV"}
+              ]
+             },
+             {"name": "Parulia",
+              "children": [
+                  {"name": "220KV"},
+                  {"name": "33KV"}
+              ]
+             }
          ]
         }
     ]
