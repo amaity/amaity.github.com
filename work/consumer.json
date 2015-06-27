@@ -61,9 +61,21 @@
                             {"name": "WBSEB-1"}
                         ]
                        },
-                       {"name": "Tie-2"},
-                       {"name": "Tie-3"},
-                       {"name": "Tie-4"}
+                       {"name": "Tie-2",
+                        "children": [
+                            {"name": "WBSEB-2"}
+                        ]
+                       },
+                       {"name": "Tie-3",
+                        "children": [
+                            {"name": "WBSEB-3"}
+                        ]
+                       },
+                       {"name": "Tie-4",
+                        "children": [
+                            {"name": "WBSEB-4"}
+                        ]
+                       }
                    ]
                   }
               ]
@@ -78,7 +90,15 @@
               ]
              },
              {"name": "Kharagpur"},
-             {"name": "Kolaghat"}
+             {"name": "Kolaghat",
+              "children": [
+                  {"name": "132KV",
+                   "children": [
+                       {"name": "Badrinarain [10 MVA]"}
+                   ]
+                  }
+              ]
+             }
          ]
         },
         {"name": "GOMD-II",
