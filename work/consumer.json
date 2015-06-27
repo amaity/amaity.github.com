@@ -56,12 +56,27 @@
                             {"name": "Shyam Sel [2.8 MVA]"}
                         ]
                        },
-                       {"name": "Bay5"}
+                       {"name": "Tie-1",
+                        "children": [
+                            {"name": "WBSEB-1"}
+                        ]
+                       },
+                       {"name": "Tie-2"},
+                       {"name": "Tie-3"},
+                       {"name": "Tie-4"}
                    ]
                   }
               ]
              },
-             {"name": "Howrah"},
+             {"name": "Howrah",
+              "children": [
+                  {"name": "132KV",
+                   "children": [
+                       {"name": "WBSEDCL (Ambuja Cement)[15MVA]"}
+                   ]
+                  }
+              ]
+             },
              {"name": "Kharagpur"},
              {"name": "Kolaghat"}
          ]
