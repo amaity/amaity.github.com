@@ -12,7 +12,12 @@
                   },
                   {"name": "33KV",
                    "children": [
-                       {"name": "Bay1"},
+                       {"name": "Bay1",
+                        "children": [
+                            {"name": "Fdr1: WBSEB"},
+                            {"name": "Fdr2: WBSEB"}
+                        ]
+                       },
                        {"name": "Bay2"}
                    ]
                   }
