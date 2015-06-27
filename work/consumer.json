@@ -14,8 +14,8 @@
                    "children": [
                        {"name": "Bay1",
                         "children": [
-                            {"name": "Fdr1: WBSEB"},
-                            {"name": "Fdr2: WBSEB"}
+                            {"name": "WBSEB"},
+                            {"name": "WBSEB"}
                         ]
                        },
                        {"name": "Bay2"}
