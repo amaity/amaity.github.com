@@ -7,23 +7,60 @@
               "children": [
                   {"name": "132KV",
                    "children": [
-                       {"name": "Fdr: Eastern Railway"}
+                       {"name": "Eastern Railway"}
                    ]
                   },
                   {"name": "33KV",
                    "children": [
                        {"name": "Bay1",
                         "children": [
-                            {"name": "WBSEB"},
                             {"name": "WBSEB"}
                         ]
                        },
-                       {"name": "Bay2"}
+                       {"name": "Bay2",
+                        "children": [
+                            {"name": "WBSEB"}
+                        ]
+                       }
                    ]
                   }
               ]
              },
-             {"name": "Burdwan"},
+             {"name": "Burdwan",
+              "children": [
+                  {"name": "132KV",
+                   "children": [
+                       {"name": "Eastern Railway -1"},
+                       {"name": "Eastern Railway -2"}
+                   ]
+                  },
+                  {"name": "33KV",
+                   "children": [
+                       {"name": "Bay1",
+                        "children": [
+                            {"name": "Howrah Gas Ltd [6.4MVA]"}
+                        ]
+                       },
+                       {"name": "Bay2"},
+                       {"name": "Bay3",
+                        "children": [
+                            {"name": "BRGD Ingot [6MVA]"},
+                            {"name": "Mansarover [3.2MVA]"},
+                            {"name": "Global [3.5MVA]"},
+                            {"name": "NN Ispat [13.2MVA]"}
+                        ]
+                       },
+                       {"name": "Bay4",
+                        "children": [
+                            {"name": "Shyam Ferro [16 MVA]"},
+                            {"name": "Shyam Sel [2.8 MVA]"}
+                        ]
+                       },
+                       {"name": "Bay5"}
+                   ]
+                  }
+              ]
+             },
              {"name": "Howrah"},
              {"name": "Kharagpur"},
              {"name": "Kolaghat"}
