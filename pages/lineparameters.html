@@ -59,55 +59,89 @@
 
 <strong>Matlab</strong> is the tool that comes to my mind when thinking about matrix manipulations. Here is a small script that should run in <strong>Python</strong> without errors.
 </p>
-      <p><strong>SimpleBlog 1.0</strong> is a free, W3C-compliant, CSS-based website template by <strong>styleshout.com</strong>. This work is distributed under the <a rel="license" target="_blank" href="http://creativecommons.org/licenses/by/2.5/"> Creative Commons Attribution 2.5 License</a>, which means that you are free to use and modify it for any purpose. All I ask is that you include a link back to my website in your credits.</p>
-      <p>For more free designs, you can visit my website to see my other works.</p>
-      <p>Good luck and I hope you find my free templates useful!</p>
       
       <h3>Brute Force Approach</h3>
         <p>Since the input data set is quite small, I found it convenient to include it in the script. Therefore the `m` file begins with:</p>
       <h3>Code</h3>
-        <p><code>	clear all;<br />
-	verbose = 1;<br />
-	input_precision = 15;<br />
-    <br />
-	% CONDUCTOR AND TOWER DATA<br />
-	Cond = '1 x AAAC 61/3.31';<br />
-	printf('Conductor is = %20s\n', Cond);<br />
-	Ew = '1 x GS 7/3.15';<br />
-	printf('Earthwire is = %20s\n', Ew);<br />
-	nc = 2; % number of circuits<br />
-	printf('No. of three phase circuits = %2i\n', nc);<br />
-	nb = 1; % number of conductors in bundle<br />
-	printf('No. of conductors in a bundle = %2i\n', nb);<br />
-	ne = 1; % number of earthwires<br />
-	printf('No. of earthwires = %2i\n', ne);<br />
-	f = 50; % frequency in Hertz<br />
-	printf('Frequency in Hertz = %4i\n', f);<br />
-	V = 220; % base voltage in kV<br />
-	printf('Voltage in kV = %4i\n', V);<br />
-	S = 100; % base MVA<br />
-	printf('Base MVA = %4i\n', S);<br />
-	radc = 0.01431; % conductor radius in meters<br />
-	printf('Conductor radius in meters = %2.6f\n', radc);<br />
-	Rc = 0.06915; % conductor resistance in ohms/km<br />
-	printf('Conductor resistance in ohms/km = %2.6f\n', Rc);<br />
-	rade = 0.004725; % earthwire radius in meters<br />
-	printf('Earthwire radius in meters = %2.6f\n', rade);<br />
-	Re = 3.375; % earthwire resistance in ohms/km<br />
-	printf('Earthwire resistance in ohms/km = %2.6f\n', Re);<br />
-	rho = 50; % earth resistivity in ohm-meter<br />
-	printf('Earth resistivity in ohm-meters = %2.6f\n', rho);<br />
-	sagc = 7.94; % average sag of conductor<br />
-	printf('Average conductor sag in meters = %2.6f\n', sagc);<br />
-	sage = 5.74; % average sag of earthwire<br />
-	printf('Average earthwire sag in meters = %2.6f\n', sage);<br />
-	dcs = 1; % sub-conductor spacing<br />
-	%printf('Sub-conductor spacing in meters = %2.6f\n', dcs);<br />
-	kc = 0.772; % stranding factor of conductor<br />
-	printf('Stranding factor of conductor = %2.6f\n', kc);<br />
-	ke = 0.72; % stranding factor of earthwire<br />
-	printf('Stranding factor of earthwire = %2.6f\n', ke);<br />
+        <p><code>	
+            import math<br />
+import numpy as np<br />
+import matplotlib.pyplot as plt<br />
+<br />
+
+#CONDUCTOR AND TOWER DATA<br />
+Cond = 'ACSR 30/7/2.92';<br />
+print 'Conductor is =', Cond<br />
+Ew =  'GS 7/3.66'<br />
+print 'Earthwire is =', Ew<br />
+nc = 2. # number of circuits<br />
+print 'No. of three phase circuits =', nc<br />
+nb = 1. # number of conductors in bundle<br />
+print 'No. of conductors in a bundle = ', nb<br />
+ne = 1. # number of earthwires<br />
+print 'No. of earthwires = ', ne<br />
+f = 50. # frequency in Hertz<br />
+print 'Frequency in Hertz = ', f<br />
+V = 132. # base voltage in kV<br />
+print 'Voltage in kV = ', V<br />
+S = 100. # base MVA<br />
+print 'Base MVA = ', S<br />
+radc = 0.02044 # conductor radius in meters<br />
+print 'Conductor radius in meters = ', radc<br />
+Rc = 0.1441 # conductor dc resistance at 20 degC in ohms/km<br />
+print 'Conductor resistance in ohms/km  = ', Rc<br />
+rade = 0.004725 # earthwire radius in meters<br />
+print 'Earthwire radius in meters = ', rade<br />
+Re = 3.375 # earthwire resistance in ohms/km<br />
+print 'Earthwire resistance in ohms/km = ', Re<br />
+rho = 100. # earth resistivity in ohm-meter<br />
+print 'Earth resistivity in ohm-meters = ', rho<br />
+sagc = 6. # average sag of conductor<br />
+print 'Conductor sag in meters = ', sagc<br />
+sage = 4.88 # average sag of earthwire<br />
+print 'Earthwire sag in meters = ', sage<br />
+dcs = 0 # sub-conductor spacing<br />
+print 'Sub-conductor spacing in meters = ', dcs<br />
+kc = 0.81 # stranding factor of conductor<br />
+print 'Stranding factor of conductor = ', kc<br />
+ke = 0.726 # stranding factor of earthwire<br />
+print 'Stranding factor of earthwire = ', ke<br />
+<br />
+xa = -3.4 <br />
+print 'Distance between bundle a and tower center line = ', xa<br />
+xb = -3.42<br />
+print 'Distance between bundle b and tower center line = ', xb<br />
+xc = -3.7<br />
+print 'Distance between bundle c and tower center line = ', xc<br />
+xf = 3.4<br />
+print 'Distance between bundle f and tower center line = ', xf<br />
+xg = 3.42<br />
+print 'Distance between bundle g and tower center line = ', xg<br />
+xh = 3.7<br />
+print 'Distance between bundle h and tower center line = ', xh<br />
+xe1 = -3.756 <br />
+print 'Distance between ew1 and tower center line = ', xe1<br />
+xe2 = 3.756<br />
+print 'Distance between ew2 and tower center line = ', xe2<br />
+<br />
+ye1 = 42.068 # distance between earthwire and ground in meters<br />
+print 'Distance between earthwire1 and ground in meters = ', ye1<br />
+ye2 = 42.068 # distance between earthwire and ground in meters<br />
+print 'Distance between earthwire2 and ground in meters = ', ye2<br />
+ya = 21.835 # distance between bundle a and ground in meters<br />
+print 'Distance between bundle-a conductors and ground in meters = ', ya<br />
+yb = 29.835 # distance between bundle b and ground in meters<br />
+print 'Distance between bundle-b conductors and ground in meters = ', yb<br />
+yc = 37.835 # distance between bundle c and ground in meters<br />
+print 'Distance between bundle-c conductors and ground in meters = ', yc<br />
+yf = 21.835 # distance between bundle f and ground in meters<br />
+print 'Distance between bundle-f conductors and ground in meters = ', yf<br />
+yg = 29.835 # distance between bundle g and ground in meters<br />
+print 'Distance between bundle-g conductors and ground in meters = ', yg<br />
+yh = 37.835 # distance between bundle h and ground in meters<br />
+print 'Distance between bundle-h conductors and ground in meters = ', yh<br />
 </code></p>
+        
       <p>This brings us to the co-ordinate calculations. Since the calculation of line parameters is based on the assumption of perfectly horizontal conductors, an average conductor height is calculated from the sag of conductors between towers as follows:
 </p>
       <h3>Blockquote</h3>
