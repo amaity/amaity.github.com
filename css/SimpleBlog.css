@@ -79,7 +79,7 @@ blockquote {
 	margin: 10px;
  	padding: 0 0 0 28px;  
    border: 1px solid #f2f2f2; 
-  	background: #FAFAFA url(quote.gif) no-repeat 5px 5px;    
+  	background: #FAFAFA url(../img/quote.gif) no-repeat 5px 5px;    
 }
 
 /* form elements */
@@ -193,7 +193,7 @@ form.search input.button {
 	clear: both;
 	width: 833px;
 	height: 26px;
-	background: #FFF url(menubg.jpg) repeat-y;
+	background: #FFF url(../img/menubg.jpg) repeat-y;
 	margin: 0;
 	font: bolder 12px/26px Tahoma, Verdana, Arial, Sans-Serif;			
 }
