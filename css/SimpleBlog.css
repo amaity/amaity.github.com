@@ -141,7 +141,7 @@ form.search input.button {
 ********************************************/ 
 #wrap {
 	width: 833px;
-	background: url(bg.jpg) repeat-y center top;
+	background: url(../img/bg.jpg) repeat-y center top;
 	margin: 0 auto;
 	text-align: left;
 }
@@ -156,7 +156,7 @@ form.search input.button {
 	position: relative;
 	width: 833px;
 	height: 100px;
-	background: #FFF url(header.jpg) no-repeat center top;
+	background: #FFF url(../img/header.jpg) no-repeat center top;
 	margin: 0; padding: 0;
 	font-size: 14px;
 	color: #FFF;
