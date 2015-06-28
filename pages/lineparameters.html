@@ -39,11 +39,11 @@
         <li><a href="http://all-free-download.com/free-website-templates/">More Free Templates</a></li>
         <li><a href="http://all-free-download.com/free-website-templates/">Premium Templates</a></li>
       </ul>
-      <h1>Site Partners</h1>
+      <h1>Contact Me</h1>
       <ul class="sidemenu">
-        <li><a href="http://all-free-download.com/free-website-templates/">Dreamhost</a></li>
-        <li><a href="http://all-free-download.com/free-website-templates/">4templates</a></li>
-        <li><a href="http://all-free-download.com/free-website-templates/">TemplateMonster</a></li>
+        <li><a>Twitter: @avamaity</a></li>
+        <li><a>Wechat: amaity_kol</a></li>
+        <li><a href="https://plus.google.com/116552924413061955886/posts">google+</a></li>
         <li><a href="http://all-free-download.com/free-website-templates/">Fotolia.com</a></li>
         <li><a href="http://all-free-download.com/free-website-templates/">Text Link Ads</a></li>
       </ul>
@@ -57,7 +57,7 @@
       <h1>Line Constants</h1>
         <p>The following calculation of impedance and susceptance matrix of an overhead power transmission line circuit configuration is a direct implementation of the procedure described in the book <strong>Power Systems Modelling and Fault Analysis</strong> by <strong>Nasser D. Tleis</strong>.
 
-<strong>Matlab</strong> is the tool that comes to my mind when thinking about matrix manipulations. Here is a small script that should run in <strong>Python</strong> without errors.
+Usually<strong>Matlab</strong> is the tool that comes to my mind when thinking about matrix manipulations. But I prefer <strong>Python</strong>. So here is a small script that should run in Python without errors.
 </p>
       
       <h3>Brute Force Approach</h3>
@@ -144,7 +144,30 @@ print 'Distance between bundle-h conductors and ground in meters = ', yh<br />
         
       <p>This brings us to the co-ordinate calculations. Since the calculation of line parameters is based on the assumption of perfectly horizontal conductors, an average conductor height is calculated from the sag of conductors between towers as follows:
 </p>
-      <h3>Blockquote</h3>
+        <p><code>
+            # co-odinate calculation<br />
+y1av = ya-(2./3.)*sagc<br />
+y2av = yb-(2./3.)*sagc<br />
+y3av = yc-(2./3.)*sagc<br />
+y4av = yf-(2./3.)*sagc<br />
+y5av = yg-(2./3.)*sagc<br />
+y6av = yh-(2./3.)*sagc<br />
+y7av = ye1-(2./3.)*sage<br />
+y8av = ye2-(2./3.)*sage<br />
+<br />
+x1 = xa; xm1 = xa;  ym1 = -y1av # co-ordinates of conductor a<br />
+x2 = xb; xm2 = xb;  ym2 = -y2av # co-ordinates of conductor b<br />
+x3 = xc; xm3 = xc;  ym3 = -y3av # co-ordinates of conductor c<br />
+x4 = xf; xm4 = xf;  ym4 = -y4av # co-ordinates of conductor f<br />
+x5 = xg; xm5 = xg;  ym5 = -y5av # co-ordinates of conductor g<br />
+x6 = xh; xm6 = xh;  ym6 = -y6av # co-ordinates of conductor h<br />
+x7 = xe1;  xm7 = xe1;   ym7 = -y7av # co-odinates of earthwire 1<br />
+x8 = xe2;  xm8 = xe2;   ym8 = -y8av # co-odinates of earthwire 2<br />
+</code></p>
+        <p>With the co-ordinates fixed, we can now go on to the calculation of the various constants.</p>
+        
+
+        <h3>Blockquote</h3>
       <blockquote>
         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat....</p>
       </blockquote>
