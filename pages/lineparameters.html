@@ -66,15 +66,15 @@
       <h3>Brute Force Approach</h3>
         <p>Since the input data set is quite small, I found it convenient to include it in the script. Therefore the `m` file begins with:</p>
       <h3>Code</h3>
-      <p><code>	clear all;
-	verbose = 1;
-	input_precision = 15;
-
-	% CONDUCTOR AND TOWER DATA
-	Cond = '1 x AAAC 61/3.31';
-	printf('Conductor is = %20s\n', Cond);
-	Ew = '1 x GS 7/3.15';
-	printf('Earthwire is = %20s\n', Ew);
+        <p><code>	clear all;<br />
+	verbose = 1;<br />
+	input_precision = 15;<br />
+    <br />
+	% CONDUCTOR AND TOWER DATA<br />
+	Cond = '1 x AAAC 61/3.31';<br />
+	printf('Conductor is = %20s\n', Cond);<br />
+	Ew = '1 x GS 7/3.15';<br />
+	printf('Earthwire is = %20s\n', Ew);<br />
 	nc = 2; % number of circuits
 	printf('No. of three phase circuits = %2i\n', nc);
 	nb = 1; % number of conductors in bundle
