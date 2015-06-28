@@ -55,20 +55,59 @@
     </div>
     <div id="main"> <a name="TemplateInfo"></a>
       <h1>Line Constants</h1>
-        <p>The following calculation of impedance and susceptance matrix of an overhead power transmission line circuit configuration is a direct implementation of the procedure described in the book `Power Systems Modelling and Fault Analysis` by `Nasser D. Tleis`.
+        <p>The following calculation of impedance and susceptance matrix of an overhead power transmission line circuit configuration is a direct implementation of the procedure described in the book <strong>Power Systems Modelling and Fault Analysis</strong> by <strong>Nasser D. Tleis</strong>.
 
-<strong>Matlab</strong> is the tool that comes to my mind when thinking about matrix manipulations. <strong>Octave</strong> and <strong>Freemat</strong> are some of the open source tools similar to Matlab. Here is a small script that should run in <strong>Python</strong> without errors.
+<strong>Matlab</strong> is the tool that comes to my mind when thinking about matrix manipulations. Here is a small script that should run in <strong>Python</strong> without errors.
 </p>
       <p><strong>SimpleBlog 1.0</strong> is a free, W3C-compliant, CSS-based website template by <strong>styleshout.com</strong>. This work is distributed under the <a rel="license" target="_blank" href="http://creativecommons.org/licenses/by/2.5/"> Creative Commons Attribution 2.5 License</a>, which means that you are free to use and modify it for any purpose. All I ask is that you include a link back to my website in your credits.</p>
       <p>For more free designs, you can visit my website to see my other works.</p>
       <p>Good luck and I hope you find my free templates useful!</p>
-      <a name="SampleTags"></a>
-      <h1>Sample Tags</h1>
+      
+      <h3>Brute Force Approach</h3>
+        <p>Since the input data set is quite small, I found it convenient to include it in the script. Therefore the `m` file begins with:</p>
       <h3>Code</h3>
-      <p><code> code-sample { <br />
-        font-weight: bold;<br />
-        font-style: italic;<br />
-        } </code></p>
+      <p><code>	clear all;
+	verbose = 1;
+	input_precision = 15;
+
+	% CONDUCTOR AND TOWER DATA
+	Cond = '1 x AAAC 61/3.31';
+	printf('Conductor is = %20s\n', Cond);
+	Ew = '1 x GS 7/3.15';
+	printf('Earthwire is = %20s\n', Ew);
+	nc = 2; % number of circuits
+	printf('No. of three phase circuits = %2i\n', nc);
+	nb = 1; % number of conductors in bundle
+	printf('No. of conductors in a bundle = %2i\n', nb);
+	ne = 1; % number of earthwires
+	printf('No. of earthwires = %2i\n', ne);
+	f = 50; % frequency in Hertz
+	printf('Frequency in Hertz = %4i\n', f);
+	V = 220; % base voltage in kV
+	printf('Voltage in kV = %4i\n', V);
+	S = 100; % base MVA
+	printf('Base MVA = %4i\n', S);
+	radc = 0.01431; % conductor radius in meters
+	printf('Conductor radius in meters = %2.6f\n', radc);
+	Rc = 0.06915; % conductor resistance in ohms/km
+	printf('Conductor resistance in ohms/km = %2.6f\n', Rc);
+	rade = 0.004725; % earthwire radius in meters
+	printf('Earthwire radius in meters = %2.6f\n', rade);
+	Re = 3.375; % earthwire resistance in ohms/km
+	printf('Earthwire resistance in ohms/km = %2.6f\n', Re);
+	rho = 50; % earth resistivity in ohm-meter
+	printf('Earth resistivity in ohm-meters = %2.6f\n', rho);
+	sagc = 7.94; % average sag of conductor
+	printf('Average conductor sag in meters = %2.6f\n', sagc);
+	sage = 5.74; % average sag of earthwire
+	printf('Average earthwire sag in meters = %2.6f\n', sage);
+	dcs = 1; % sub-conductor spacing
+	%printf('Sub-conductor spacing in meters = %2.6f\n', dcs);
+	kc = 0.772; % stranding factor of conductor
+	printf('Stranding factor of conductor = %2.6f\n', kc);
+	ke = 0.72; % stranding factor of earthwire
+	printf('Stranding factor of earthwire = %2.6f\n', ke);
+</code></p>
       <h3>Example Lists</h3>
       <ol>
         <li>example of</li>
