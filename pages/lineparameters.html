@@ -75,48 +75,41 @@
 	printf('Conductor is = %20s\n', Cond);<br />
 	Ew = '1 x GS 7/3.15';<br />
 	printf('Earthwire is = %20s\n', Ew);<br />
-	nc = 2; % number of circuits
-	printf('No. of three phase circuits = %2i\n', nc);
-	nb = 1; % number of conductors in bundle
-	printf('No. of conductors in a bundle = %2i\n', nb);
-	ne = 1; % number of earthwires
-	printf('No. of earthwires = %2i\n', ne);
-	f = 50; % frequency in Hertz
-	printf('Frequency in Hertz = %4i\n', f);
-	V = 220; % base voltage in kV
-	printf('Voltage in kV = %4i\n', V);
-	S = 100; % base MVA
-	printf('Base MVA = %4i\n', S);
-	radc = 0.01431; % conductor radius in meters
-	printf('Conductor radius in meters = %2.6f\n', radc);
-	Rc = 0.06915; % conductor resistance in ohms/km
-	printf('Conductor resistance in ohms/km = %2.6f\n', Rc);
-	rade = 0.004725; % earthwire radius in meters
-	printf('Earthwire radius in meters = %2.6f\n', rade);
-	Re = 3.375; % earthwire resistance in ohms/km
-	printf('Earthwire resistance in ohms/km = %2.6f\n', Re);
-	rho = 50; % earth resistivity in ohm-meter
-	printf('Earth resistivity in ohm-meters = %2.6f\n', rho);
-	sagc = 7.94; % average sag of conductor
-	printf('Average conductor sag in meters = %2.6f\n', sagc);
-	sage = 5.74; % average sag of earthwire
-	printf('Average earthwire sag in meters = %2.6f\n', sage);
-	dcs = 1; % sub-conductor spacing
-	%printf('Sub-conductor spacing in meters = %2.6f\n', dcs);
-	kc = 0.772; % stranding factor of conductor
-	printf('Stranding factor of conductor = %2.6f\n', kc);
-	ke = 0.72; % stranding factor of earthwire
-	printf('Stranding factor of earthwire = %2.6f\n', ke);
+	nc = 2; % number of circuits<br />
+	printf('No. of three phase circuits = %2i\n', nc);<br />
+	nb = 1; % number of conductors in bundle<br />
+	printf('No. of conductors in a bundle = %2i\n', nb);<br />
+	ne = 1; % number of earthwires<br />
+	printf('No. of earthwires = %2i\n', ne);<br />
+	f = 50; % frequency in Hertz<br />
+	printf('Frequency in Hertz = %4i\n', f);<br />
+	V = 220; % base voltage in kV<br />
+	printf('Voltage in kV = %4i\n', V);<br />
+	S = 100; % base MVA<br />
+	printf('Base MVA = %4i\n', S);<br />
+	radc = 0.01431; % conductor radius in meters<br />
+	printf('Conductor radius in meters = %2.6f\n', radc);<br />
+	Rc = 0.06915; % conductor resistance in ohms/km<br />
+	printf('Conductor resistance in ohms/km = %2.6f\n', Rc);<br />
+	rade = 0.004725; % earthwire radius in meters<br />
+	printf('Earthwire radius in meters = %2.6f\n', rade);<br />
+	Re = 3.375; % earthwire resistance in ohms/km<br />
+	printf('Earthwire resistance in ohms/km = %2.6f\n', Re);<br />
+	rho = 50; % earth resistivity in ohm-meter<br />
+	printf('Earth resistivity in ohm-meters = %2.6f\n', rho);<br />
+	sagc = 7.94; % average sag of conductor<br />
+	printf('Average conductor sag in meters = %2.6f\n', sagc);<br />
+	sage = 5.74; % average sag of earthwire<br />
+	printf('Average earthwire sag in meters = %2.6f\n', sage);<br />
+	dcs = 1; % sub-conductor spacing<br />
+	%printf('Sub-conductor spacing in meters = %2.6f\n', dcs);<br />
+	kc = 0.772; % stranding factor of conductor<br />
+	printf('Stranding factor of conductor = %2.6f\n', kc);<br />
+	ke = 0.72; % stranding factor of earthwire<br />
+	printf('Stranding factor of earthwire = %2.6f\n', ke);<br />
 </code></p>
-      <h3>Example Lists</h3>
-      <ol>
-        <li>example of</li>
-        <li>ordered list</li>
-      </ol>
-      <ul>
-        <li>example of</li>
-        <li>unordered list</li>
-      </ul>
+      <p>This brings us to the co-ordinate calculations. Since the calculation of line parameters is based on the assumption of perfectly horizontal conductors, an average conductor height is calculated from the sag of conductors between towers as follows:
+</p>
       <h3>Blockquote</h3>
       <blockquote>
         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat....</p>
