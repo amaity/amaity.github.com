@@ -1,0 +1,294 @@
+Division,Substation,Consumer,Cd,Remarks
+.GOMD-I,HOWRAH,WBSEDCL ( AMBUJA CEMENT) 132KV,15.000
+.GOMD-I,BELMURI,WBSEB,25.000
+.GOMD-I,BELMURI,WBSEB(E.Rly),18.000,wef 01.11.08
+.GOMD-I,BURDWAN,WBSEB,48.000
+.GOMD-I,BURDWAN,E.Rly(Burdwan),22.000
+.GOMD-I,BURDWAN,Howrah Gases Ltd.,6.400
+.GOMD-I,BURDWAN,Shyam Sel Ltd.,2.800,"wef. 3.09.08,10.05.09"
+.GOMD-I,BURDWAN,Shyam Ferro Alloys Ltd.,16.000,wef 20.12.08
+.GOMD-I,BURDWAN,BRGD Ingots,8.600,"wef. 15.09, 24.12.08, 09.11.09,5.2"
+.GOMD-I,BURDWAN,N.N.Ispat Pvt. Ltd.,13.200,"disc-9.9, recn-12.11.08"
+.GOMD-I,BURDWAN,Global Castings Pvt. Ltd.,3.500
+.GOMD-I,BURDWAN,Mansarovar Ferrous Pvt. Ltd.,3.200
+.GOMD-I,KHARAGPUR," WBSEB, Kharagpur     (132KV) ",17.040
+.GOMD-I,KOLAGHAT,Shri Badrinarain Alloys & Steels Ltd.                          (132 KV),10.000
+.GOMD-I,KOLAGHAT,Skipper Limited,4.500
+GOMD-II,KALIPAHARI,"DPSCLtd., Seebpore",38.000
+GOMD-II,KALIPAHARI,"DPSCLtd., Luchipur",37.500
+GOMD-II,KALIPAHARI,"DPSC Ltd., J K Nagar",20.000
+GOMD-II,KALIPAHARI,"WBSEB, Luchipur",12.000
+GOMD-II,KALIPAHARI,"WBSEB, Kanyapur",29.000
+GOMD-II,KALIPAHARI,"ECL, Satgram",3.500,wef 01.08.10
+GOMD-II,KALIPAHARI,Sarvamangalam Gajanan Steel Pvt. Ltd.,1.000
+GOMD-II,KALYANESWARI,Maithon Alloys Ltd.       (132KV),40.000,wef 01.10.14
+GOMD-II,KALYANESWARI,Impex Ferro Tech. Ltd.  (132KV),23.000
+GOMD-II,KALYANESWARI,Nikita Metals Pvt.Ltd.,8.400,recn-14.08.08
+GOMD-II,KALYANESWARI,City Alloys Pvt Ltd,3.000
+GOMD-II,KALYANESWARI,BMA Stainless Limited,12.000
+GOMD-II,KALYANESWARI,Hira Concast Ltd.,11.000,wef. 16.03.10
+GOMD-II,KALYANESWARI,Impex Steel Ltd.,14.000,wef.10.12.09
+GOMD-II,KALYANESWARI,Maa Lori Ispat Pvt. Ltd.,3.000,"disc-18.09.08, recn 08/06/09"
+GOMD-II,KALYANESWARI,Chhabra Ispat Pvt. Ltd.,7.500,"wef.13.12,08,22.01,29.08.09"
+GOMD-II,KALYANESWARI,Maithon Steel & Power Ltd.,2.800,"wef 01.02, 07.02.10"
+GOMD-II,KALYANESWARI,Maithon Power Ltd.,0.600
+GOMD-II,KALYANESWARI,Maa Sherawali Ispat Pvt.Ltd.,6.000,w.e.f.06.01.11
+GOMD-II,KALYANESWARI,Ujjal Minerals & Steel Pvt. Ltd.,2.000,w.e.f.13.04.11
+GOMD-II,KALYANESWARI,Jagdamba Ispat Pvt. Ltd.,3.000
+GOMD-II,KALYANESWARI,Asansol Alloys Pvt. Ltd.,3.600
+GOMD-II,KALYANESWARI,Employee Township of Maithon Power Ltd.,0.900
+GOMD-II,MAITHON L/Bank,"CLW, Chittaranjan",11.000
+GOMD-II,MAITHON L/Bank,"SAIL, Kulti",8.250,"wef.16/08,15/09/08,4/2,28/07,01/11,07/12/09 "
+GOMD-II,MAITHON L/Bank,"WBSEB, Kalyaneswari",1.000
+GOMD-II,MAITHON L/Bank,Mihijam Vanaspati Ltd.,0.725
+GOMD-II,MAITHON L/Bank,"HCL, Rupnarayanpur",1.500
+GOMD-II,MAITHON L/Bank,"WBSEB, Dendua",10.000
+GOMD-II,MAITHON L/Bank,Anjaney Ferro Alloys Ltd.,16.500,"wef.1.08,16.12.08,08.06.09"
+GOMD-II,MAITHON L/Bank,Dhanbad Water Supply Project,2.500
+GOMD-II, MAITHON R/Bank ," JSEB, Badjna ",9.000
+GOMD-II, KUMARDHUBI ," E. Rly, Kumardhubi ",20.500,wef.1/11/08
+GOMD-II, KUMARDHUBI ,"DPSC Ltd., Dishergarh",32.000
+GOMD-II, KUMARDHUBI ," JSEB, Kumardhubi ",6.500
+GOMD-II, KUMARDHUBI ," BCCL, Chanch-Victoria ",5.000
+GOMD-II, KUMARDHUBI ," JSEB, Mugma ",17.000
+GOMD-II, KUMARDHUBI , Natraj Iron & Castings Ltd. ,1.335,"wef.14/12/08, 10.12.09"
+GOMD-II, KUMARDHUBI ," JSEB,Sanjay Chawk ",3.000,wef.13.05.09
+GOMD-II, KUMARDHUBI , Maithon Ceramic Ltd. ,1.900,"wef.12/1,01.05.09,01/07/10"
+GOMD-II, KUMARDHUBI ,G.N.Coke Mfg.Pvt. Ltd.,0.450
+GOMD-II, KUMARDHUBI ,Sharad International Ltd.,1.500
+GOMD-II, KUMARDHUBI ,Valley Refractories Ltd (Baba Hi-Tech),0.400,wef. 16.03.10
+GOMD-II, PANCHET HYDEL ," DCSL, Madhukunda ",6.000
+GOMD-II, PANCHET HYDEL , Mark Steels Ltd. ,3.500
+GOMD-II, PANCHET HYDEL , Rabindra Enterprises Pvt. Ltd. ,0.500
+GOMD-II, PANCHET HYDEL , AIC Iron Industries Pvt. Ltd. ,6.100
+GOMD-II, PANCHET HYDEL , Vision Sponge Iron Pvt.Ltd. ,1.500,"wef.1/8/08,1/12/10"
+GOMD-II, RAMKANALI ," S.E. Rly, Adra ",14.500,wef.01.05.09
+GOMD-II, RAMKANALI , Ispat Damodar Ltd.      (132 KV) ,18.000,"wef.1/2/09,01/11/10"
+GOMD-II, Burnpur ,"IISCO, Burnpur  (220 KV)",120.00,wef 01.10.14
+GOMD-II, Burnpur ,"IISCO, Burnpur",30.00,wef 01.03.11
+GOMD-II, Jamuria ,Gagan Commodoties Pvt. Ltd.,22.000,"wef 01.02,10.05"
+GOMD-II, Jamuria ,Super Smelters Ltd.,25.000
+GOMD-II, Jamuria ,Shyam Sel & Power Ltd.,15.000
+GOMD-II, Jamuria ,Satyam Smelters Pvt Ltd. ,10.000
+GOMD-II, Jamuria ,Bhagwati Sponge Pvt. Ltd.,1.000
+GOMD-III,JAMSHEDPUR,JUSCO,20,wef 19.02.11
+GOMD-III,JAMSHEDPUR,TISCO                         (132 KV),120.000,wef.01.08.08
+GOMD-III,MOSABANI,"JSEB, Mosabani",16.000
+GOMD-III,MOSABANI,JSEB(S.E. Rly)( 132 KV),8.400
+GOMD-III,PURULIA,Bharat Hi-Tech (Cements) Ltd.,3.500,wef. 11.06.14
+GOMD-III,PURULIA,Har Gouri Steels Pvt. Ltd.,3.000
+GOMD-III,PURULIA,Purulia Metal Casting Pvt. Ltd.,8.250
+GOMD-III,PURULIA,J & C Ferro Alloy,3.000
+GOMD-IV, PATHERDIH ," WBSEB, Santaldih ",0.800
+GOMD-IV, PATHERDIH ," BCCL, Putki-Balihari     (132KV) ",25.000
+GOMD-IV, PATHERDIH ," BCCL, North Amlabad ",3.600
+GOMD-IV, PATHERDIH ," IISCO, Jitpur ",4.000
+GOMD-IV, PATHERDIH ," TSL, Jamadoba ",7.000
+GOMD-IV, PATHERDIH ," BCCL, Sudamdih ",11.000
+GOMD-IV, PATHERDIH ," JSEB, Digwadih ",11.000
+GOMD-IV, PATHERDIH ," BCCL, Jealgora ",22.000
+GOMD-IV, PATHERDIH , ACC ,7.300
+GOMD-IV, PATHERDIH ," JSEB, Gobindpur ",19.000
+GOMD-IV, PATHERDIH ," JSEB, Mukunda ",4.000
+GOMD-IV, PATHERDIH ," BCCL, Bastacolla ",12.500
+GOMD-IV, PATHERDIH ," JSEB, Chasnalla ",8.000
+GOMD-IV, PATHERDIH ," S.E. Rly, Patherdih ",15.000,wef 1/6/10
+GOMD-IV, PATHERDIH ," BCCL, Koylanagar ",5.100
+GOMD-IV, PATHERDIH , Electrosteel Castings Ltd. ,5.000
+GOMD-IV, PATHERDIH ,Parth Ispat  Pvt. Ltd.,0.750
+GOMD-IV, PATHERDIH ," JSEB, PMCH PSS ",10.000
+GOMD-IV, PATHERDIH , Electrosteel Steels Ltd.(Water Pump House) ,1.000,1.4.14
+GOMD-IV, SINDRI , PDIL                         (132KV) ,0.250
+GOMD-IV, SINDRI ," JSEB, FCI                 (132KV) ",10.000
+GOMD-IV, SINDRI ," E.C. Rly, Pradhankanta ",18.000,wef. 15/09/08
+GOMD-IV, PUTKI ," JSEB, Katras ",10.000
+GOMD-IV, PUTKI ," JSEB, Katras(Sijua) ",2.500
+GOMD-IV, PUTKI ," BCCL, Katras Project ",9.200,15.2.14
+GOMD-IV, PUTKI ," TSL, Bhelatand ",12.000,wef.10.12.09
+GOMD-IV, PUTKI ," JSEB, Ganeshpur ",12.000
+GOMD-IV, PUTKI ," JSEB, Jamadoba ",13.000
+GOMD-IV, PUTKI ," JSEB, Godhore ",14.000
+GOMD-IV, PUTKI , HMFL. Bhuli ,4.000
+GOMD-IV, PUTKI ," BCCL, South Loyabad ",11.000
+GOMD-IV, PUTKI ," BCCL, Moonidih ",12.500
+GOMD-IV, PUTKI ,BCCL Bhalgora,13.500
+GOMD-IV, PUTKI ,JSEB Sendra-Bansjora,4.000
+GOMD-IV, PUTKI ,BCCL Ramkanali,16.500
+GOMD-IV, PUTKI ,"Mohuda Raiway Settlement & Pumping Station,SER (33 KV)",0.500
+GOMD-IV,NIMIAGHAT,"E. C. Rly, Nimiaghat",19.000,wef.14/10/08
+GOMD-IV,NIMIAGHAT,"JSEB,Dumri Banaso",25.000
+GOMD-IV,NIMIAGHAT,"ECR,Gomoh Complex",2.500,"wef.1/10/08,15.12.09"
+GOMD-IV,GIRIDIH,"JSEB, Giridih",45.000
+GOMD-IV,GIRIDIH,"CCL, Giridih",4.500
+GOMD-IV,GIRIDIH,Allied India Pvt. Ltd.,1.000
+GOMD-IV,GIRIDIH,"Lall Steels Pvt. Ltd,",3.200,wef 05.04.10
+GOMD-IV,GIRIDIH,Mongia Hi-Tech(P) Ltd.,7.500,wef. 28.04.09
+GOMD-IV,GIRIDIH,Atibir Hi-Tech(P) Ltd.,9.500,"wef. 18.06.09, 01.03.10"
+GOMD-IV,GIRIDIH,Shivam Iron & Steel Co. (P) Ltd,15.000
+GOMD-IV,GIRIDIH,Zoya Steels Pvt. Ltd.,0.500
+GOMD-IV,GIRIDIH,Balmukund Sponge & Iron Ltd.,17.000
+GOMD-IV,GIRIDIH,Satyam Ferro Tech Pvt Ltd.,8.000
+GOMD-IV,GIRIDIH,Atibir Industries Company Limited,1.350
+GOMD-IV,GIRIDIH,Sundaram  ferro Tech Pvt. Ltd,0.500,01.01.15
+GOMD-IV,GIRIDIH,Saluja Steel & Power(P) Ltd,0.500
+GOMD-IV,GIRIDIH,ADI  ISPAT PVT. LTD,3.000
+GOMD-IV,GIRIDIH,RUBY MICA,0.500
+GOMD-IV,GIRIDIH,PRS METALIKS,0.500
+GOMD-IV,GIRIDIH,BIR Steels Pvt. Ltd.,2.000
+GOMD-IV,GIRIDIH,Santpuria Alloys Private Limited,0.500
+GOMD-IV,GIRIDIH,Atibir Industries Co. Ltd. (Concast & Rolling Division),16.000,"wef. 18.06.09, 01.03.10"
+GOMD-IV,GIRIDIH,Lal Ferro Alloys Company P. Ltd.,0.500
+GOMD-IV,GIRIDIH,Swati Sponge & Iron Pvt. Ltd. ,1.500
+GOMD-IV,GIRIDIH,Harshit Power & Ispat Pvt. Ltd.,0.500
+GOMD-IV,GIRIDIH,Carbon Resources Pvt Ltd.,0.300
+GOMD-IV,GIRIDIH,Gaurishankar Electro-Castings (P) Ltd.,0.500
+GOMD-IV,GIRIDIH,"Saluja Steel & Power Pvt. Ltd, (UNIT#2)",3.000
+GOMD-IV,GIRIDIH,ADI Wires (P) Ltd.,0.500
+GOMD-IV,GIRIDIH,ShreeVenkateshwara Electrocast Private Limited,1.000,01.10.14
+GOMD-IV,CTPS,"BCCL, Madhuband",30.000
+GOMD-IV,CTPS,"JSEB, Dugda",15.000
+GOMD-IV,CTPS,"JSEB, Chas /(Multifeeder from BIADA)",30.000
+GOMD-IV,CTPS,"JSEB, Jainamore",13.000
+GOMD-IV,CTPS,"E. C. Rly,Rajabera",18.000,wef.5/10/08
+GOMD-IV,CTPS,"BSL, Marafari at         (132 KV)",200.000,"wef 01.07.09, 16.10.09"
+GOMD-IV,CTPS,"BCCL, Dugda",6.000
+GOMD-IV,CTPS,The Eastern Oxygen & Acetylene Pvt. Ltd.,0.400
+GOMD-IV,CTPS,Bokaro Jaypee Cement Ltd. (132 KV),23.000
+GOMD-IV,CTPS,BRL (Bhandardah),1.500
+GOMD-IV,BIADA,MDA Projects,2.000
+GOMD-IV,BIADA,Shreewali Ferro,3.100
+GOMD-IV,BIADA,Shree Bholay Alloy Pvt.Ltd.,9.000,"03.02.11,"
+GOMD-IV,BIADA,Hanuman Alloys Pvt.Ltd.,6.500,11.02.11
+GOMD-IV,BIADA,"JSEB, Chas",0.000,*Increased from combined 23 MVA to 30 MVA(from CTPS + Biada)
+GOMD-IV,BIADA,Bharat Re-Rolling Mills Ltd.,0.500,by ED (System) himself vide his letter dated 17.07.2014
+GOMD-IV,BIADA,Uday Vijay Steel Pvt. Ltd.,5.000,(from 15.7.2014 08-00hrs)
+GOMD-IV,BIADA,Castron Technologies Ltd.,6.000,New supply from BIADA 10.10.14
+GOMD-IV,Dhanbad,Electrosteel Steel Ltd. (220 KV),65.000
+GOMD-IV,Dhanbad,Lai Prabhuji Iron & Steel(P) Ltd.,3.000
+GOMD-IV,Dhanbad,Mittal Polypacks Pvt. Ltd.,1.000
+GOMD-V,"BTPS'A""","JSEB, Bokaro",14.000
+GOMD-V,"BTPS'A""","CCL, Kathara",5.000
+GOMD-V,"BTPS'A""","CCL, Kargali",24.000,wef.1/2/09
+GOMD-V,"BTPS'A""","CCL, Karo Special",5.000,wef. 01.10.14
+GOMD-V,"BTPS'A""","ECR, Gomia-TSS",6.000
+GOMD-V,BARHI,"JSEB,Padma",5.000
+GOMD-V,BARHI,"JSEB, Barhi",15.000
+GOMD-V,HAZARIBAGH,"JSEB, Hazaribagh",30.000
+GOMD-V,HAZARIBAGH,"JSEB, Hazaribagh (RGGVY)",15.000,cop: 14.7.14
+GOMD-V,KONAR,"JSEB,Banaso",6.000
+GOMD-V,KONAR,"JSEB,Karma",5.000
+GOMD-V,KONAR,"ECR, Hazaribagh Road",14.000
+GOMD-V,GOLA,"CCL, Rajrappa",1.600
+GOMD-V,GOLA,"JSEB, HUPPU",5.000
+GOMD-V,GOLA,Yash Alloys Pvt. Ltd.,6.000,wef. 01.08.09
+GOMD-V,GOLA,"South Eastern Railway,Muri ",19.000
+GOMD-V,KODARMA,"JSEB, Kodarma",30.000
+GOMD-V,KODARMA,"E.C. Rly, Kodarma",24.500,wef.15/09/08
+GOMD-V,KODARMA,Super Steel Castings Ltd.,2.700
+GOMD-V,KODARMA,Balaji Electrosteels Ltd.,10.000,01.10.14
+GOMD-V,KODARMA,Tulshyan Metals Pvt. Ltd.,0.500
+GOMD-V,KODARMA,Jai Durga Iron Pvt. Ltd,2.000
+GOMD-V,KODARMA,Super Smelters  Limited,15.000
+GOMD-V,KODARMA,Mayur Rice Mills Pvt. Ltd.,0.500
+GOMD-V,RAMGARH,JSEB,35.000
+GOMD-V,RAMGARH,"JSEB, Kuju",12.000
+GOMD-V,RAMGARH,"JSEB, West Bokaro",0.300
+GOMD-V,RAMGARH,"TISCO, West Bokaro",8.000
+GOMD-V,RAMGARH,"BFCL, Marar",4.500
+GOMD-V,RAMGARH,"CCL, Giddi",16.000
+GOMD-V,RAMGARH,"CCL,Kedla",14.500
+GOMD-V,RAMGARH,Aloke Steel Industries Pvt. Ltd.,1.500,wef.15/2/09
+GOMD-V,RAMGARH,"CCL,Sirka",6.000
+GOMD-V,RAMGARH,"BRL,Ranchi Road",0.600,wef.17/9/08
+GOMD-V,RAMGARH,"BRL, IFICO Plant",1.500
+GOMD-V,RAMGARH,E. Rly for Barkakhana TSS,18.500
+GOMD-V,RAMGARH,Dayal Steel Limited,9.600,wef. 04.04.09
+GOMD-V,RAMGARH,Gautam Ferro Alloys ,5.100
+GOMD-V,RAMGARH,Sumi Vyapaar Pvt. Ltd.,0.500
+GOMD-V,RAMGARH,Balashri Metals Pvt.Ltd.,2.550,wef. 26.05.09
+GOMD-V,RAMGARH,Jharkhand Ispat Private Limited,8.000,disc-21/8 recn-4/9/08
+GOMD-V,RAMGARH,Calcutta Carbide Pvt. Ltd.,3.000,wef. 22.05.09
+GOMD-V,RAMGARH,War Steel Pvt. Ltd.,1.500
+GOMD-V,RAMGARH,"Garrison Engineer, Ramgarh, Cantonment",2.200,"wef. 01.06.09,1/7/10, 1/8/14"
+GOMD-V,RAMGARH,Maihar Alloys Private Limited,2.800
+GOMD-V,RAMGARH,CCL Kuju,8.000,1.3.14
+GOMD-V,PATRATU,UMI Special Steel Ltd.,0.000
+GOMD-V,PATRATU,"CCL, Urimari",8.000,"wef. 22.09.09,1.6.10"
+GOMD-V,PATRATU,Jindal Steel & Power Ltd 132 KV,40.000,"wef.13/9/08, 23/01/10"
+GOMD-V,North Karanpura,"CCL, North karanpura",27.000,wef.1/1/09
+GOMD-V,North Karanpura,E. C. Rly for RAY TSS,18.000,wef.15/9/08
+GOMD-VI,DTPS,Durgapur Cement Ltd,11.200
+GOMD-VI,DTPS,E.Rly(Durgapur),25.000,"wef.22.12.08,01.05.05"
+GOMD-VI,DTPS,Durga Hi-Tech Cement,6.000
+GOMD-VI,PARULIA,Tamla (SAIL)            AT 220 KV,100.000,wef. 01.10.14
+GOMD-VI,PARULIA,Alaknanda Sponge Iron Pvt. Ltd,2.500,wef. 19.05.09
+GOMD-VI,PARULIA,Vaishanavi Ispat Pvt. Ltd.,9.500,"wef.1/1,1/2/09"
+GOMD-VI,PARULIA,H. R. Ispat Pvt. Ltd.,6.000,"wef. 01.04.09,1.6.10"
+GOMD-VI,PARULIA,Sharp Ferro Alloys Ltd.,19.500,wef. 10.08.09
+GOMD-VI,PARULIA,Alishan Steels Pvt. Ltd.,3.500,disc-21/01
+GOMD-VI,PARULIA,Debeanjana Hard coke Pvt. Ltd.,3.500
+GOMD-VI,PARULIA,East India Holdings Pvt. Ltd.,10.000,1.4.14
+GOMD-VI,PARULIA,R.S.Casting Pvt.Ltd.,3.300
+GOMD-VI,PARULIA,K.B.Sponge Iron Ltd.,3.300
+GOMD-VI,PARULIA,Sumangal Ispat Pvt. Ltd.,3.500
+GOMD-VI,PARULIA,Sova Electrocasting Pvt. Ltd.,5.000
+GOMD-VI,PARULIA,Sreevardhana Metaliks Pvt. Ltd.,3.200,wef.15/2/09
+GOMD-VI,PARULIA,Salasar Ispat  Ltd.,3.000
+GOMD-VI,PARULIA,Super Iron Foundry Pvt. Ltd.,1.500
+GOMD-VI,PARULIA,Ma Chandi Durga Cement Pvt. Ltd.,5.000
+GOMD-VI,MTPS,"WBSEB, Barjora",10.000
+GOMD-VI,MTPS,SRC Metallic Pvt. Ltd.,4.500
+GOMD-VI,MTPS,Shree Sanyeeji Steel & Power Ltd.,10.000
+GOMD-VI,MTPS,GPT Castings Ltd.,2.700
+GOMD-VI,MTPS,Lafarge India Pvt. Ltd.,7.500,wef.07/01/09
+GOMD-VI,MTPS,"Lafarge India Pvt. Ltd., U # II",2.000
+GOMD-VI,MTPS,SRC Udyog Ltd.,1.000
+GOMD-VI,MTPS,Nilkanth Ferro Pvt. Ltd.,18.000
+GOMD-VI,MTPS,Capricon Ispat Udyog Pvt. Ltd.,8.000
+GOMD-VI,"ASP, Durgapur",Srinivsaa Ferro Alloys Ltd.,12.600
+GOMD-VI,"ASP, Durgapur",Bhaskar Schrachi Alloys Ltd.,16.000
+GOMD-VI,"ASP, Durgapur",Karthik Alloys Ltd.,10.750
+GOMD-VI,"ASP, Durgapur",Shivam India Ltd.,15.000
+GOMD-VI,"ASP, Durgapur",CP Sponge Iron Pvt. Ltd.,0.950
+GOMD-VI,"ASP, Durgapur","NIT, Durgapur",2.000
+GOMD-VI,DURGAPUR,Ultra tech Cement Limited,7.000
+GOMD-VI,DURGAPUR,Dinman Polypacks Pvt.Ltd.,0.750,"wef 01.04,01.08"
+GOMD-VI,DURGAPUR,VSP Udyog Pvt. Ltd.,11.000
+GOMD-VI,DURGAPUR,Venky Hi-Tech Ispat Ltd,9.000,"wef 01.10.09, 22.04.10"
+GOMD-VI,DURGAPUR,Brahm (Alloys) Pvt Ltd,10.000,"wef.1/10/08,06.06.09"
+GOMD-VI,DURGAPUR,Sree Waris Piya Steel Co.P Ltd.,3.000
+GOMD-VI,DURGAPUR,Shri Ramrupai Balaji Steels Ltd,26.000
+GOMD-VI,DURGAPUR,Shyam Steel Ind. Ltd. ( formerly Shree Gopal Hi-Tech Pvt Ltd.),9.500
+GOMD-VI,DURGAPUR,Neo Metaliks Limited,2.300,wef 27.12.2008
+GOMD-VI,DURGAPUR,Ramsarup Nirmann Wires,1.000,"wef.12/10/08 24.06, 24.08.09"
+GOMD-VI,DURGAPUR,Graphite India Ltd.,48.000,"wef.10/01,9/3/09,01/02/10"
+GOMD-VI,DURGAPUR,Jai Balaji (Temporaray),22.000
+GOMD-VI,DURGAPUR,Mackeil Ispat & Forging Ltd.,2.500
+GOMD-VI,DURGAPUR,Jai Balaji Sponge Limited,10.000
+GOMD-VI,DURGAPUR,Sova Power Ltd.,0.500,wef 04.11.2010
+GOMD-VI,DURGAPUR,Jai Venkatesh ,11.000
+GOMD-VI,DURGAPUR,Ruhr Ispat Pvt. Ltd.,1.250
+GOMD-VI,DURGAPUR,Shivam Meltek Pvt. Ltd.,13.700
+GOMD-VI,DURGAPUR,Jaishree Steels Pvt Ltd,5.000
+GOMD-VI,DURGAPUR,Saran Alloys Pvt. Ltd.,3.000,wef 01.12.2012
+GOMD-VI,BARJORA,Surya Alloy Industries Ltd.,12.000,"wef. 05.04.09,07.02.10,01.06.11"
+GOMD-VI,BARJORA,BDG & Sons Pvt. Ltd.,35.500,"wef. 01.05.09, 19.01,12.05"
+GOMD-VI,BARJORA,Tulip Fabrics Alloys Ltd.,0.320,"wef. 02.06.09,10.05.10"
+GOMD-VI,BARJORA,Expandable Enterprises(P) Ltd.,3.150
+GOMD-VI,BARJORA,Steelex Electrocast (P) Ltd,6.300
+GOMD-VI,BARJORA,Cosmic Ferro Alloys Pvt. Ltd,27.500,"wef.20/12/08, 15/2/09"
+GOMD-VI,BARJORA,G & A Metals,7.000,wef.01.08.08
+GOMD-VI,BARJORA,Times Ferro Alloy Ltd.,4.800,wef.8/2/09
+GOMD-VI,BARJORA,Rattan Ispat Pvt. Ltd.,4.000
+GOMD-VI,BARJORA,Lalwani Ferro Alloys Ltd.,19.125,"wef.1/1,22/2,1/5,15.12.09,01.02.10,1/1/11"
+GOMD-VI,BARJORA,Shriram Rathi Steels Pvt. Ltd.,2.200,"wef 26.04,16.09.09"
+GOMD-VI,BARJORA,Kharkia Steel Pvt. Ltd.,12.700,wef 01.02.10
+GOMD-VI,BARJORA,Surya Alloy Industries Ltd. U#2,3.400,"wef 28.03,1.6.10"
+GOMD-VI,BARJORA,SBIW Steels Pvt. Ltd.,2.200,wef 6/7/10
+GOMD-VI,BARJORA,Jai Ambey Metals Pvt. Ltd.,3.500
+GOMD-VI,BARJORA,Arjan Dass & Sons Pvt. Ltd.,3.100,wef 1.6.10
+GOMD-VI,BARJORA,Sonic Thermal Ltd.  (132 KV),18.000,"w.e.f.10.01.11,01.02.11"
+GOMD-VI,BARJORA,H.P.Ispat (P) Ltd. ,6.850,"wef.11/01/09,1/1/11"
+GOMD-VI,BARJORA,Xpro India Limited,1.800
+GOMD-VI,BARJORA,SHREE AMBEY ISPAT PVT. LTD.(132 KV),8.000,wef 01.05.14
+GOMD-VI,BARJORA,Dimension Steel & Alloys Pvt. Ltd.,18.000,wef 27/09/2011
