@@ -115,14 +115,14 @@
               "children": [
                   {"name": "220KV",
                    "children": [
-                       {"Fdr1": "IISCO [160 MVA]"},
-                       {"Fdr2": "IISCO"}
+                       {"name": "IISCO [160 MVA]"},
+                       {"name": "IISCO"}
                    ]
                   },
                   {"name": "33KV",
                    "children": [
-                       {"Fdr1": "IISCO [30 MVA]"},
-                       {"Fdr2": "IISCO"}
+                       {"name": "IISCO [30 MVA]"},
+                       {"name": "IISCO"}
                    ]
                   }
               ]
@@ -130,7 +130,27 @@
              {"name": "Jamuria",
               "children": [
                   {"name": "132KV"},
-                  {"name": "33KV"}
+                  {"name": "33KV",
+                   "children": [
+                       {"name": "Fdr1",
+                        "children": [
+                            {"name": "Super Smelters [25 MVA]"}
+                        ]
+                       },
+                       {"name": "Fdr2",
+                        "children": [
+                            {"name": "Satyam Smelters [10 MVA]"},
+                            {"name": "Shyam Sel [15 MVA]"}
+                        ]
+                       },
+                       {"name": "Fdr3",
+                        "children": [
+                            {"name": "Gagan Ferrotech [22 MVA]"},
+                            {"name": "Bhagwati Sponge [1 MVA]"}
+                        ]
+                       }
+                   ]
+                  }
               ]
              },
              {"name": "Kalipahari"},
