@@ -127,33 +127,24 @@
                   }
               ]
              },
-             {"name": "Jamuria",
+             {"name": "Kalipahari",
               "children": [
-                  {"name": "132KV"},
-                  {"name": "33KV",
+                  {"name": "132KV",
                    "children": [
-                       {"name": "Fdr1",
-                        "children": [
-                            {"name": "Super Smelters [25 MVA]"}
-                        ]
-                       },
-                       {"name": "Fdr2",
-                        "children": [
-                            {"name": "Satyam Smelters [10 MVA]"},
-                            {"name": "Shyam Sel [15 MVA]"}
-                        ]
-                       },
-                       {"name": "Fdr3",
-                        "children": [
-                            {"name": "Gagan Ferrotech [22 MVA]"},
-                            {"name": "Bhagwati Sponge [1 MVA]"}
-                        ]
-                       }
+                       {"name": "to Kalyaneswari"},
+                       {"name": "to Kalyaneswari"},
+                       {"name": "80 MVA, 132/33KV, Transformer"},
+                       {"name": "80 MVA, 132/33KV, Transformer"},
+                       {"name": "to JK Nagar"},
+                       {"name": "to JK Nagar"},
+                       {"name": "50 MVA, 132/33KV, Transformer"},
+                       {"name": "to DTPS"},
+                       {"name": "to DTPS"}
                    ]
-                  }
+                  },
+                  {"name": "33KV"}
               ]
              },
-             {"name": "Kalipahari"},
              {"name": "Kalyaneswari"},
              {"name": "Kumardubi"},
              {"name": "Maithon Hydel"},
@@ -219,6 +210,32 @@
               "children": [
                   {"name": "220KV"},
                   {"name": "33KV"}
+              ]
+             },
+             {"name": "Jamuria",
+              "children": [
+                  {"name": "132KV"},
+                  {"name": "33KV",
+                   "children": [
+                       {"name": "Fdr1",
+                        "children": [
+                            {"name": "Super Smelters [25 MVA]"}
+                        ]
+                       },
+                       {"name": "Fdr2",
+                        "children": [
+                            {"name": "Satyam Smelters [10 MVA]"},
+                            {"name": "Shyam Sel [15 MVA]"}
+                        ]
+                       },
+                       {"name": "Fdr3",
+                        "children": [
+                            {"name": "Gagan Ferrotech [22 MVA]"},
+                            {"name": "Bhagwati Sponge [1 MVA]"}
+                        ]
+                       }
+                   ]
+                  }
               ]
              },
              {"name": "MTPS",
