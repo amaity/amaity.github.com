@@ -22,12 +22,26 @@
                 "children": [
                     {"name": "to Hirapur R/S"},
                     {"name": "to Hirapur + Sarvamangalam [1 MVA]"},
-                    {"name": "to Shibpur R/S [3 fdrs]"},
+                    {"name": "to Shibpur R/S [3 fdrs]",
+                     "children": [
+                         {"name": "DPSC Shibpur [38 MVA]"},
+                         {"name": "DPSC Shibpur"}
+                     ]
+                    },
                     {"name": "DPSC JKNagar [20 MVA]"},
                     {"name": "ECL Satgram [3.5 MVA]"},
                     {"name": "WBSEDCL Kanyapur [29 MVA]"},
                     {"name": "WBSEDCL Kanyapur"},
-                    {"name": "Luchipur R/S [4 fdrs]"}
+                    {"name": "Luchipur R/S [4 fdrs]",
+                     "children": [
+                         {"name": "WBSEB Luchipur [12 MVA]"},
+                         {"name": "WBSEB Luchipur"},
+                         {"name": "DPSC Luchipur [37.5 MVA]"},
+                         {"name": "DPSC Luchipur"},
+                         {"name": "DPSC Luchipur"},
+                         {"name": "DPSC Luchipur"}
+                     ]
+                    }
                 ]
                }
            ]
