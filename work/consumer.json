@@ -81,7 +81,21 @@
           {"name": "Sindri"}
       ]
      },
-     {"name": "GOMD-V"},
+     {"name": "GOMD-V",
+      "children": [
+          {"name": "Barhi"},
+          {"name": "BTPS"},
+          {"name": "Gola"},
+          {"name": "Hazaribagh"},
+          {"name": "Koderma"},
+          {"name": "Koderma New"},
+          {"name": "Konar"},
+          {"name": "North Karanpura"},
+          {"name": "Patratu"},
+          {"name": "Ramgarh"},
+          {"name": "Tilaiya"}
+      ]
+     },
      {"name": "GOMD-VI"}
  ]
 }
