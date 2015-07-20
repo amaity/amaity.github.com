@@ -1,6 +1,14 @@
 {"name": "DVC",
  "children": [
-     {"name": "GOMD-I"},
+     {"name": "GOMD-I",
+      "children": [
+          {"name": "Belmuri"},
+          {"name": "Burdwan"},
+          {"name": "Howrah"},
+          {"name": "Kharagpur"},
+          {"name": "Kolaghat"}
+      ]
+     },
      {"name": "GOMD-II",
       "children": [
           {"name": "Kalipahari",
