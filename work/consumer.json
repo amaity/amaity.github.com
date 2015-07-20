@@ -63,7 +63,22 @@
      },
      {"name": "GOMD-III",
       "children": [
-          {"name": "Chandil"},
+          {"name": "Chandil",
+           "children": [
+               {"name": "132KV",
+                "children": [
+                    {"name": "to Gola"},
+                    {"name": "to Gola"},
+                    {"name": "JBVNL Tie"},
+                    {"name": "JUSCO [12 MVA]"},
+                    {"name": "Bus Coupler"},
+                    {"name": "JUSCO"},
+                    {"name": "to Jamshedpur"},
+                    {"name": "to Jamshedpur"}
+                ]
+               }
+           ]
+          },
           {"name": "Jamshedpur"},
           {"name": "Mosabani"},
           {"name": "Purulia"}
