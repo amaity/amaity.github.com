@@ -3,7 +3,12 @@
      {"name": "GOMD-I"},
      {"name": "GOMD-II",
       "children": [
-          {"name": "Kalipahari"},
+          {"name": "Kalipahari",
+           "children": [
+               {"name": "132KV"},
+               {"name": "33KV"}
+           ]
+          },
           {"name": "Kalyaneswari"},
           {"name": "Kumardubi"},
           {"name": "Maithon Hydel"},
