@@ -115,8 +115,11 @@
               "children": [
                   {"name": "220KV",
                    "children": [
-                       {"name": "IISCO [160 MVA]"},
-                       {"name": "IISCO"}
+                       {"name": "to Kalyaneswari"},
+                       {"name": "Bus Coupler"}
+                       {"name": "to IISCO [160 MVA]"},
+                       {"name": "to IISCO"},
+                       {"name": "to Mejia TPS"}
                    ]
                   },
                   {"name": "33KV",
@@ -158,8 +161,8 @@
                        {"name": "WBSEDCL Kanyapur"},
                        {"name": "Luchipur R/S [4 fdrs]",
                         "children": [
-                            {"name": "WBSEDCL Luchipur [12 MVA]"},
-                            {"name": "WBSEDCL Luchipur"},
+                            {"name": "WBSEB Luchipur [12 MVA]"},
+                            {"name": "WBSEB Luchipur"},
                             {"name": "DPSC Luchipur [37.5 MVA]"},
                             {"name": "DPSC Luchipur"},
                             {"name": "DPSC Luchipur"},
@@ -179,7 +182,22 @@
         },
         {"name": "GOMD-III",
          "children": [
-             {"name": "Chandil"},
+             {"name": "Chandil",
+              "children": [
+                  {"name": "132KV",
+                   "children": [
+                       {"name": "to Gola"},
+                       {"name": "to Gola"},
+                       {"name": "JSEB Tie"},
+                       {"name": "JUSCO [12 MVA]"},
+                       {"name": "Bus Coupler"},
+                       {"name": "JUSCO"},
+                       {"name": "to Jamshedpur"},
+                       {"name": "to Jamshedpur"}
+                   ]
+                  }
+              ]
+             },
              {"name": "Jamshedpur"},
              {"name": "Mosabani"},
              {"name": "Purulia"}
@@ -187,7 +205,12 @@
         },
         {"name": "GOMD-IV",
          "children": [
-             {"name": "Biada"},
+             {"name": "Biada",
+              "children": [
+                  {"name": "132KV"},
+                  {"name": "33KV"}
+              ]
+             },
              {"name": "CTPS"},
              {"name": "Dhanbad"},
              {"name": "Giridih"},
