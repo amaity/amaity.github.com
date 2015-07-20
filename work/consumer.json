@@ -69,7 +69,18 @@
           {"name": "Purulia"}
       ]
      },
-     {"name": "GOMD-IV"},
+     {"name": "GOMD-IV",
+      "children": [
+          {"name": "Biada"},
+          {"name": "CTPS"},
+          {"name": "Dhanbad"},
+          {"name": "Giridih"},
+          {"name": "Patherdih"},
+          {"name": "Putki"},
+          {"name": "Nimiaghat"},
+          {"name": "Sindri"}
+      ]
+     },
      {"name": "GOMD-V"},
      {"name": "GOMD-VI"}
  ]
