@@ -96,6 +96,16 @@
           {"name": "Tilaiya"}
       ]
      },
-     {"name": "GOMD-VI"}
+     {"name": "GOMD-VI",
+      "children": [
+          {"name": "ASP"},
+          {"name": "Barjora"},
+          {"name": "DTPS"},
+          {"name": "Durgapur"},
+          {"name": "Jamuria"},
+          {"name": "MTPS"},
+          {"name": "Parulia"}
+      ]
+     }
  ]
 }
