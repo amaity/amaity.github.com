@@ -86,7 +86,12 @@
      },
      {"name": "GOMD-IV",
       "children": [
-          {"name": "Biada"},
+          {"name": "Biada",
+           "children": [
+               {"name": "132KV"},
+               {"name": "33KV"}
+           ]
+          },
           {"name": "CTPS"},
           {"name": "Dhanbad"},
           {"name": "Giridih"},
