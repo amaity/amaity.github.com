@@ -61,7 +61,14 @@
           {"name": "Ramkanali"}
       ]
      },
-     {"name": "GOMD-III"},
+     {"name": "GOMD-III",
+      "children": [
+          {"name": "Chandil"},
+          {"name": "Jamshedpur"},
+          {"name": "Mosabani"},
+          {"name": "Purulia"}
+      ]
+     },
      {"name": "GOMD-IV"},
      {"name": "GOMD-V"},
      {"name": "GOMD-VI"}
