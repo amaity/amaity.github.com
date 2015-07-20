@@ -1,9 +1,19 @@
 {"name": "DVC",
  "children": [
      {"name": "GOMD-I"},
-     {"name": "GOMD-II"},
+     {"name": "GOMD-II",
+      "children": [
+          {"name": "Kalipahari"},
+          {"name": "Kalyaneswari"},
+          {"name": "Kumardubi"},
+          {"name": "Maithon Hydel"},
+          {"name": "Maithon RightBank"},
+          {"name": "Ramkanali"}
+      ]
+     },
      {"name": "GOMD-III"},
      {"name": "GOMD-IV"},
+     {"name": "GOMD-V"},
      {"name": "GOMD-VI"}
  ]
 }
