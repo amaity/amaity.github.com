@@ -5,8 +5,26 @@
       "children": [
           {"name": "Kalipahari",
            "children": [
-               {"name": "132KV"},
-               {"name": "33KV"}
+               {"name": "132KV",
+                "children": [
+                    {"name": "to Kalyaneswari"},
+                    {"name": "to Kalyaneswari"},
+                    {"name": "to 33KV bus, 80 MVA Transformer"},
+                    {"name": "to 33KV bus, 80 MVA Transformer"},
+                    {"name": "to JKNagar"},
+                    {"name": "to JKNagar"},
+                    {"name": "to 33KV bus, 50 MVA Transformer"},
+                    {"name": "to DTPS"},
+                    {"name": "to DTPS"}
+                ]
+               },
+               {"name": "33KV",
+                "children": [
+                    {"name": "to Hirapur R/S"},
+                    {"name": "to Hirapur + Sarvamangalam [1 MVA]"},
+                    {"name": "to Shibpur R/S [3 fdrs]"}
+                ]
+               }
            ]
           },
           {"name": "Kalyaneswari"},
