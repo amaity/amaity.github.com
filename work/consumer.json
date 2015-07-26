@@ -88,8 +88,22 @@
       "children": [
           {"name": "Biada",
            "children": [
-               {"name": "132KV"},
-               {"name": "33KV"}
+               {"name": "132KV",
+                "children": [
+                    {"name": "to CTPS"},
+                    {"name": "to 80 MVA Transformer"},
+                    {"name": "Bus Coupler"},
+                    {"name": "to 80 MVA Transformer"},
+                    {"name": "to CTPS"}
+                ]
+               },
+               {"name": "33KV",
+                "children": [
+                    {"name": "Spare"},
+                    {"name": "Spare"},
+                    {"name": "from 80 MVA Transformer"}
+                ]
+               }
            ]
           },
           {"name": "CTPS"},

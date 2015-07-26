@@ -82,95 +82,43 @@
 </head>
 
 <body>
-
-
-<section class="container">
+    
 <h2>Substation-wise consumer details</h2>
   <p>Hover your mouse over the relevant GOMD table and then click the substation you want.</p>
 
-<div class="pricing_table_wdg">
-		<ul>
-			<li>GOMD-I</li>
-			<li>$20</li>
-			<li>Perfect for those getting started with our app.</li>
-			<li>15 Projects</li>
-			<li>5GB Storage</li>
-			<li>Unlimited Users</li>
-			<li>No Time Tracking</li>
-			<li>Enchaned Security</li>
-			<li></li>
-			<li><a href="" class="buy_now">Buy Now</a></li>
-		</ul>
-		
-		<ul>
-			<li>GOMD-II</li>
-			<li>$60</li>
-			<li>Perfect for those getting started with our app.</li>
-			<li>15 Projects</li>
-			<li>5GB Storage</li>
-			<li>Unlimited Users</li>
-			<li>No Time Tracking</li>
-			<li>Enchaned Security</li>
-			<li></li>
-			<li><a href="" class="buy_now">Buy Now</a></li>
-		</ul>
-		
-		<ul>
-			<li>GOMD-III</li>
-			<li>$80</li>
-			<li>Perfect for those getting started with our app.</li>
-			<li>15 Projects</li>
-			<li>5GB Storage</li>
-			<li>Unlimited Users</li>
-			<li>No Time Tracking</li>
-			<li>Enchaned Security</li>
-			<li></li>
-			<li><a href="" class="buy_now">Buy Now</a></li>
-		</ul>
-		
-		<ul>
-			<li>GOMD-IV</li>
-			<li>$100</li>
-			<li>Perfect for those getting started with our app.</li>
-			<li>15 Projects</li>
-			<li>5GB Storage</li>
-			<li>Unlimited Users</li>
-			<li>No Time Tracking</li>
-			<li>Enchaned Security</li>
-			<li></li>
-			<li><a href="" class="buy_now">Buy Now</a></li>
-		</ul>
-		
-		<ul>
-			<li>GOMD-V</li>
-			<li>$120</li>
-			<li>Perfect for those getting started with our app.</li>
-			<li>15 Projects</li>
-			<li>5GB Storage</li>
-			<li>Unlimited Users</li>
-			<li>No Time Tracking</li>
-			<li>Enchaned Security</li>
-			<li></li>
-			<li><a href="" class="buy_now">Buy Now</a></li>
-		</ul>
+<section class="container">
 
-		<ul>
-			<li>GOMD-VI</li>
-			<li>$120</li>
-			<li>Perfect for those getting started with our app.</li>
-			<li>15 Projects</li>
-			<li>5GB Storage</li>
-			<li>Unlimited Users</li>
-			<li>No Time Tracking</li>
-			<li>Enchaned Security</li>
-			<li></li>
-			<li><a href="" class="buy_now">Buy Now</a></li>
-		</ul>
+<div class="pricing_table_wdg">
+
 
 </div>
   </section>
     <script>
-        d3.csv("cdout.csv", draw);
+        d3.csv("modcd.csv", function(data){
+            var gpdivs = d3.nest()
+                           .key(function(r){return r.Division;})
+                           .rollup(function(r){return r.length;})
+                           .entries(data);
+            var keys = [];
+            for (var item in gpdivs){ keys.push(gpdivs[item].key);};
+            var values = [];
+            for (var item in gpdivs){ values.push(gpdivs[item].values);};
+
+            for(var i = 0; i < keys.length; i++) {
+                d3.select('div.pricing_table_wdg')
+                    .insert('ul')
+                    .insert('li')
+                    .text(keys[i])
+            }
+            
+            d3.selectAll('ul')
+                .each(function(d,i){
+                return d3.select(this)
+                    .insert('li')
+                    .text(values[i]);
+            })
+            
+        });
     </script>
 </body>
 
