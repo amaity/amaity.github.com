@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <title>Title of the document</title>
         <script src="d3.min.js"></script>
+        <script src="lodash.min.js"></script>
 
     <style>
         body {
@@ -94,6 +95,7 @@
 </div>
   </section>
     <script>
+        /*
         d3.csv("modcd.csv", function(data){
             var gpdivs = d3.nest()
                            .key(function(r){return r.Division;})
@@ -118,8 +120,71 @@
                     .text(values[i]+" Consumers");
             })
 
-       
+        });
+        */
+        d3.csv("modcd.csv", function(data){
+            var goms = d3.nest()
+                           .key(function(r){return r.Division;})
+                           .key(function(r){return r.Substation;})
+                           .rollup(function(r){return r.length;})
+                           .map(data);
+            var values = [];
+            for (var key in goms){
+                values.push(goms[key])
+            };
+            d3.select('div.pricing_table_wdg')
+                .selectAll('ul')
+                .data(Object.keys(goms))
+                .enter()
+                .append('ul')
+                .append('li')
+                .text(function(d){return d;})
 
+            var ncon = values.map(function(elem){
+                var item = [];
+                for (var prop in elem){
+                    item.push(elem[prop]);
+                }
+                return d3.sum(item);
+            });
+            d3.selectAll('ul')
+                .each(function(d,i){
+                return d3.select(this)
+                    .insert('li')
+                    .text(ncon[i]+" Consumers")
+            })
+            
+            var nsub = values.map(function(elem){
+                var item = [];
+                for (var prop in elem){
+                    item.push(elem[prop]);
+                }
+                return item.length;
+            })
+            d3.selectAll('ul')
+                .each(function(d,i){
+                return d3.select(this)
+                    .insert('li')
+                    .text(nsub[i]+" Substations")
+            })
+            
+            var snames = values.map(function(elem){
+                var item = [];
+                for (var prop in elem){
+                    item.push(prop);
+                }
+                return _.fill(item.concat(Array(d3.max(nsub)-item.length)),"--",item.length);
+            })
+            snames = _.unzip(snames);
+            for(var i = 0; i < snames.length; i++) {
+                d3.selectAll("ul")
+                    .each(function(d,j){
+                    return d3.select(this)
+                        .insert('li')
+                        .text(snames[i][j])
+                })
+            }
+           
         });
     </script>
 </body>
