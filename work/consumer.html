@@ -56,10 +56,10 @@
 	font-size:12px;
 	font-weight:bold;
 }
-.pricing_table_wdg ul li:nth-child(n+4) { 
+.pricing_table_wdg ul li:nth-child(n) { 
 	font-size:14px;
 }
-.pricing_table_wdg ul li:last-child a { 
+.buy_now { 
 	color:#F0F0F0;
 	text-decoration:none;
 	font-weight:bold;
@@ -121,7 +121,7 @@
             })
 
         });
-        */
+        //----------------------------------------------------
         d3.csv("modcd.csv", function(data){
             var goms = d3.nest()
                            .key(function(r){return r.Division;})
@@ -185,6 +185,67 @@
                 })
             }
            
+        });
+        */
+        d3.csv("modcd.csv", function(data){
+            var goms = d3.nest()
+                           .key(function(r){return r.Division;})
+                           .key(function(r){return r.Substation;})
+                           .rollup(function(v){return {
+                               totalCd: Math.round(d3.sum(v, function(d) { return d.Cd; })),
+                               totalCon: v.length
+                           }; })
+                           .map(data);
+            d3.select('div.pricing_table_wdg')
+                .selectAll('ul')
+                .data(_.keys(goms))
+                .enter()
+                .append('ul')
+                .append('li')
+                .text(function(d){return d;})
+            arr = _.values(_.mapValues(goms, _.partial(_.map, _, _.values)));
+            var tots = arr.map(function (a) {
+                return _.unzip(a).map(_.sum);
+            });
+            var ncon = tots.map(function (d) {
+                return _.last(d);
+            });
+            d3.selectAll('ul')
+                .each(function(d,i){
+                return d3.select(this)
+                    .insert('li')
+                    .text(ncon[i]+" Consumers")
+            });
+            var nsub = _.map(goms, function (d) {return _.keys(d).length;});
+            d3.selectAll('ul')
+                .each(function(d,i){
+                return d3.select(this)
+                    .insert('li')
+                    .text(nsub[i]+" Substations")
+            });
+            var subs = _.map(goms, function (d) {return _.keys(d);});
+            var snames = _.map(subs, function (d) {
+                return _.fill(d.concat(Array(d3.max(nsub) - d.length)), "--", d.length);
+            });
+            snames = _.unzip(snames);
+            _.forEach(snames, function(v){
+                return d3.selectAll('ul')
+                    .each(function(d,i){
+                    return d3.select(this)
+                        .insert('li')
+                        .text(v[i])
+                });
+            });
+            var totcd = tots.map(function (d) {
+                return _.first(d);
+            });
+            d3.selectAll('ul')
+                .each(function(d,i){
+                return d3.select(this)
+                    .append('li')
+                    .attr('class','buy_now')
+                    .text(totcd[i]+" MVA")
+            });    
         });
     </script>
 </body>
