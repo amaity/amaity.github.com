@@ -5,7 +5,7 @@
 <title>Title of the document</title>
         <script src="d3.min.js"></script>
         <script src="lodash.min.js"></script>
-
+    
     <style>
         body {
    font-family: sans-serif;    
@@ -53,8 +53,8 @@
 	background:#fbfbfb;
 }
 .pricing_table_wdg ul li:nth-child(3) { 
-	font-size:12px;
-	font-weight:bold;
+	font-size:4px;
+	//font-weight:bold;
 }
 .pricing_table_wdg ul li:nth-child(n) { 
 	font-size:14px;
@@ -79,6 +79,49 @@
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0061bb', endColorstr='#164e82',GradientType=0 ); /* IE6-9 */
 	background: linear-gradient(top, #0061bb 0%,#164e82 100%); /* W3C */
 }
+        
+#tooltip {
+        position: absolute;
+        width: auto;
+        height: auto;
+        padding: 0px;
+        background-color: white;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+        -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+        pointer-events: none;
+}
+
+#tooltip.hidden {
+        display: none;
+}
+
+#tooltip p {
+        margin: 0;
+        font-family: sans-serif;
+        font-size: 16px;
+        line-height: 20px;
+}
+
+table {
+    background-color:rgba(68, 136, 187, 0.5);
+    margin: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    border-radius:10px;
+}
+        
+td{
+    border:1px dotted black;   
+}
+        
     </style>
 </head>
 
@@ -89,105 +132,53 @@
 
 <section class="container">
 
-<div class="pricing_table_wdg">
-
-
+<div class="pricing_table_wdg"></div>
+    
+<div id="tooltip" class="hidden">
+       
 </div>
   </section>
     <script>
-        /*
-        d3.csv("modcd.csv", function(data){
-            var gpdivs = d3.nest()
-                           .key(function(r){return r.Division;})
-                           .rollup(function(r){return r.length;})
-                           .entries(data);
-            var keys = [];
-            for (var item in gpdivs){ keys.push(gpdivs[item].key);};
-            var values = [];
-            for (var item in gpdivs){ values.push(gpdivs[item].values);};
+        
+        
+        var tabulate = function(array, columns) {
+            d3.select("table").remove();
+      var table = d3.select("#tooltip").append("table"),
+          thead = table.append("thead"),
+          tbody = table.append("tbody");
 
-            for(var i = 0; i < keys.length; i++) {
-                d3.select('div.pricing_table_wdg')
-                    .insert('ul')
-                    .insert('li')
-                    .text(keys[i])
-            }
-            
-            d3.selectAll('ul')
-                .each(function(d,i){
-                return d3.select(this)
-                    .insert('li')
-                    .text(values[i]+" Consumers");
-            })
+      // append the header row
+      thead.append("tr")
+          .selectAll("th")
+          .data(columns)
+          .enter()
+          .append("th")
+              .text(function(column) { return column; });
 
-        });
-        //----------------------------------------------------
-        d3.csv("modcd.csv", function(data){
-            var goms = d3.nest()
-                           .key(function(r){return r.Division;})
-                           .key(function(r){return r.Substation;})
-                           .rollup(function(r){return r.length;})
-                           .map(data);
-            var values = [];
-            for (var key in goms){
-                values.push(goms[key])
-            };
-            d3.select('div.pricing_table_wdg')
-                .selectAll('ul')
-                .data(Object.keys(goms))
-                .enter()
-                .append('ul')
-                .append('li')
-                .text(function(d){return d;})
+      // create a row for each object in the data
+      var rows = tbody.selectAll("tr")
+          .data(array)
+          .enter()
+          .append("tr");
 
-            var ncon = values.map(function(elem){
-                var item = [];
-                for (var prop in elem){
-                    item.push(elem[prop]);
-                }
-                return d3.sum(item);
-            });
-            d3.selectAll('ul')
-                .each(function(d,i){
-                return d3.select(this)
-                    .insert('li')
-                    .text(ncon[i]+" Consumers")
-            })
-            
-            var nsub = values.map(function(elem){
-                var item = [];
-                for (var prop in elem){
-                    item.push(elem[prop]);
-                }
-                return item.length;
-            })
-            d3.selectAll('ul')
-                .each(function(d,i){
-                return d3.select(this)
-                    .insert('li')
-                    .text(nsub[i]+" Substations")
-            })
-            
-            var snames = values.map(function(elem){
-                var item = [];
-                for (var prop in elem){
-                    item.push(prop);
-                }
-                return _.fill(item.concat(Array(d3.max(nsub)-item.length)),"--",item.length);
-            })
-            snames = _.unzip(snames);
-            for(var i = 0; i < snames.length; i++) {
-                d3.selectAll("ul")
-                    .each(function(d,j){
-                    return d3.select(this)
-                        .insert('li')
-                        .text(snames[i][j])
-                })
-            }
-           
-        });
-        */
+      // create a cell in each row for each column
+      var cells = rows.selectAll("td")
+          .data(function(d) {return d; })
+          .enter()
+          .append("td")
+              .text(function(d) { return d; });
+
+      return table;
+  };
+   
+        
         d3.csv("modcd.csv", function(data){
+            var consumers = d3.nest()
+            .key(function(r){return r.Substation;})
+            .rollup(function(v){return _.map(v, function(d){return [d.Consumer,d.Cd];})})
+            .entries(data);
+            consumers = _.object(_.map(consumers, function(x){return [x.key, x.values]}));
+            
             var goms = d3.nest()
                            .key(function(r){return r.Division;})
                            .key(function(r){return r.Substation;})
@@ -228,13 +219,28 @@
                 return _.fill(d.concat(Array(d3.max(nsub) - d.length)), "--", d.length);
             });
             snames = _.unzip(snames);
-            _.forEach(snames, function(v){
+            li = _.forEach(snames, function(v){
                 return d3.selectAll('ul')
                     .each(function(d,i){
                     return d3.select(this)
                         .insert('li')
+                        .attr("id","chart")
                         .text(v[i])
-                });
+                        .on("mouseover", function(d) {
+                        //Update the tooltip position and value
+                        var bodyNode = d3.select('body').node();
+                         var absoluteMousePos = d3.mouse(bodyNode);
+                         d3.select("#tooltip")
+                         .style("left", (absoluteMousePos[0] + 10)+'px')
+                         .style("top", (absoluteMousePos[1] - 15)+'px')
+                        //.select("#value")
+                        //.text(consumers[d3.select(this).text()]);
+                         tabulate(consumers[d3.select(this).text()],["Consumer","Cd"]);
+                           //Show the tooltip
+                           d3.select("#tooltip").classed("hidden", false); })
+                    .on("mouseout", function() { d3.select("#tooltip").classed("hidden", true); })
+                    
+                })
             });
             var totcd = tots.map(function (d) {
                 return _.first(d);
@@ -247,6 +253,8 @@
                     .text(totcd[i]+" MVA")
             });    
         });
+        
+
     </script>
 </body>
 
