@@ -223,7 +223,7 @@ form.search input.button {
 /* Main */
 #main {
 	float: left;	
-	width: 72%;
+	width: 100%    //72%;
 	padding: 0;	margin: 0;	
 }
 #main h1 {
