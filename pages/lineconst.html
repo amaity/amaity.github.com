@@ -1,411 +1,50 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-    <title>Line Constants</title>
-</head>
-<body>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
 
-The following calculation of impedance and susceptance matrix of an overhead power transmission line circuit configuration is a direct implementation of the procedure described in the book `Power Systems Modelling and Fault Analysis` by `Nasser D. Tleis`.
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-`Matlab` is the tool that comes to my mind when thinking about matrix manipulations. `Octave` and `FreeMat` are some of the open source tools similar to Matlab. Here is a small script that should run in Octave or Freemat without errors.
+        <link rel="stylesheet" href="css/normalize.css"> 
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        
+    </head>
 
+    <body class="body">
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
 
-### Brute Force Approach
+        <!-- Add your site or application content here -->
+        
+        <header class="mainheader">
+            <h1><img width="75px" src="img/baba.svg">avamaity </h1>
+            
+        </header>
 
-Since the input data set is quite small, I found it convenient to include it in the script. Therefore the `m` file begins with:
+        <nav><ul>
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="./pages/pidx.html">Blog</a></li>
+            <li><a href="./work/widx.html">Work</a></li>
+        </ul></nav>
 
-<div class="codebox">
-	clear all;
-	verbose = 1;
-	input_precision = 15;
+        <div>
+            <script src="https://gist.github.com/amaity/6b9a3b6937b6383b3b93.js"></script>
+        </div>
 
-	% CONDUCTOR AND TOWER DATA
-	Cond = '1 x AAAC 61/3.31';
-	printf('Conductor is = %20s\n', Cond);
-	Ew = '1 x GS 7/3.15';
-	printf('Earthwire is = %20s\n', Ew);
-	nc = 2; % number of circuits
-	printf('No. of three phase circuits = %2i\n', nc);
-	nb = 1; % number of conductors in bundle
-	printf('No. of conductors in a bundle = %2i\n', nb);
-	ne = 1; % number of earthwires
-	printf('No. of earthwires = %2i\n', ne);
-	f = 50; % frequency in Hertz
-	printf('Frequency in Hertz = %4i\n', f);
-	V = 220; % base voltage in kV
-	printf('Voltage in kV = %4i\n', V);
-	S = 100; % base MVA
-	printf('Base MVA = %4i\n', S);
-	radc = 0.01431; % conductor radius in meters
-	printf('Conductor radius in meters = %2.6f\n', radc);
-	Rc = 0.06915; % conductor resistance in ohms/km
-	printf('Conductor resistance in ohms/km = %2.6f\n', Rc);
-	rade = 0.004725; % earthwire radius in meters
-	printf('Earthwire radius in meters = %2.6f\n', rade);
-	Re = 3.375; % earthwire resistance in ohms/km
-	printf('Earthwire resistance in ohms/km = %2.6f\n', Re);
-	rho = 50; % earth resistivity in ohm-meter
-	printf('Earth resistivity in ohm-meters = %2.6f\n', rho);
-	sagc = 7.94; % average sag of conductor
-	printf('Average conductor sag in meters = %2.6f\n', sagc);
-	sage = 5.74; % average sag of earthwire
-	printf('Average earthwire sag in meters = %2.6f\n', sage);
-	dcs = 1; % sub-conductor spacing
-	%printf('Sub-conductor spacing in meters = %2.6f\n', dcs);
-	kc = 0.772; % stranding factor of conductor
-	printf('Stranding factor of conductor = %2.6f\n', kc);
-	ke = 0.72; % stranding factor of earthwire
-	printf('Stranding factor of earthwire = %2.6f\n', ke);
-</div>
+        <footer class="mainfooter">
+            <p>Copyright &copy; 2015</p>
+        </footer>
+        
 
-This brings us to the co-ordinate calculations. Since the calculation of line parameters is based on the assumption of perfectly horizontal conductors, an average conductor height is calculated from the sag of conductors between towers as follows:
-
-<div class="codebox">
-	y1av = ya-(2/3)*sagc;
-	y2av = yb-(2/3)*sagc;
-	y3av = yc-(2/3)*sagc;
-	y4av = yf-(2/3)*sagc;
-	y5av = yg-(2/3)*sagc;
-	y6av = yh-(2/3)*sagc;
-	y7av = ye-(2/3)*sage;
-	x1 = xa; xm1 = xa;  ym1 = -y1av; % co-ordinates of conductor a
-	x2 = xb; xm2 = xb;  ym2 = -y2av; % co-ordinates of conductor b
-	x3 = xc; xm3 = xc;  ym3 = -y3av; % co-ordinates of conductor c
-	x4 = xf; xm4 = xf;  ym4 = -y4av; % co-ordinates of conductor f
-	x5 = xg; xm5 = xg;  ym5 = -y5av; % co-ordinates of conductor g
-	x6 = xh; xm6 = xh;  ym6 = -y6av; % co-ordinates of conductor h
-	x7 = 0;  xm7 = 0;   ym7 = -y7av; % co-odinates of earthwire 7
-</div>
-
-With the co-ordinates fixed, we can now go on to the calculation of the various constants.
-
-<div class="codebox">
-	A = dcs/(2*sin(pi/nb)); % radius of a circle through the center of the bundled conductors in meters
-	GMrc = radc; % radius of conductor in meters
-	GMRc = kc*radc;
-	GMre = rade;
-	GMRe = ke*rade; % radius of earthwire in meters
-	GMrceq = (nb*GMrc*A^(nb-1))^(1/nb); % GMR of equivalent conductor in meters
-	GMRceq = (nb*GMRc*A^(nb-1))^(1/nb); % GMR of equivalent conductor in meters
-	Derc = 658.87*sqrt(rho/f);
-	h = e^(j*2*pi/3);
-	H = [1, 1, 1; h*h, h, 1; h, h*h, 1];
-</div>
-
-Next comes the spacing calculations:
-
-<div class="codebox">
-	D12 = sqrt((x1-xm2)^2+(y1av-ym2)^2); % in meters
-	D21 = sqrt((x1-xm2)^2+(y1av-ym2)^2); % in meters
-	D13 = sqrt((x1-xm3)^2+(y1av-ym3)^2); % in meters
-	D31 = sqrt((x1-xm3)^2+(y1av-ym3)^2); % in meters
-	D14 = sqrt((x1-xm4)^2+(y1av-ym4)^2); % in meters
-	D41 = sqrt((x1-xm4)^2+(y1av-ym4)^2); % in meters
-	D15 = sqrt((x1-xm5)^2+(y1av-ym5)^2); % in meters
-	D51 = sqrt((x1-xm5)^2+(y1av-ym5)^2); % in meters
-	D16 = sqrt((x1-xm6)^2+(y1av-ym6)^2); % in meters
-	D61 = sqrt((x1-xm6)^2+(y1av-ym6)^2); % in meters
-	D17 = sqrt((x1-xm7)^2+(y1av-ym7)^2); % in meters
-	D71 = sqrt((x1-xm7)^2+(y1av-ym7)^2); % in meters
-	D23 = sqrt((x2-xm3)^2+(y2av-ym3)^2); % in meters
-	D32 = sqrt((x2-xm3)^2+(y2av-ym3)^2); % in meters
-	D24 = sqrt((x2-xm4)^2+(y2av-ym4)^2); % in meters
-	D42 = sqrt((x2-xm4)^2+(y2av-ym4)^2); % in meters
-	D25 = sqrt((x2-xm5)^2+(y2av-ym5)^2); % in meters
-	D52 = sqrt((x2-xm5)^2+(y2av-ym5)^2); % in meters
-	D26 = sqrt((x2-xm6)^2+(y2av-ym6)^2); % in meters
-	D62 = sqrt((x2-xm6)^2+(y2av-ym6)^2); % in meters
-	D27 = sqrt((x2-xm7)^2+(y2av-ym7)^2); % in meters
-	D72 = sqrt((x2-xm7)^2+(y2av-ym7)^2); % in meters
-	D34 = sqrt((x3-xm4)^2+(y3av-ym4)^2); % in meters
-	D43 = sqrt((x3-xm4)^2+(y3av-ym4)^2); % in meters
-	D35 = sqrt((x3-xm5)^2+(y3av-ym5)^2); % in meters
-	D53 = sqrt((x3-xm5)^2+(y3av-ym5)^2); % in meters
-	D36 = sqrt((x3-xm6)^2+(y3av-ym6)^2); % in meters
-	D63 = sqrt((x3-xm6)^2+(y3av-ym6)^2); % in meters
-	D37 = sqrt((x3-xm7)^2+(y3av-ym7)^2); % in meters
-	D73 = sqrt((x3-xm7)^2+(y3av-ym7)^2); % in meters
-	D45 = sqrt((x4-xm5)^2+(y4av-ym5)^2); % in meters
-	D54 = sqrt((x4-xm5)^2+(y4av-ym5)^2); % in meters
-	D46 = sqrt((x4-xm6)^2+(y4av-ym6)^2); % in meters
-	D64 = sqrt((x4-xm6)^2+(y4av-ym6)^2); % in meters
-	D47 = sqrt((x4-xm7)^2+(y4av-ym7)^2); % in meters
-	D74 = sqrt((x4-xm7)^2+(y4av-ym7)^2); % in meters
-	D56 = sqrt((x5-xm6)^2+(y5av-ym6)^2); % in meters
-	D65 = sqrt((x5-xm6)^2+(y5av-ym6)^2); % in meters
-	D57 = sqrt((x5-xm7)^2+(y5av-ym7)^2); % in meters
-	D75 = sqrt((x5-xm7)^2+(y5av-ym7)^2); % in meters
-	D67 = sqrt((x6-xm7)^2+(y6av-ym7)^2); % in meters
-	D76 = sqrt((x6-xm7)^2+(y6av-ym7)^2); % in meters
-
-	d12 = sqrt((x1-x2)^2+(y1av-y2av)^2); % in meters
-	d21 = sqrt((x1-x2)^2+(y1av-y2av)^2); % in meters
-	d13 = sqrt((x1-x3)^2+(y1av-y3av)^2); % in meters
-	d31 = sqrt((x1-x3)^2+(y1av-y3av)^2); % in meters
-	d14 = sqrt((x1-x4)^2+(y1av-y4av)^2); % in meters
-	d41 = sqrt((x1-x4)^2+(y1av-y4av)^2); % in meters
-	d15 = sqrt((x1-x5)^2+(y1av-y5av)^2); % in meters
-	d51 = sqrt((x1-x5)^2+(y1av-y5av)^2); % in meters
-	d16 = sqrt((x1-x6)^2+(y1av-y6av)^2); % in meters
-	d61 = sqrt((x1-x6)^2+(y1av-y6av)^2); % in meters
-	d17 = sqrt((x1-x7)^2+(y1av-y7av)^2); % in meters
-	d71 = sqrt((x1-x7)^2+(y1av-y7av)^2); % in meters
-	d23 = sqrt((x2-x3)^2+(y2av-y3av)^2); % in meters
-	d32 = sqrt((x2-x3)^2+(y2av-y3av)^2); % in meters
-	d24 = sqrt((x2-x4)^2+(y2av-y4av)^2); % in meters
-	d42 = sqrt((x2-x4)^2+(y2av-y4av)^2); % in meters
-	d25 = sqrt((x2-x5)^2+(y2av-y5av)^2); % in meters
-	d52 = sqrt((x2-x5)^2+(y2av-y5av)^2); % in meters
-	d26 = sqrt((x2-x6)^2+(y2av-y6av)^2); % in meters
-	d62 = sqrt((x2-x6)^2+(y2av-y6av)^2); % in meters
-	d27 = sqrt((x2-x7)^2+(y2av-y7av)^2); % in meters
-	d72 = sqrt((x2-x7)^2+(y2av-y7av)^2); % in meters
-	d34 = sqrt((x3-x4)^2+(y3av-y4av)^2); % in meters
-	d43 = sqrt((x3-x4)^2+(y3av-y4av)^2); % in meters
-	d35 = sqrt((x3-x5)^2+(y3av-y5av)^2); % in meters
-	d53 = sqrt((x3-x5)^2+(y3av-y5av)^2); % in meters
-	d36 = sqrt((x3-x6)^2+(y3av-y6av)^2); % in meters
-	d63 = sqrt((x3-x6)^2+(y3av-y6av)^2); % in meters
-	d37 = sqrt((x3-x7)^2+(y3av-y7av)^2); % in meters
-	d73 = sqrt((x3-x7)^2+(y3av-y7av)^2); % in meters
-	d45 = sqrt((x4-x5)^2+(y4av-y5av)^2); % in meters
-	d54 = sqrt((x4-x5)^2+(y4av-y5av)^2); % in meters
-	d46 = sqrt((x4-x6)^2+(y4av-y6av)^2); % in meters
-	d64 = sqrt((x4-x6)^2+(y4av-y6av)^2); % in meters
-	d47 = sqrt((x4-x7)^2+(y4av-y7av)^2); % in meters
-	d74 = sqrt((x4-x7)^2+(y4av-y7av)^2); % in meters
-	d56 = sqrt((x5-x6)^2+(y5av-y6av)^2); % in meters
-	d65 = sqrt((x5-x6)^2+(y5av-y6av)^2); % in meters
-	d57 = sqrt((x5-x7)^2+(y5av-y7av)^2); % in meters
-	d75 = sqrt((x5-x7)^2+(y5av-y7av)^2); % in meters
-	d67 = sqrt((x6-x7)^2+(y6av-y7av)^2); % in meters
-	d76 = sqrt((x6-x7)^2+(y6av-y7av)^2); % in meters
-</div>
-
-Since the potential _V_ of conductor _i_ due to conductor's own charge and charges on all other conductors is:
-
-![eqn1](/images/eqn1.jpg)
-
-where _P<sub>ij</sub>_ is the Maxwell's potential coefficient expressed in km/F and _Q<sub>j</sub>_ is the charge in C/km, we calculate the self potential co-efficients from the spacings as follow:
-
-	P11 = 17.975109*log(2*y1av/GMrceq); % in km/microF
-	P22 = 17.975109*log(2*y2av/GMrceq); % in km/microF
-	P33 = 17.975109*log(2*y3av/GMrceq); % in km/microF
-	P44 = 17.975109*log(2*y4av/GMrceq); % in km/microF
-	P55 = 17.975109*log(2*y5av/GMrceq); % in km/microF
-	P66 = 17.975109*log(2*y6av/GMrceq); % in km/microF
-	P77 = 17.975109*log(2*y7av/GMre); % in km/microF
-
-and the mutual potential co-efficients between conductor _i_ and conductor _j_ are as follows:
-
-	P12 = 17.975109*log(D12/d12); % in km/microF
-	P21 = 17.975109*log(D12/d12); % in km/microF
-	P13 = 17.975109*log(D13/d13); % in km/microF
-	P31 = 17.975109*log(D13/d13); % in km/microF
-	P14 = 17.975109*log(D14/d14); % in km/microF
-	P41 = 17.975109*log(D14/d14); % in km/microF
-	P15 = 17.975109*log(D15/d15); % in km/microF
-	P51 = 17.975109*log(D15/d15); % in km/microF
-	P16 = 17.975109*log(D16/d16); % in km/microF
-	P61 = 17.975109*log(D16/d16); % in km/microF
-	P17 = 17.975109*log(D17/d17); % in km/microF
-	P71 = 17.975109*log(D17/d17); % in km/microF
-	P23 = 17.975109*log(D23/d23); % in km/microF
-	P32 = 17.975109*log(D23/d23); % in km/microF
-	P24 = 17.975109*log(D24/d24); % in km/microF
-	P42 = 17.975109*log(D24/d24); % in km/microF
-	P25 = 17.975109*log(D25/d25); % in km/microF
-	P52 = 17.975109*log(D25/d25); % in km/microF
-	P26 = 17.975109*log(D26/d26); % in km/microF
-	P62 = 17.975109*log(D26/d26); % in km/microF
-	P27 = 17.975109*log(D27/d27); % in km/microF
-	P72 = 17.975109*log(D27/d27); % in km/microF
-	P34 = 17.975109*log(D34/d34); % in km/microF
-	P43 = 17.975109*log(D34/d34); % in km/microF
-	P35 = 17.975109*log(D35/d53); % in km/microF
-	P53 = 17.975109*log(D35/d53); % in km/microF
-	P36 = 17.975109*log(D36/d36); % in km/microF
-	P63 = 17.975109*log(D36/d36); % in km/microF
-	P37 = 17.975109*log(D37/d37); % in km/microF
-	P73 = 17.975109*log(D37/d37); % in km/microF
-	P45 = 17.975109*log(D45/d45); % in km/microF
-	P54 = 17.975109*log(D45/d45); % in km/microF
-	P46 = 17.975109*log(D46/d46); % in km/microF
-	P64 = 17.975109*log(D46/d46); % in km/microF
-	P47 = 17.975109*log(D47/d47); % in km/microF
-	P74 = 17.975109*log(D47/d47); % in km/microF
-	P56 = 17.975109*log(D56/d56); % in km/microF
-	P65 = 17.975109*log(D56/d56); % in km/microF
-	P57 = 17.975109*log(D57/d57); % in km/microF
-	P75 = 17.975109*log(D57/d57); % in km/microF
-	P67 = 17.975109*log(D67/d67); % in km/microF
-	P76 = 17.975109*log(D67/d67); % in km/microF
-
-The potential co-efficient matrix is equal to:
-
-	P = [P11, P12, P13, P14, P15, P16, P17;
-	 P21, P22, P23, P24, P25, P26, P27;
-	 P31, P32, P33, P34, P35, P36, P37;
-	 P41, P42, P43, P44, P45, P46, P47;
-	 P51, P52, P53, P54, P55, P56, P57;
-	 P61, P62, P63, P64, P65, P66, P67;
-	 P71, P72, P73, P74, P75, P76, P77];
-
-And the shunt capacitance matrix is equal to the inverse of the potential coefficient matrix:
-
-	C = inv(P);
-
-The sequence susceptances after eliminating the earthwires
-
-	Paa = P (1:3, 1:3);
-	Pab = P (1:3, 4:6);
-	Pba = P (4:6, 1:3);
-	Pbb = P (4:6, 4:6);
-	Pas = P (1:3, 7);
-	Pbs = P (4:6, 7);
-	Pss = P (7, 7);
-
-	Pph = [Paa-Pas*inv(Pss)*Pas.', Pab-Pas*inv(Pss)*Pbs.';
-	       Pba-Pbs*inv(Pss)*Pas.', Pbb-Pbs*inv(Pss)*Pbs.'];
-	Cph = inv(Pph);
-	
-	Bph = 2*pi*f*Cph;
-	Baa = Bph (1:3, 1:3);
-	Bab = Bph (1:3, 4:6);
-	Bba = Bph (4:6, 1:3);
-	Bbb = Bph (4:6, 4:6);
-
-	Bpnz = [inv(H)*Baa*H, inv(H)*Bab*H;
-	 inv(H)*Bba*H, inv(H)*Bbb*H];
-
-The series voltage drop of each conductor due to current flowing in the conductor and currents flowing in all other conductors in the same direction is
-
-![eqn2](/images/eqn2.jpg)
-
-Therefore the phase impedances are:
-
-	Z11 = (Rc/nb)+(pi^2)*(10^-4)*f+j*4*pi*(10^-4)*f*((1/(4*nb))+log(Derc/GMRceq));
-	Z22 = Z11; Z33 = Z11; Z44 = Z11; Z55 = Z11; Z66 = Z11;
-	Z77 = Re+(pi^2)*(10^-4)*f+j*4*pi*(10^-4)*f*((1/4)+log(Derc/GMRe));
-	Z12 = (pi^2)*(10^-4)*f+j*4*pi*(10^-4)*f*log(Derc/d12);
-	Z21 = (pi^2)*(10^-4)*f+j*4*pi*(10^-4)*f*log(Derc/d12);
-	Z13 = (pi^2)*(10^-4)*f+j*4*pi*(10^-4)*f*log(Derc/d13);
-	Z31 = (pi^2)*(10^-4)*f+j*4*pi*(10^-4)*f*log(Derc/d13);
-	Z14 = (pi^2)*(10^-4)*f+j*4*pi*(10^-4)*f*log(Derc/d14);
-	Z41 = (pi^2)*(10^-4)*f+j*4*pi*(10^-4)*f*log(Derc/d14);
-	Z15 = (pi^2)*(10^-4)*f+j*4*pi*(10^-4)*f*log(Derc/d15);
-	Z51 = (pi^2)*(10^-4)*f+j*4*pi*(10^-4)*f*log(Derc/d15);
-	Z16 = (pi^2)*(10^-4)*f+j*4*pi*(10^-4)*f*log(Derc/d16);
-	Z61 = (pi^2)*(10^-4)*f+j*4*pi*(10^-4)*f*log(Derc/d16);
-	Z17 = (pi^2)*(10^-4)*f+j*4*pi*(10^-4)*f*log(Derc/d17);
-	Z71 = (pi^2)*(10^-4)*f+j*4*pi*(10^-4)*f*log(Derc/d17);
-	Z23 = (pi^2)*(10^-4)*f+j*4*pi*(10^-4)*f*log(Derc/d23);
-	Z32 = (pi^2)*(10^-4)*f+j*4*pi*(10^-4)*f*log(Derc/d23);
-	Z24 = (pi^2)*(10^-4)*f+j*4*pi*(10^-4)*f*log(Derc/d24);
-	Z42 = (pi^2)*(10^-4)*f+j*4*pi*(10^-4)*f*log(Derc/d24);
-	Z25 = (pi^2)*(10^-4)*f+j*4*pi*(10^-4)*f*log(Derc/d25);
-	Z52 = (pi^2)*(10^-4)*f+j*4*pi*(10^-4)*f*log(Derc/d25);
-	Z26 = (pi^2)*(10^-4)*f+j*4*pi*(10^-4)*f*log(Derc/d26);
-	Z62 = (pi^2)*(10^-4)*f+j*4*pi*(10^-4)*f*log(Derc/d26);
-	Z27 = (pi^2)*(10^-4)*f+j*4*pi*(10^-4)*f*log(Derc/d27);
-	Z72 = (pi^2)*(10^-4)*f+j*4*pi*(10^-4)*f*log(Derc/d27);
-	Z34 = (pi^2)*(10^-4)*f+j*4*pi*(10^-4)*f*log(Derc/d34);
-	Z43 = (pi^2)*(10^-4)*f+j*4*pi*(10^-4)*f*log(Derc/d34);
-	Z35 = (pi^2)*(10^-4)*f+j*4*pi*(10^-4)*f*log(Derc/d35);
-	Z53 = (pi^2)*(10^-4)*f+j*4*pi*(10^-4)*f*log(Derc/d35);
-	Z36 = (pi^2)*(10^-4)*f+j*4*pi*(10^-4)*f*log(Derc/d36);
-	Z63 = (pi^2)*(10^-4)*f+j*4*pi*(10^-4)*f*log(Derc/d36);
-	Z37 = (pi^2)*(10^-4)*f+j*4*pi*(10^-4)*f*log(Derc/d37);
-	Z73 = (pi^2)*(10^-4)*f+j*4*pi*(10^-4)*f*log(Derc/d37);
-	Z45 = (pi^2)*(10^-4)*f+j*4*pi*(10^-4)*f*log(Derc/d45);
-	Z54 = (pi^2)*(10^-4)*f+j*4*pi*(10^-4)*f*log(Derc/d45);
-	Z46 = (pi^2)*(10^-4)*f+j*4*pi*(10^-4)*f*log(Derc/d46);
-	Z64 = (pi^2)*(10^-4)*f+j*4*pi*(10^-4)*f*log(Derc/d46);
-	Z47 = (pi^2)*(10^-4)*f+j*4*pi*(10^-4)*f*log(Derc/d47);
-	Z74 = (pi^2)*(10^-4)*f+j*4*pi*(10^-4)*f*log(Derc/d47);
-	Z56 = (pi^2)*(10^-4)*f+j*4*pi*(10^-4)*f*log(Derc/d56);
-	Z65 = (pi^2)*(10^-4)*f+j*4*pi*(10^-4)*f*log(Derc/d56);
-	Z57 = (pi^2)*(10^-4)*f+j*4*pi*(10^-4)*f*log(Derc/d57);
-	Z75 = (pi^2)*(10^-4)*f+j*4*pi*(10^-4)*f*log(Derc/d57);
-	Z67 = (pi^2)*(10^-4)*f+j*4*pi*(10^-4)*f*log(Derc/d67);
-	Z76 = (pi^2)*(10^-4)*f+j*4*pi*(10^-4)*f*log(Derc/d67);
-
-The impedance matrix:
-
-	Z = [Z11, Z12, Z13, Z14, Z15, Z16, Z17;
-	 Z21, Z22, Z23, Z24, Z25, Z26, Z27;
-	 Z31, Z32, Z33, Z34, Z35, Z36, Z37;
-	 Z41, Z42, Z43, Z44, Z45, Z46, Z47;
-	 Z51, Z52, Z53, Z54, Z55, Z56, Z57;
-	 Z61, Z62, Z63, Z64, Z65, Z66, Z67;
-	 Z71, Z72, Z73, Z74, Z75, Z76, Z77];
-
-	Zaa = Z (1:3, 1:3);
-	Zab = Z (1:3, 4:6);
-	Zba = Z (4:6, 1:3);
-	Zbb = Z (4:6, 4:6);
-	Zas = Z (1:3, 7);
-	Zbs = Z (4:6, 7);
-	Zss = Z (7, 7);
-
-	Zph = [Zaa-Zas*inv(Zss)*Zas.', Zab-Zas*inv(Zss)*Zbs.';
-	 Zba-Zbs*inv(Zss)*Zas.', Zbb-Zbs*inv(Zss)*Zbs.'];
-
-	Zaa_d = Zph (1:3, 1:3);
-	Zab_d = Zph (1:3, 4:6);
-	Zba_d = Zph (4:6, 1:3);
-	Zbb_d = Zph (4:6, 4:6);
-
-	Zpnz = [inv(H)*Zaa_d*H, inv(H)*Zab_d*H;
-	 inv(H)*Zba_d*H, inv(H)*Zbb_d*H];
-
-Some preliminary calculations for the output are:
-
-	Zbase = (V^2)/S;
-	Ybase = 1/Zbase;
-
-	Bp = Bpnz (1, 1); % in microsiemens/km
-	Bn = Bpnz (2, 2); % in microsiemens/km
-	Bz = Bpnz (3, 3); % in microsiemens/km
-
-	Zp = Zpnz (1, 1); % in ohms/km
-	Zn = Zpnz (2, 2); % in ohms/km
-	Zz = Zpnz (3, 3); % in ohms/km
-
-Finally the results are spit out as follows:
-
-	printf('+ve sequence resistance in ohms/km/ckt = %2.6f\n', real (Zp));
-	printf('+ve sequence reactance in ohms/km/ckt = %2.6f\n', imag (Zp));
-	printf('+ve sequence charging susceptance in microsiemens/km/ckt = %2.6f\n\n', Bp);
-	printf('+ve sequence Xc in Mohms/km/ckt = %2.6f\n\n', 1/Bp);
-
-	printf('+ve sequence resistance in percent/km/ckt = %2.6f\n', 100*real(Zp)/Zbase);
-	printf('+ve sequence reactance in percent/km/ckt = %2.6f\n', 100*imag(Zp)/Zbase);
-	printf('+ve sequence charging susceptance in percent/km/ckt = %2.6f\n\n', 100*(10^-6)*Bp/Ybase);
-
-	printf('-ve sequence resistance in ohms/km/ckt = %2.6f\n', real (Zn));
-	printf('-ve sequence reactance in ohms/km/ckt = %2.6f\n', imag (Zn));
-	printf('-ve sequence charging susceptance in microsiemens/km/ckt = %2.6f\n\n', Bn);
-
-	printf('-ve sequence resistance in percent/km/ckt = %2.6f\n', 100*real(Zn)/Zbase);
-	printf('-ve sequence reactance in percent/km/ckt = %2.6f\n', 100*imag(Zn)/Zbase);
-	printf('-ve sequence charging susceptance in percent/km/ckt = %2.6f\n\n', 100*(10^-6)*Bn/Ybase);
-
-	printf('Zero sequence resistance in ohms/km/ckt = %2.6f\n', real (Zz));
-	printf('Zero sequence reactance in ohms/km/ckt = %2.6f\n', imag (Zz));
-	printf('Zero sequence charging susceptance in microsiemens/km/ckt = %2.6f\n\n', Bz);
-	printf('Zero sequence Xc in Mohms/km/ckt = %2.6f\n\n', 1/Bz);
-
-	printf('Zero sequence resistance in percent/km/ckt = %2.6f\n', 100*real(Zz)/Zbase);
-	printf('Zero sequence reactance in percent/km/ckt = %2.6f\n', 100*imag(Zz)/Zbase);
-	printf('Zero sequence charging susceptance in percent/km/ckt = %2.6f\n\n', 100*(10^-6)*Bz/Ybase);
-
-	hold off;
-
-### Any Ideas?
-
-If you have read this far you must have realised that this method would be even more unweildy for a multi-circuit tower configuration. What could be done to make the script more compact? How would you approach the problem?   
-
-</body>
+    </body>
 </html>
