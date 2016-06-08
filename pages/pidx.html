@@ -6,53 +6,65 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>My Books</title>
+        <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-        <link rel="stylesheet" href="../css/960_12_col.css"> 
-        <style> 
-            * {text-align:center;}
-            #header {
-                font-family:Ravie; 
-                color:#525252; 
-                padding:2pythonpx;
-            }
-            #nav {
-                background-color:#666;
-                height:40px;
-                border-radius:5px;
-            }
-            
-        </style>
+        <link rel="stylesheet" href="../css/normalize.css">
+        <link rel="stylesheet" href="../css/main.css">
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+
     </head>
+    <body class="body">
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
 
-    <body>
-
-        <div class="container_12 clearfix">
-            <div id="header" class="grid_12">
-                 <h1 style=""><img width="75px" src="../img/baba.svg">avamaity</h1>
-            </div>
-            <div id="nav">
-                 <nav>
-                     <ul>
-                         <li><a href="../index.html">Home</a></li>
-                         <li class="active"><a href="./pidx.html">MyBooks</a></li>
-                         <li><a href="../work/widx.html">Work</a></li>
-                     </ul>
-                </nav>
-            </div>
-            <div id="feature" class="grid_12">
-                <p STYLE="font-family: 'Cooper Black'; font-size:100%; color:#525252">BookShelf</p>
-            </div>
-            
-            <div id="footer" class="grid_12">
-                <p>&copy; avamaity 2015</p>
-            </div>
-
-        </div>
+        <!-- Add your site or application content here -->
         
+        <header class="mainheader">
+            <h1><img width="75px" src="../img/baba.svg">avamaity</h1>
+            
+        </header>
+
+        <nav><ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../pages/pidx.html">Blog</a></li>
+            <li class="active"><a href="./widx.html">Work</a></li>
+        </ul></nav>
+
+        <div>
+            <article class="content">
+                <h1>My blogs!</h1>
+                <content>
+        <ul>
+            <li>2013-10-26: Magnetic Saturation</li>
+            <li>2013-05-12: Roeper Example</li>
+            <li><a href="lineconst.html">2013-04-01: Line Constants</a></li>
+        </ul>
+                    
+                </content>
+            </article>
+        </div>
+
+        <footer class="mainfooter">
+            <p>Copyright &copy; 2015</p>
+        </footer>
+        
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
     </body>
 </html>

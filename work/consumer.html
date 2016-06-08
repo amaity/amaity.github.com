@@ -81,7 +81,7 @@
 }
         
 #tooltip {
-        position: absolute;
+    position: absolute;
         width: auto;
         height: auto;
         padding: 0px;
@@ -128,7 +128,7 @@ td{
 <body>
     
 <h2>Substation-wise consumer details</h2>
-  <p>Hover your mouse over the relevant GOMD table and then click the substation you want.</p>
+  <p>Hover your mouse over the relevant GOMD table and click on the substation you want.</p>
 
 <section class="container">
 
@@ -226,15 +226,14 @@ td{
                         .insert('li')
                         .attr("id","chart")
                         .text(v[i])
-                        .on("mouseover", function(d) {
+                        .on("click", function(d) {
                         //Update the tooltip position and value
                         var bodyNode = d3.select('body').node();
                          var absoluteMousePos = d3.mouse(bodyNode);
                          d3.select("#tooltip")
                          .style("left", (absoluteMousePos[0] + 10)+'px')
                          .style("top", (absoluteMousePos[1] - 15)+'px')
-                        //.select("#value")
-                        //.text(consumers[d3.select(this).text()]);
+                        //Insert the consumer data table
                          tabulate(consumers[d3.select(this).text()],["Consumer","Cd"]);
                            //Show the tooltip
                            d3.select("#tooltip").classed("hidden", false); })
