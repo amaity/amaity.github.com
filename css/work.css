@@ -19,6 +19,16 @@ img {
     vertical-align: middle;
 }
 
+a {
+    clear: both;
+    padding: 5px;
+    background-color: #666;
+    color: white;
+    text-align: center;
+    font-size: 150%;
+    text-decoration: none;
+}
+
 #container {
     background-color: white;
     width: 80%;
@@ -31,21 +41,28 @@ img {
     font-family:Ravie;
     font-size: 200%;
     text-align:center;
-}
-
-#main {
-    font-size: 150%;
-}
-
-#footer {
-    clear: both;
-    padding: 1px;
-    background-color: #666;
-    color: white;
-    text-align: center;
+    padding-bottom: 20px;
 }
 
 #content #nav ul li {
     list-style: none;
     display: inline;
+}
+
+.active{
+    font-size: 150%;
+}
+
+#main {
+    font-size: 150%;
+    margin-left: 20px;
+    padding-bottom: 20px;
+}
+
+#footer {
+    clear: both;
+    padding: 5px;
+    background-color: #666;
+    color: white;
+    text-align: center;
 }

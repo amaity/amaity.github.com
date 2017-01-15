@@ -6,7 +6,7 @@ To change this template use Tools | Templates.
 <head>
     <title>Prelims</title>
     <link rel="stylesheet" href="../css/work.css">
-    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    
 </head>
 <body>
     <div id="container">
@@ -16,23 +16,53 @@ To change this template use Tools | Templates.
         <div id="content">
             <div id="nav">
                 <ul>
-                    <h3>Navigation</h3>
                     <li><a href="../index.html">Home</a></li>
                     <li><a href="../pages/pidx.html">Blog</a></li>
-                    <li class="active">Work</a></li>
+                    <li><a href="widx.html">Work</a></li>
                 </ul>
             </div>
             <div id="main">
                 <h2>PSSE - Getting started</h2>
-                <p>So you want to run PSSE through python? Here is a simple way to begin with. Let's use the following example file in the PSSE example directory: <span style="color: blue">savnw.sav</span>.</p>
-                <code class="prettyprint lang-py"> SAVFILE_LOCATION = r"C:\Program Files (x86)\PTI\PSSE33\EXAMPLE\\"</code>
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+                <p>So you want to run PSSE through python? Here is a simple way to begin with. 
+                    Let's use the following example file in the PSSE example 
+                    directory - <span style="color: blue">savnw.sav</span>.
+                </p>
+                
+                <p>Connect the PSSE engine like so:</p>
+                <code class="prettyprint lang-py">
+                    import os, sys <br/>
+                    PSSE_LOCATION = r"C:\Program Files (x86)\PTI\PSSE33\PSSBIN" <br/>
+                    sys.path.append(PSSE_LOCATION) <br/>
+                    os.environ['PATH'] = os.environ['PATH'] + ';' + PSSE_LOCATION <br/>
+                    import psspy <br/>
+                    import redirect <br/>
+                    redirect.psse2py()
+                </code>
+                <p>Feed in the case file. Note the location of the file.</p>
+                <code class="prettyprint lang-py">
+                    import psspy, redirect <br/>
+                    SAVFILE_LOCATION = r"C:\Program Files (x86)\PTI\PSSE33\EXAMPLE\\" <br/>
+                    CASE = r"savnw.sav" <br/>
+                    psspy.case(SAVFILE_LOCATION + CASE) <br/>
+                </code>
+                <p>Run the Full Newton Raphson solution. You should get the full powerflow output in your program console.</p>
+                <code class="prettyprint lang-py">
+                    psspy.fnsl((1,0,1,0,0,0,99,1)) <br/>
+                    psspy.inibus(0) <br/>
+                    psspy.pout() 
+                </code>
+                <p>The easiest way to run the above code would be to fire up <span style="color: #ff0000">idle (python GUI)</span>, 
+                    which is available from your Windows startup menu in the <span style="color: #ff0000">Python 2.7</span> folder. 
+                    Click <span style="color: #ff0000">New Window</span> in the file menu of your idle (python GUI) editor, copy paste the 
+                    above code in this new window, save it with an appropriate name say - test.py. Run the code by clicking 
+                    <span style="color: #ff0000">Run Module</span> from the Run menu.
+                </p>
             </div>
         </div>
         <div id="footer">
-            <p>Copyright &copy; 2017 Amitava Maity</p>
+            <a href="https://twitter.com/intent/tweet?screen_name=avamaity" class="twitter-mention-button" data-size="large" data-show-count="false">Tweet to @avamaity</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>        
         </div>
     </div>
-
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 </body>
 </html>
