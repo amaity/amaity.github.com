@@ -44,6 +44,10 @@ a {
     padding-bottom: 20px;
 }
 
+#content #nav ul {
+    padding: 20px;
+}
+
 #content #nav ul li {
     list-style: none;
     display: inline;

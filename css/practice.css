@@ -1,0 +1,53 @@
+/*
+    Document   : css/practice.css
+    Created on : 2017-01-18 04:24 PM
+    Author     : amaity
+    Description:
+    Purpose of the stylesheet follows.
+    To change this template use Tools | Templates.
+*/
+
+root {
+    display: block;
+}
+
+body {
+    background-color: #FED8B1;
+}
+
+#container {
+    width: 50%;
+    background-color: #71BC78; /*Fern */ /* */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#container #head #content {
+    width: 80%;
+    margin: 0 auto;
+}
+
+#headtxt {
+    background-color: #ED1C24;
+    line-height: 1.5;
+    color: white;
+    font-family: "Arial Black";
+}
+
+.firstLetter {
+    float: left;
+    font-size: 9em;
+    line-height: 0.5;
+    margin: 0.15em 0.1em 0 0.1em;
+}
+
+.firstLetter + span {
+    font-size: 2em;
+    line-height: 1.3;
+}
+
+#othertxt {
+    clear: both;
+    padding: 5%;
+    font-family: "Arial";
+}
