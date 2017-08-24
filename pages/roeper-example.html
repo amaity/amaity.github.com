@@ -62,32 +62,32 @@ To change this template use Tools | Templates.
                     attached to a bus.
                 </p>
                 <code class="prettyprint lang-py">
-                    import numpy as np
+                    import numpy as np <br/>
 
-                     #Constants
-                     a = np.exp(2*np.pi/3.);
-                     A = np.matrix( ((1., 1., 1.), (1., a**2., a), (1., a, a**2.)), dtype=np.complex64)
+                     #Constants <br/>
+                     a = np.exp(2*np.pi/3.) <br/>
+                     A = np.matrix( ((1., 1., 1.), (1., a**2., a), (1., a, a**2.)), dtype=np.complex64) <br/>
 
-                     #System description at Bus A
-                     S_NG1 = 100. #generator rated apparent power in MVA 
-                     U_NG1 = 10.5 #generator rated voltage in kV
-                     xst_dG1 = 10.5 #relative initial subtransient reactance in percent
-                     r_G1 = 0.3 #generator resistance in percent
-                     S_NT1 = 100. # transformer rated capacity in MVA
-                     U_NT1LV = 10.5 #in kV
-                     U_NT1HV = 115. #in kV
-                     u_kNT1 = 11.5 #in percent
-                     u_RNT1 = 0.5 #in percent
-                     n_ZT1 = 0.8 #ratio of zero to positive sequence impedance 
-                     #Sequence impedance calculations -----------------------
-Z1_G1 = complex(r_G1, xst_dG1)*(1./100.)*((U_NG1**2)/S_NG1)*(U_NT1HV/U_NT1LV)**2
-print 'Z1_G1 =', Z1_G1
-Z2_G1 = Z1_G1
-Z1_T1 = complex(u_RNT1/100., u_kNT1/100.)*((U_NT1HV**2)/S_NT1)
-print 'Z1_T1 =', Z1_T1
-Z2_T1 = Z1_T1
-Z0_T1 = n_ZT1*Z1_T1
-print 'Z0_T1 =', Z0_T1
+                     #System description at Bus A <br/>
+                     S_NG1 = 100. #generator rated apparent power in MVA <br/>
+                     U_NG1 = 10.5 #generator rated voltage in kV <br/>
+                     xst_dG1 = 10.5 #relative initial subtransient reactance in percent <br/>
+                     r_G1 = 0.3 #generator resistance in percent <br/>
+                     S_NT1 = 100. # transformer rated capacity in MVA <br/>
+                     U_NT1LV = 10.5 #in kV <br/>
+                     U_NT1HV = 115. #in kV <br/>
+                     u_kNT1 = 11.5 #in percent <br/>
+                     u_RNT1 = 0.5 #in percent <br/>
+                     n_ZT1 = 0.8 #ratio of zero to positive sequence impedance  <br/>
+                     #Sequence impedance calculations ----------------------- <br/>
+                     Z1_G1 = complex(r_G1, xst_dG1)*(1./100.)*((U_NG1**2)/S_NG1)*(U_NT1HV/U_NT1LV)**2 <br/>
+                     print 'Z1_G1 =', Z1_G1 <br/>
+                     Z2_G1 = Z1_G1 <br/>
+                     Z1_T1 = complex(u_RNT1/100., u_kNT1/100.)*((U_NT1HV**2)/S_NT1) <br/>
+                     print 'Z1_T1 =', Z1_T1 <br/>
+                     Z2_T1 = Z1_T1 <br/>
+                     Z0_T1 = n_ZT1*Z1_T1 <br/>
+                     print 'Z0_T1 =', Z0_T1 <br/>
 Similarly the impedance calculations for devices (other than lines) connected to buses B, C and Q are as follows:
 
 #System description at Bus B
@@ -229,27 +229,8 @@ Z0_D = (6.41623849995+10.9769540055j)
 Z0_D (magnitude) = 12.7146229094
 Z0_D (phi) = 59.6929014604
                 </code>
-                <p>Feed in the case file. Note the location of the file.</p>
-                <code class="prettyprint lang-py">
-                    import psspy, redirect <br/>
-                    SAVFILE_LOCATION = r"C:\Program Files (x86)\PTI\PSSE33\EXAMPLE\\" <br/>
-                    CASE = r"savnw.sav" <br/>
-                    psspy.case(SAVFILE_LOCATION + CASE) <br/>
-                </code>
-                <p>Run the Full Newton Raphson solution. You should get the full powerflow output in your program console.</p>
-                <code class="prettyprint lang-py">
-                    psspy.fnsl((1,0,1,0,0,0,99,1)) <br/>
-                    psspy.inibus(0) <br/>
-                    psspy.pout() 
-                </code>
-                <p>
-                    The easiest way to run the above code would be to fire up <span style="color: #ff0000">idle (python GUI)</span>, 
-                    which is available from your Windows startup menu in the <span style="color: #ff0000">Python 2.7</span> folder. 
-                    Click <span style="color: #ff0000">New Window</span> in the file menu of your idle (python GUI) editor, copy paste the 
-                    above code in this new window, save it with an appropriate name say - test.py. Run the code by clicking 
-                    <span style="color: #ff0000">Run Module</span> from the Run menu. If all goes exactly as described, a powerflow 
-                    output in 132 columns format will be displayed in the idle console.
-                </p>
+                <p>What could be the reason for the difference in Z0 values?</p>
+
             </div>
         </div>
         <div id="footer">
