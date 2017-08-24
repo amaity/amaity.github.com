@@ -1,0 +1,86 @@
+<!--
+To change this template use Tools | Templates.
+-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Prelims</title>
+    <link rel="stylesheet" href="../css/psse.css">
+    
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <h1><img width="75px" src="../img/baba.svg">avamaity </h1>
+        </div>
+        <div id="content">
+            <div id="nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../pages/pidx.html">Blog</a></li>
+                    <li><a href="widx.html">Work</a></li>
+                </ul>
+            </div>
+            <div id="main">
+                <h2>Roeper Example</h2>
+                <p>Here is an example from the book Short-circuit Currents in Three-phase Systems 
+                    by Richard Roeper. I was surprised to find that my calculations using the 
+                    admittance matrix method rendered with python did not tally with some of the 
+                    results given in the book.
+                </p>
+                
+                <p>The example is the one towards the end of the book titled Example 3: Initial A.C. 
+                    Short-circuit Currents I<sup>"</sup><sub>k</sub> for the Five Kinds of Short 
+                    Circuit in a Meshed System with Several Infeeds. What stumped me was that the 
+                    three pole short impedance tallied to two decimal places yet the zero sequence 
+                    impedance was close but not equal.
+                </p>
+                
+                <p>Since nothing would make sense without a circuit diagram, here is the interconnected
+                    system depicted in the book.
+                </p>
+                <img src="../img/roeper.png" > 
+                <p>The fault point is at D. After detailing the equipment ratings and mesh connections, 
+                    the book goes on to give a step by step account of the circuit reduction procedure.
+                    The impedance values for the positive-, negative-, and zero-sequence systems given 
+                    in book are:
+                </p>
+                <code class="prettyprint lang-py">
+                    import os, sys <br/>
+                    PSSE_LOCATION = r"C:\Program Files (x86)\PTI\PSSE33\PSSBIN" <br/>
+                    sys.path.append(PSSE_LOCATION) <br/>
+                    os.environ['PATH'] = os.environ['PATH'] + ';' + PSSE_LOCATION <br/>
+                    import psspy <br/>
+                    import redirect <br/>
+                    redirect.psse2py()
+                </code>
+                <p>Feed in the case file. Note the location of the file.</p>
+                <code class="prettyprint lang-py">
+                    import psspy, redirect <br/>
+                    SAVFILE_LOCATION = r"C:\Program Files (x86)\PTI\PSSE33\EXAMPLE\\" <br/>
+                    CASE = r"savnw.sav" <br/>
+                    psspy.case(SAVFILE_LOCATION + CASE) <br/>
+                </code>
+                <p>Run the Full Newton Raphson solution. You should get the full powerflow output in your program console.</p>
+                <code class="prettyprint lang-py">
+                    psspy.fnsl((1,0,1,0,0,0,99,1)) <br/>
+                    psspy.inibus(0) <br/>
+                    psspy.pout() 
+                </code>
+                <p>
+                    The easiest way to run the above code would be to fire up <span style="color: #ff0000">idle (python GUI)</span>, 
+                    which is available from your Windows startup menu in the <span style="color: #ff0000">Python 2.7</span> folder. 
+                    Click <span style="color: #ff0000">New Window</span> in the file menu of your idle (python GUI) editor, copy paste the 
+                    above code in this new window, save it with an appropriate name say - test.py. Run the code by clicking 
+                    <span style="color: #ff0000">Run Module</span> from the Run menu. If all goes exactly as described, a powerflow 
+                    output in 132 columns format will be displayed in the idle console.
+                </p>
+            </div>
+        </div>
+        <div id="footer">
+            <a href="https://twitter.com/intent/tweet?screen_name=avamaity" class="twitter-mention-button" data-size="large" data-show-count="false">Tweet to @avamaity</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>        
+        </div>
+    </div>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+</body>
+</html>
