@@ -30,7 +30,7 @@ To change this template use Tools | Templates.
                 </p>
                 
                 <p>Paste this little function in your favourite python editior:</p>
-                <div markdowm=1>
+                <div markdowm="1">
                     ```python
                 from itertools import islice
                 def read_rawdata(floc,fname):
@@ -43,10 +43,10 @@ To change this template use Tools | Templates.
                                 data[key], n = n, 0
                         else: n += 1
                     return data
-                    if __name__ == "__main__":
-                        floc = r"C:\Program Files (x86)\PTI\PSSE33\EXAMPLE\\" <br/>
-                        fname = "savnw.raw" <br/>
-                        rawdat = read_rawdata(floc,fname)
+                if __name__ == "__main__":
+                    floc = r"C:\Program Files (x86)\PTI\PSSE33\EXAMPLE\\" <br/>
+                    fname = "savnw.raw" <br/>
+                    rawdat = read_rawdata(floc,fname)
                 ```
                 </div>
                 <p>
