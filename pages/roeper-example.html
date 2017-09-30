@@ -25,8 +25,8 @@ To change this template use Tools | Templates.
             </div>
             <div id="main">
                 <h2>Roeper Example</h2>
-                <p>Here is an example from the book Short-circuit Currents in Three-phase Systems 
-                    by Richard Roeper. I was surprised to find that my calculations using the 
+                <p>Here is an example from the book <span style="color:blue">Short-circuit Currents in Three-phase Systems</span> 
+                    by <span style="color:blue">Richard Roeper</span>. I was surprised to find that my calculations using the 
                     admittance matrix method rendered with python did not tally with some of the 
                     results given in the book.
                 </p>
@@ -41,7 +41,7 @@ To change this template use Tools | Templates.
                 <p>Since nothing would make sense without a circuit diagram, here is the interconnected
                     system depicted in the book.
                 </p>
-                <img src="../img/roeper.png" > 
+                <center><img src="../img/roeper.png" ></center> 
                 <p>The fault point is at D. After detailing the equipment ratings and mesh connections, 
                     the book goes on to give a step by step account of the circuit reduction procedure.
                     The impedance values for the positive-, negative-, and zero-sequence systems given 
@@ -53,9 +53,7 @@ To change this template use Tools | Templates.
                 <p>
                     Z<sub>0D</sub> = (6.406 + j10.978)Ω = 12.710Ω(φ=69.73<sup>o</sup>)
                 </p>
-                <p>
-                    Note that the cartesian and polar representations do not tally.
-                </p>
+                <p>Note that the cartesian and polar representations do not tally.</p>
                 <p>
                     Here is a small script that calculates the above impedances using the admittance 
                     matrix method. The script starts of with the impedance calculations of each branch 
