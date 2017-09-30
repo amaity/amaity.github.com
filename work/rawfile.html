@@ -1,0 +1,75 @@
+<!--
+To change this template use Tools | Templates.
+-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Prelims</title>
+    <link rel="stylesheet" href="../css/psse.css">
+    
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <h1><img width="75px" src="../img/baba.svg">avamaity </h1>
+        </div>
+        <div id="content">
+            <div id="nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../pages/pidx.html">Blog</a></li>
+                    <li><a href="widx.html">Work</a></li>
+                </ul>
+            </div>
+            <div id="main">
+                <h2>PSSE - What are your power system elements?</h2>
+                <p>Want to know the number and type of elements in your power system study? 
+                    It's easy. All you require is the PSSE raw file. 
+                    Let's use the following example file in the PSSE example 
+                    directory - <span style="color: blue">savnw.raw</span>.
+                </p>
+                
+                <p>Paste this little function in your favourite python editior:</p>
+                <code class="prettyprint lang-py">
+                    from itertools import islice <br/>
+                    def read_rawdata(floc,fname): <br/>
+                        n, data = 0, {} <br/>
+                        with open(floc + fname) as f: <br/>
+                            for line in islice(f,3,None): <br/>
+                                if "0 /" in line: <br/>
+                                    key = line.split("END OF")[1].split("BEGIN")[0].replace(",","")<br/>
+                                    key = key.strip() <br/>
+                                    data[key], n = n, 0 <br/>
+                                else: n += 1 <br/>
+                        return data <br/>
+                    if __name__ == "__main__":
+                        floc = r"C:\Program Files (x86)\PTI\PSSE33\EXAMPLE\\" <br/>
+                        fname = "savnw.raw" <br/>
+                        rawdat = read_rawdata(floc,fname)
+                </code>
+                <p>
+                    Now, print the contents of the <span style="color:red">rawdat</span> variable.
+                    with the following bit of code:
+                </p>
+                <code class="prettyprint lang-py">
+                    print {key:value for key, value in rawdat.iteritems() if not value==0}
+                </code>
+                <p>The output should be as follows:</p>
+                <code class="prettyprint lang-py">
+                    {'BRANCH DATA': 23, 'BUS DATA': 23, 'INTER-AREA TRANSFER DATA': 4, 'AREA DATA': 3, <br/>
+                    'GENERATOR DATA': 6, 'LOAD DATA': 8, 'MULTI-SECTION LINE DATA': 2, <br/>
+                    'FIXED SHUNT DATA': 5, 'TRANSFORMER DATA': 44, 'OWNER DATA': 7, 'ZONE DATA': 4}
+                </code>
+                <p>
+                    That at a glance are the number and type of power system elements in the PSSE  
+                    example file.
+                </p>
+            </div>
+        </div>
+        <div id="footer">
+            <a href="https://twitter.com/intent/tweet?screen_name=avamaity" class="twitter-mention-button" data-size="large" data-show-count="false">Tweet to @avamaity</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>        
+        </div>
+    </div>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+</body>
+</html>
