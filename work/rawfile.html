@@ -33,22 +33,22 @@ To change this template use Tools | Templates.
                 <code class="prettyprint lang-py">
                     from itertools import islice <br/>
                     def read_rawdata(floc,fname): <br/>
-                        n, data = 0, {} <br/>
-                        with open(floc + fname) as f: <br/>
-                            for line in islice(f,3,None): <br/>
-                                if "0 /" in line: <br/>
+                        &#x09;n, data = 0, {} <br/>
+                        &#x09;with open(floc + fname) as f: <br/>
+                            &#x09;&#x09;for line in islice(f,3,None): <br/>
+                                &#x09;&#x09;&#x09;if "0 /" in line: <br/>
                                     key = line.split("END OF")[1].split("BEGIN")[0].replace(",","")<br/>
                                     key = key.strip() <br/>
                                     data[key], n = n, 0 <br/>
                                 else: n += 1 <br/>
                         return data <br/>
                     if __name__ == "__main__":
-                        floc = r"C:\Program Files (x86)\PTI\PSSE33\EXAMPLE\\" <br/>
-                        fname = "savnw.raw" <br/>
-                        rawdat = read_rawdata(floc,fname)
+                        &#x09;floc = r"C:\Program Files (x86)\PTI\PSSE33\EXAMPLE\\" <br/>
+                        &#x09;fname = "savnw.raw" <br/>
+                        &#x09;rawdat = read_rawdata(floc,fname)
                 </code>
                 <p>
-                    Now, print the contents of the <span style="color:red">rawdat</span> variable.
+                    Now, print the contents of the <span style="color:red">rawdat</span> variable
                     with the following bit of code:
                 </p>
                 <code class="prettyprint lang-py">
@@ -61,7 +61,7 @@ To change this template use Tools | Templates.
                     'FIXED SHUNT DATA': 5, 'TRANSFORMER DATA': 44, 'OWNER DATA': 7, 'ZONE DATA': 4}
                 </code>
                 <p>
-                    That at a glance are the number and type of power system elements in the PSSE  
+                    That at a glance gives you the number and type of power system elements in the PSSE  
                     example file.
                 </p>
             </div>
