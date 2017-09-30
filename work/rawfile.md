@@ -1,7 +1,3 @@
----
-layout: default
----
-
 
 ## PSSE - What are your power system elements?
    

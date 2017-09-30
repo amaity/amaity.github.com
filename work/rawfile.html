@@ -1,0 +1,75 @@
+<!--
+To change this template use Tools | Templates.
+-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Prelims</title>
+    <link rel="stylesheet" href="../css/psse.css">
+    
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <h1><img width="75px" src="../img/baba.svg">avamaity </h1>
+        </div>
+        <div id="content">
+            <div id="nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../pages/pidx.html">Blog</a></li>
+                    <li><a href="widx.html">Work</a></li>
+                </ul>
+            </div>
+            <div id="main">
+                <h2>PSSE - What are your power system elements?</h2>
+                <p>Want to know the number and type of elements in your power system study? 
+                    It's easy. All you require is the PSSE raw file. 
+                    Let's use the following example file in the PSSE example 
+                    directory - <span style="color: blue">savnw.raw</span>.
+                </p>
+                
+                <p>Paste this little function in your favourite python editior:</p>
+                <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">from</span> <span style="color: #0e84b5; font-weight: bold">itertools</span> <span style="color: #008800; font-weight: bold">import</span> islice
+<span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">read_rawdata</span>(floc,fname):
+    n, data <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>, {}
+    <span style="color: #008800; font-weight: bold">with</span> <span style="color: #007020">open</span>(floc <span style="color: #333333">+</span> fname) <span style="color: #008800; font-weight: bold">as</span> f:
+        <span style="color: #008800; font-weight: bold">for</span> line <span style="color: #000000; font-weight: bold">in</span> islice(f,<span style="color: #0000DD; font-weight: bold">3</span>,<span style="color: #007020">None</span>):
+            <span style="color: #008800; font-weight: bold">if</span> <span style="background-color: #fff0f0">&quot;0 /&quot;</span> <span style="color: #000000; font-weight: bold">in</span> line:
+                key <span style="color: #333333">=</span> line<span style="color: #333333">.</span>split(<span style="background-color: #fff0f0">&quot;END OF&quot;</span>)[<span style="color: #0000DD; font-weight: bold">1</span>]<span style="color: #333333">.</span>split(<span style="background-color: #fff0f0">&quot;BEGIN&quot;</span>)[<span style="color: #0000DD; font-weight: bold">0</span>]<span style="color: #333333">.</span>replace(<span style="background-color: #fff0f0">&quot;,&quot;</span>,<span style="background-color: #fff0f0">&quot;&quot;</span>)
+                key <span style="color: #333333">=</span> key<span style="color: #333333">.</span>strip()
+                data[key], n <span style="color: #333333">=</span> n, <span style="color: #0000DD; font-weight: bold">0</span>
+            <span style="color: #008800; font-weight: bold">else</span>: n <span style="color: #333333">+=</span> <span style="color: #0000DD; font-weight: bold">1</span>
+    <span style="color: #008800; font-weight: bold">return</span> data
+<span style="color: #008800; font-weight: bold">if</span> __name__ <span style="color: #333333">==</span> <span style="background-color: #fff0f0">&quot;__main__&quot;</span>:
+    floc <span style="color: #333333">=</span> <span style="background-color: #fff0f0">r&quot;C:\Program Files (x86)\PTI\PSSE33\EXAMPLE</span><span style="color: #666666; font-weight: bold; background-color: #fff0f0">\\</span><span style="background-color: #fff0f0">&quot;</span> 
+    fname <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;savnw.raw&quot;</span>
+    rawdat <span style="color: #333333">=</span> read_rawdata(floc,fname)
+</pre></div>
+
+                <p>
+                    Now, print the contents of the <span style="color:red">rawdat</span> variable
+                    with the following bit of code:
+                </p>
+                <code class="prettyprint lang-py">
+                    print {key:value for key, value in rawdat.iteritems() if not value==0}
+                </code>
+                <p>The output should be as follows:</p>
+                <code class="prettyprint lang-py">
+                    {'BRANCH DATA': 23, 'BUS DATA': 23, 'INTER-AREA TRANSFER DATA': 4, 'AREA DATA': 3, <br/>
+                    'GENERATOR DATA': 6, 'LOAD DATA': 8, 'MULTI-SECTION LINE DATA': 2, <br/>
+                    'FIXED SHUNT DATA': 5, 'TRANSFORMER DATA': 44, 'OWNER DATA': 7, 'ZONE DATA': 4}
+                </code>
+                <p>
+                    That at a glance gives you the number and type of power system elements in the PSSE  
+                    example file.
+                </p>
+            </div>
+        </div>
+        <div id="footer">
+            <a href="https://twitter.com/intent/tweet?screen_name=avamaity" class="twitter-mention-button" data-size="large" data-show-count="false">Tweet to @avamaity</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>        
+        </div>
+    </div>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+</body>
+</html>
