@@ -30,27 +30,23 @@ To change this template use Tools | Templates.
                 </p>
                 
                 <p>Paste this little function in your favourite python editior:</p>
-                <code class="prettyprint lang-py">
-                    from itertools import islice 
-                    
-                    def read_rawdata(floc,fname): 
-                    
-                            n, data = 0, {} 
-                    
-                            with open(floc + fname) as f: 
-                    
-                            &#x09;&#x09;for line in islice(f,3,None): <br/>
-                                &#x09;&#x09;&#x09;if "0 /" in line: <br/>
-                                    key = line.split("END OF")[1].split("BEGIN")[0].replace(",","")<br/>
-                                    key = key.strip() <br/>
-                                    data[key], n = n, 0 <br/>
-                                else: n += 1 <br/>
-                        return data <br/>
+                ```python
+                from itertools import islice
+                def read_rawdata(floc,fname):
+                    n, data = 0, {}
+                    with open(floc + fname) as f:
+                        for line in islice(f,3,None):
+                            if "0 /" in line:
+                                key = line.split("END OF")[1].split("BEGIN")[0].replace(",","")
+                                key = key.strip()
+                                data[key], n = n, 0
+                        else: n += 1
+                    return data
                     if __name__ == "__main__":
-                        &#x09;floc = r"C:\Program Files (x86)\PTI\PSSE33\EXAMPLE\\" <br/>
-                        &#x09;fname = "savnw.raw" <br/>
-                        &#x09;rawdat = read_rawdata(floc,fname)
-                </code>
+                        floc = r"C:\Program Files (x86)\PTI\PSSE33\EXAMPLE\\" <br/>
+                        fname = "savnw.raw" <br/>
+                        rawdat = read_rawdata(floc,fname)
+                ```
                 <p>
                     Now, print the contents of the <span style="color:red">rawdat</span> variable
                     with the following bit of code:
