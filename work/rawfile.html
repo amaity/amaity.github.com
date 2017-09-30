@@ -31,10 +31,14 @@ To change this template use Tools | Templates.
                 
                 <p>Paste this little function in your favourite python editior:</p>
                 <code class="prettyprint lang-py">
-                    from itertools import islice <br/>
-                    def read_rawdata(floc,fname): <br/>
-                        &#x09;n, data = 0, {} <br/>
-                        &#x09;with open(floc + fname) as f: <br/>
+                    from itertools import islice 
+                    
+                    def read_rawdata(floc,fname): 
+                    
+                            n, data = 0, {} 
+                    
+                            with open(floc + fname) as f: 
+                    
                             &#x09;&#x09;for line in islice(f,3,None): <br/>
                                 &#x09;&#x09;&#x09;if "0 /" in line: <br/>
                                     key = line.split("END OF")[1].split("BEGIN")[0].replace(",","")<br/>
