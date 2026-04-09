@@ -1,71 +1,226 @@
-/*
-    Document   : css/work.css
-    Created on : 2017-01-08 02:47 PM
-    Author     : amaity
-    Description:
-    Purpose of the stylesheet follows.
-    To change this template use Tools | Templates.
-*/
+/* ============================================================
+   Design tokens (shared with main.css)
+   ============================================================ */
+:root {
+  --bg:      #fafafa;
+  --surface: #ffffff;
+  --text:    #1a1a1a;
+  --muted:   #6b7280;
+  --accent:  #2563eb;
+  --border:  #e5e7eb;
+  --radius:  4px;
+}
 
-root {
-    display: block;
+/* ============================================================
+   Reset
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ============================================================
+   Base
+   ============================================================ */
+html {
+  font-size: 16px;
 }
 
 body {
-    background-color: #EEE;
+  font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  line-height: 1.7;
+  color: var(--text);
+  background: var(--bg);
 }
 
 img {
-    vertical-align: middle;
+  vertical-align: middle;
+  max-width: 100%;
 }
 
 a {
-    clear: both;
-    padding: 5px;
-    background-color: #666;
-    color: white;
-    text-align: center;
-    font-size: 150%;
-    text-decoration: none;
+  color: var(--accent);
+  text-decoration: none;
 }
 
+a:hover {
+  text-decoration: underline;
+}
+
+/* ============================================================
+   Layout
+   ============================================================ */
 #container {
-    background-color: white;
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
 }
 
+/* ============================================================
+   Header
+   ============================================================ */
 #header {
-    background-color: #EEE;
-    font-family:Ravie;
-    font-size: 200%;
-    text-align:center;
-    padding-bottom: 20px;
+  padding: 2.5rem 0 1.25rem;
 }
 
-#content #nav ul {
-    padding: 20px;
+#header h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  letter-spacing: -0.02em;
 }
 
-#content #nav ul li {
-    list-style: none;
-    display: inline;
+#header h1 img {
+  width: 36px;
+  height: auto;
 }
 
-.active{
-    font-size: 150%;
+/* ============================================================
+   Navigation
+   ============================================================ */
+#nav {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.75rem;
+  margin-bottom: 2.5rem;
 }
 
+#nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  padding: 0;
+}
+
+#nav ul li {
+  display: inline;
+}
+
+#nav ul li a {
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  background: none;
+  padding: 0;
+}
+
+#nav ul li a:hover {
+  color: var(--accent);
+  text-decoration: none;
+  background: none;
+}
+
+/* ============================================================
+   Main content
+   ============================================================ */
 #main {
-    font-size: 150%;
-    padding: 20px;
+  font-size: 1rem;
+  padding: 0.5rem 0 2.5rem;
+  line-height: 1.75;
 }
 
+#main h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+#main h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 1.75rem 0 0.5rem;
+  color: var(--text);
+}
+
+#main h4,
+#main h5 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 1.25rem 0 0.5rem;
+  color: var(--muted);
+}
+
+#main p {
+  margin-bottom: 1rem;
+}
+
+#main ul,
+#main ol {
+  margin: 0.5rem 0 1rem 1.5rem;
+}
+
+#main li {
+  margin-bottom: 0.35rem;
+}
+
+#main code,
+#main .prettyprint {
+  display: block;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  padding: 1rem 1.25rem;
+  margin: 0.75rem 0 1.5rem;
+  overflow-x: auto;
+  color: var(--text);
+  white-space: pre;
+}
+
+#main table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1rem 0 1.5rem;
+  font-size: 0.9rem;
+}
+
+#main table th,
+#main table td {
+  border: 1px solid var(--border);
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+}
+
+#main table th {
+  background: var(--bg);
+  font-weight: 600;
+}
+
+/* ============================================================
+   Footer
+   ============================================================ */
 #footer {
-    clear: both;
-    padding: 5px;
-    background-color: #666;
-    color: white;
-    text-align: center;
+  border-top: 1px solid var(--border);
+  padding: 1.5rem 0;
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--muted);
+  background: none;
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 600px) {
+  #container {
+    padding: 0 1rem;
+  }
+
+  #header {
+    padding: 1.5rem 0 1rem;
+  }
+
+  #nav ul {
+    gap: 1rem;
+  }
 }
