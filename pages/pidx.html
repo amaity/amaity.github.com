@@ -3,38 +3,83 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Blog — avamaity</title>
-    <meta name="description" content="Blog posts by Amitava Maity.">
+    <title>Writing — avamaity</title>
+    <meta name="description" content="Essays and blog posts by Amitava Maity.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="../css/main.css">
 </head>
-<body class="body">
+<body>
 
-    <header class="mainheader">
-        <h1><img src="../img/baba.svg" alt="logo">avamaity</h1>
+    <header class="site-header">
+        <a href="../index.html" class="wordmark">avamaity</a>
+        <nav class="site-nav">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li class="active"><a href="#">Blog</a></li>
+                <li><a href="../work/widx.html">Work</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li class="active"><a href="./pidx.html">Blog</a></li>
-            <li><a href="../work/widx.html">Work</a></li>
-        </ul>
-    </nav>
+    <header class="page-hero">
+        <div class="container-wide">
+            <h1>Writing</h1>
+            <p>Essays on art, culture, books, and whatever else.</p>
+        </div>
+    </header>
 
-    <article class="content">
-        <h1>My blogs!</h1>
-        <ul>
-            <li><a href="sindh.html">2020-07-28 — The Land of Two Rivers</a></li>
-            <li><a href="indianpaint.html">2020-05-19 — A Brief History of Indian Paintings</a></li>
-            <li><a href="books.html">2019-04-24 — Fiction and Non-fiction</a></li>
-            <li><a href="dauntingproj.html">2018-08-27 — My Daunting Project</a></li>
-            <li><a href="practice.html">2017-01-18 — CSS Practice</a></li>
-        </ul>
-    </article>
+    <main class="container-prose" style="padding-top: 3rem; padding-bottom: 4rem;">
 
-    <footer class="mainfooter">
-        <a href="https://twitter.com/intent/tweet?screen_name=avamaity" class="twitter-mention-button" data-size="large" data-show-count="false">Tweet to @avamaity</a>
-        <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <article class="post-card">
+            <div class="post-meta">
+                <span class="post-tag">Art History</span>
+                <time class="post-date" datetime="2020-07-28">2020-07-28</time>
+            </div>
+            <h2><a href="sindh.html">The Land of Two Rivers</a></h2>
+            <p class="post-subtitle">On the paintings of Balochistan and Sindh, and the difficulty of accessing South Asian art.</p>
+        </article>
+
+        <article class="post-card">
+            <div class="post-meta">
+                <span class="post-tag">Art History</span>
+                <time class="post-date" datetime="2020-05-19">2020-05-19</time>
+            </div>
+            <h2><a href="indianpaint.html">A Brief History of Indian Paintings</a></h2>
+            <p class="post-subtitle">A loose translation of Bharater Chitrakala by Sri Ashoke Mitra — from prehistoric caves to the medieval period.</p>
+        </article>
+
+        <article class="post-card">
+            <div class="post-meta">
+                <span class="post-tag">Reading</span>
+                <time class="post-date" datetime="2019-04-24">2019-04-24</time>
+            </div>
+            <h2><a href="books.html">Fiction and Non-fiction</a></h2>
+            <p class="post-subtitle">A running list of every book read — over a hundred titles across fiction and non-fiction.</p>
+        </article>
+
+        <article class="post-card">
+            <div class="post-meta">
+                <span class="post-tag">Reading</span>
+                <time class="post-date" datetime="2018-08-27">2018-08-27</time>
+            </div>
+            <h2><a href="dauntingproj.html">My Daunting Project</a></h2>
+            <p class="post-subtitle">Working through the hundred most influential books since the Second World War, as selected by the TLS in 1995.</p>
+        </article>
+
+        <article class="post-card">
+            <div class="post-meta">
+                <span class="post-tag">Meta</span>
+                <time class="post-date" datetime="2017-01-18">2017-01-18</time>
+            </div>
+            <h2><a href="practice.html">CSS Practice</a></h2>
+            <p class="post-subtitle">An exercise in HTML and CSS styling.</p>
+        </article>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; Amitava Maity &mdash; <a href="../index.html">avamaity</a></p>
     </footer>
 
 </body>

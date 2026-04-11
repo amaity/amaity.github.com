@@ -4,42 +4,127 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Work — avamaity</title>
-    <meta name="description" content="Work and projects by Amitava Maity.">
+    <meta name="description" content="Technical work and projects by Amitava Maity — Python scripts and power systems analysis.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="../css/main.css">
 </head>
-<body class="body">
+<body>
 
-    <header class="mainheader">
-        <h1><img src="../img/baba.svg" alt="logo">avamaity</h1>
+    <header class="site-header">
+        <a href="../index.html" class="wordmark">avamaity</a>
+        <nav class="site-nav">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../pages/pidx.html">Blog</a></li>
+                <li class="active"><a href="#">Work</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="../pages/pidx.html">Blog</a></li>
-            <li class="active"><a href="./widx.html">Work</a></li>
-        </ul>
-    </nav>
+    <header class="page-hero page-hero--indigo">
+        <div class="container-wide">
+            <h1>Work</h1>
+            <p>Python scripts, power systems analysis, and network visualizations.</p>
+        </div>
+    </header>
 
-    <article class="content">
-        <h1>My latest work!</h1>
-        <ul>
-            <li><a href="psse-prelim.html">2017-01-08 — PSSE - Getting Started</a></li>
-            <li><a href="rawfile.html">2016-09-18 — What are your power system elements</a></li>
-            <li><a href="consumer_con.html">2016-06-09 — Consumer Connections Alternate View</a></li>
-            <li><a href="consumer.html">2015-07-05 — Consumer Contract Demand</a></li>
-            <li><a href="contree.html">2015-06-22 — Consumer Connectivity Diagram</a></li>
-            <li><a href="netviz.html">2015-02-25 — Network Visualization Proposal</a></li>
-            <li><a href="flow_alt.html">2015-01-31 — DVC Network</a></li>
-            <li><a href="magsat.html">2013-10-26 — Magnetic Saturation</a></li>
-            <li><a href="roeper-example.html">2013-05-12 — Roeper Example</a></li>
-            <li><a href="lineconst.html">2013-04-01 — Line Constants</a></li>
-        </ul>
-    </article>
+    <main class="container-prose" style="padding-top: 3rem; padding-bottom: 4rem;">
 
-    <footer class="mainfooter">
-        <a href="https://twitter.com/intent/tweet?screen_name=avamaity" class="twitter-mention-button" data-size="large" data-show-count="false">Tweet to @avamaity</a>
-        <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <article class="work-card">
+            <div class="post-meta">
+                <span class="post-tag">Python</span>
+                <time class="post-date" datetime="2017-01-08">2017-01-08</time>
+            </div>
+            <h2><a href="psse-prelim.html">PSSE — Getting Started</a></h2>
+            <p class="post-subtitle">Connecting the PSSE power systems engine through Python and running a basic load flow analysis.</p>
+        </article>
+
+        <article class="work-card">
+            <div class="post-meta">
+                <span class="post-tag">Python</span>
+                <time class="post-date" datetime="2016-09-18">2016-09-18</time>
+            </div>
+            <h2><a href="rawfile.html">What Are Your Power System Elements?</a></h2>
+            <p class="post-subtitle">A Python script that reads a PSSE raw file and counts every element type in the network.</p>
+        </article>
+
+        <article class="work-card">
+            <div class="post-meta">
+                <span class="post-tag">Python</span>
+                <time class="post-date" datetime="2016-06-09">2016-06-09</time>
+            </div>
+            <h2><a href="consumer_con.html">Consumer Connections — Alternate View</a></h2>
+            <p class="post-subtitle">An alternate visualization of consumer connection data from the DVC network.</p>
+        </article>
+
+        <article class="work-card">
+            <div class="post-meta">
+                <span class="post-tag">Visualization</span>
+                <time class="post-date" datetime="2015-07-05">2015-07-05</time>
+            </div>
+            <h2><a href="consumer.html">Consumer Contract Demand</a></h2>
+            <p class="post-subtitle">An interactive D3.js visualization of consumer contract demand data.</p>
+        </article>
+
+        <article class="work-card">
+            <div class="post-meta">
+                <span class="post-tag">Visualization</span>
+                <time class="post-date" datetime="2015-06-22">2015-06-22</time>
+            </div>
+            <h2><a href="contree.html">Consumer Connectivity Diagram</a></h2>
+            <p class="post-subtitle">A collapsible D3.js tree diagram showing the hierarchy of the DVC consumer network.</p>
+        </article>
+
+        <article class="work-card">
+            <div class="post-meta">
+                <span class="post-tag">Visualization</span>
+                <time class="post-date" datetime="2015-02-25">2015-02-25</time>
+            </div>
+            <h2><a href="netviz.html">Network Visualization Proposal</a></h2>
+            <p class="post-subtitle">A proposal for browser-based power system diagrams using HTML5, SVG, and D3.js.</p>
+        </article>
+
+        <article class="work-card">
+            <div class="post-meta">
+                <span class="post-tag">Visualization</span>
+                <time class="post-date" datetime="2015-01-31">2015-01-31</time>
+            </div>
+            <h2><a href="flow_alt.html">DVC Network</a></h2>
+            <p class="post-subtitle">A D3.js force-directed graph of the DVC power network, colored by voltage level.</p>
+        </article>
+
+        <article class="work-card">
+            <div class="post-meta">
+                <span class="post-tag">Power Systems</span>
+                <time class="post-date" datetime="2013-10-26">2013-10-26</time>
+            </div>
+            <h2><a href="magsat.html">Magnetic Saturation</a></h2>
+            <p class="post-subtitle">A Python translation of a Mathematica script for plotting the Langevin magnetic saturation curve.</p>
+        </article>
+
+        <article class="work-card">
+            <div class="post-meta">
+                <span class="post-tag">Power Systems</span>
+                <time class="post-date" datetime="2013-05-12">2013-05-12</time>
+            </div>
+            <h2><a href="roeper-example.html">Roeper Example</a></h2>
+            <p class="post-subtitle">Three-phase short-circuit current calculations using the admittance matrix method, following Roeper.</p>
+        </article>
+
+        <article class="work-card">
+            <div class="post-meta">
+                <span class="post-tag">Power Systems</span>
+                <time class="post-date" datetime="2013-04-01">2013-04-01</time>
+            </div>
+            <h2><a href="lineconst.html">Line Constants</a></h2>
+            <p class="post-subtitle">Computing transmission line impedance parameters for overhead power lines.</p>
+        </article>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; Amitava Maity &mdash; <a href="../index.html">avamaity</a></p>
     </footer>
 
 </body>
