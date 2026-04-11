@@ -1,53 +1,14 @@
 /* ============================================================
-   Google Fonts
-   ============================================================ */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Barlow+Condensed:wght@400;600;700&family=Lora:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400&display=swap');
-
-/* ============================================================
-   Design tokens
+   Design tokens (shared with main.css)
    ============================================================ */
 :root {
-  /* Core */
-  --ink:          #0F0E0A;
-  --paper:        #F5F0E8;
-  --paper-dark:   #EDE8DC;
-
-  /* Accent — saffron */
-  --saffron:      #E07B39;
-  --saffron-deep: #B85C1A;
-  --saffron-pale: #FBF0E6;
-
-  /* Secondary — indigo */
-  --indigo:       #2D3A8C;
-  --indigo-light: #4A5AB0;
-
-  /* Utility */
-  --muted:        #7A6E5F;
-  --border:       #D8CEBC;
-
-  /* Code panels */
-  --code-bg:      #1A1814;
-  --code-text:    #E8E0D0;
-
-  /* Book status */
-  --reading:      #2D7A3A;
-  --unfinished:   #A0522D;
-
-  /* Spacing */
-  --space-2:  0.5rem;
-  --space-3:  0.75rem;
-  --space-4:  1rem;
-  --space-5:  1.25rem;
-  --space-6:  1.5rem;
-  --space-8:  2rem;
-  --space-10: 2.5rem;
-  --space-12: 3rem;
-  --space-16: 4rem;
-
-  /* Layout */
-  --max-prose: 680px;
-  --radius-sm: 2px;
-  --radius-md: 4px;
+  --bg:      #fafafa;
+  --surface: #ffffff;
+  --text:    #1a1a1a;
+  --muted:   #6b7280;
+  --accent:  #2563eb;
+  --border:  #e5e7eb;
+  --radius:  4px;
 }
 
 /* ============================================================
@@ -64,15 +25,13 @@
    ============================================================ */
 html {
   font-size: 16px;
-  scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Lora', Georgia, serif;
-  font-size: 1rem;
-  line-height: 1.75;
-  color: var(--ink);
-  background: var(--paper);
+  font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  line-height: 1.7;
+  color: var(--text);
+  background: var(--bg);
 }
 
 img {
@@ -81,89 +40,59 @@ img {
 }
 
 a {
-  color: var(--saffron-deep);
+  color: var(--accent);
   text-decoration: none;
 }
 
 a:hover {
-  color: var(--saffron);
   text-decoration: underline;
 }
 
-hr {
-  border: 0;
-  border-top: 1px solid var(--border);
-  margin: var(--space-8) 0;
-}
-
 /* ============================================================
-   Legacy container — wraps all content pages
+   Layout
    ============================================================ */
 #container {
-  max-width: 100%;
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
 }
 
 /* ============================================================
-   Site header (replaces #header)
+   Header
    ============================================================ */
 #header {
-  background: var(--ink);
-  padding: var(--space-4) var(--space-6);
+  padding: 2.5rem 0 1.25rem;
+}
+
+#header h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text);
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: var(--space-6);
-}
-
-#header a.wordmark,
-#header h1 a {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 700;
-  font-size: 2rem;
-  letter-spacing: -0.01em;
-  color: var(--paper);
-  text-decoration: none;
-  line-height: 1;
-}
-
-#header a.wordmark:hover,
-#header h1 a:hover {
-  color: var(--saffron);
-  text-decoration: none;
-}
-
-/* Legacy h1 inside header — hide img, style text */
-#header h1 {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 700;
-  font-size: 2rem;
-  color: var(--paper);
-  background: none;
-  padding: 0;
-  margin: 0;
-  letter-spacing: -0.01em;
+  gap: 0.5rem;
+  letter-spacing: -0.02em;
 }
 
 #header h1 img {
-  display: none;
+  width: 36px;
+  height: auto;
 }
 
 /* ============================================================
-   Navigation (replaces #nav)
+   Navigation
    ============================================================ */
 #nav {
-  background: var(--ink);
-  padding: 0 var(--space-6) var(--space-3);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  margin-bottom: 0;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.75rem;
+  margin-bottom: 2.5rem;
 }
 
 #nav ul {
   list-style: none;
   display: flex;
-  gap: var(--space-6);
+  gap: 1.5rem;
   padding: 0;
-  flex-wrap: wrap;
 }
 
 #nav ul li {
@@ -171,317 +100,127 @@ hr {
 }
 
 #nav ul li a {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 600;
-  font-size: 0.875rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
   color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 500;
   text-decoration: none;
-  padding-bottom: 2px;
-  border-bottom: 2px solid transparent;
+  background: none;
+  padding: 0;
 }
 
-#nav ul li a:hover,
-#nav ul li.active a {
-  color: var(--paper);
+#nav ul li a:hover {
+  color: var(--accent);
   text-decoration: none;
-  border-bottom-color: var(--saffron);
+  background: none;
 }
 
 /* ============================================================
-   Main content area
+   Main content
    ============================================================ */
 #main {
-  max-width: var(--max-prose);
-  margin: 0 auto;
-  padding: var(--space-12) var(--space-6) var(--space-16);
+  font-size: 1rem;
+  padding: 0.5rem 0 2.5rem;
   line-height: 1.75;
 }
 
-/* Article header block */
-#main .article-header {
-  padding-bottom: var(--space-8);
-  border-bottom: 1px solid var(--border);
-  margin-bottom: var(--space-8);
-}
-
-#main .article-tag {
-  display: inline-block;
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 700;
-  font-size: 0.75rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--saffron-deep);
-  background: var(--saffron-pale);
-  padding: 2px 8px;
-  border-radius: var(--radius-sm);
-  margin-bottom: var(--space-3);
-}
-
-#main .article-date {
-  display: block;
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 0.875rem;
-  color: var(--muted);
-  margin-bottom: var(--space-4);
-}
-
-#main .article-title {
-  font-family: 'Playfair Display', serif;
-  font-weight: 900;
-  font-size: clamp(1.75rem, 5vw, 2.75rem);
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-  color: var(--ink);
-  margin-bottom: var(--space-4);
-}
-
-#main .article-title::after {
-  content: '';
-  display: block;
-  width: 3rem;
-  height: 3px;
-  background: var(--saffron);
-  margin-top: var(--space-4);
-}
-
-/* Headings */
-#main h1 {
-  font-family: 'Playfair Display', serif;
-  font-weight: 900;
-  font-size: clamp(1.75rem, 4vw, 2.5rem);
-  letter-spacing: -0.02em;
-  line-height: 1.2;
-  color: var(--ink);
-  margin: var(--space-10) 0 var(--space-5);
-}
-
 #main h2 {
-  font-family: 'Playfair Display', serif;
-  font-weight: 700;
   font-size: 1.5rem;
-  color: var(--ink);
-  margin: var(--space-10) 0 var(--space-4);
-  line-height: 1.25;
-  letter-spacing: -0.01em;
-}
-
-#main h2::before {
-  content: '§ ';
-  color: var(--saffron);
-  font-style: normal;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.02em;
+  color: var(--text);
 }
 
 #main h3 {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 700;
-  font-size: 1.125rem;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--indigo);
-  margin: var(--space-8) 0 var(--space-3);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 1.75rem 0 0.5rem;
+  color: var(--text);
 }
 
 #main h4,
 #main h5 {
-  font-family: 'Lora', serif;
+  font-size: 0.95rem;
   font-weight: 600;
-  font-style: italic;
-  font-size: 0.9rem;
+  margin: 1.25rem 0 0.5rem;
   color: var(--muted);
-  margin: var(--space-6) 0 var(--space-2);
 }
 
-/* Paragraphs */
 #main p {
-  font-family: 'Lora', serif;
-  color: var(--ink);
-  margin-bottom: var(--space-5);
+  margin-bottom: 1rem;
 }
 
-/* Lists */
 #main ul,
 #main ol {
-  padding-left: var(--space-6);
-  margin-bottom: var(--space-5);
+  margin: 0.5rem 0 1rem 1.5rem;
 }
 
 #main li {
-  font-family: 'Lora', serif;
-  margin-bottom: var(--space-2);
-  color: var(--ink);
+  margin-bottom: 0.35rem;
 }
 
-/* Blockquote */
-#main blockquote {
-  border-left: 5px solid var(--saffron);
-  padding-left: var(--space-6);
-  margin: var(--space-8) 0;
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  font-size: 1.125rem;
-  color: var(--muted);
-}
-
-/* Code blocks — override Google Prettify and inline code */
 #main code,
-#main pre,
-#main .prettyprint,
-#main div[style*="background"],
-#main .code-block {
-  font-family: 'JetBrains Mono', 'Courier New', monospace !important;
-  font-size: 0.875rem !important;
-  line-height: 1.7 !important;
-  background: var(--code-bg) !important;
-  color: var(--code-text) !important;
-  border-left: 4px solid var(--saffron) !important;
-  border-top: none !important;
-  border-right: none !important;
-  border-bottom: none !important;
-  border-radius: var(--radius-sm) !important;
-  padding: var(--space-6) !important;
-  margin: var(--space-6) 0 !important;
-  overflow-x: auto !important;
-  display: block !important;
-  white-space: pre !important;
+#main .prettyprint {
+  display: block;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  padding: 1rem 1.25rem;
+  margin: 0.75rem 0 1.5rem;
+  overflow-x: auto;
+  color: var(--text);
+  white-space: pre;
 }
 
-/* Inline code (not in pre) */
-#main p code,
-#main li code {
-  display: inline !important;
-  background: var(--paper-dark) !important;
-  color: var(--saffron-deep) !important;
-  border-left: none !important;
-  padding: 1px 5px !important;
-  margin: 0 !important;
-  border-radius: var(--radius-md) !important;
-  font-size: 0.875em !important;
-}
-
-/* Tables */
 #main table {
   border-collapse: collapse;
   width: 100%;
-  margin: var(--space-6) 0;
-  font-family: 'Lora', serif;
+  margin: 1rem 0 1.5rem;
   font-size: 0.9rem;
 }
 
 #main table th,
 #main table td {
   border: 1px solid var(--border);
-  padding: var(--space-3) var(--space-4);
+  padding: 0.5rem 0.75rem;
   text-align: left;
 }
 
 #main table th {
-  background: var(--paper-dark);
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 700;
-  font-size: 0.8125rem;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: var(--ink);
-}
-
-/* Images */
-#main img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: var(--space-8) 0;
-  border-radius: var(--radius-md);
+  background: var(--bg);
+  font-weight: 600;
 }
 
 /* ============================================================
-   Book list status classes
-   ============================================================ */
-.book-read {
-  color: var(--reading);
-  font-style: italic;
-}
-
-.book-reading {
-  color: var(--indigo);
-  font-style: italic;
-}
-
-.book-unfinished {
-  color: var(--unfinished);
-  font-style: italic;
-}
-
-/* ============================================================
-   Footer (replaces #footer)
+   Footer
    ============================================================ */
 #footer {
-  background: var(--ink);
-  color: var(--muted);
-  padding: var(--space-8) var(--space-6);
+  border-top: 1px solid var(--border);
+  padding: 1.5rem 0;
+  margin-top: 2rem;
   text-align: center;
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 0.875rem;
-  letter-spacing: 0.03em;
-  margin-top: 0;
-  border-top: none;
-}
-
-#footer a {
-  color: var(--saffron);
-  text-decoration: none;
-}
-
-#footer a:hover {
-  color: var(--paper);
-  text-decoration: none;
+  font-size: 0.85rem;
+  color: var(--muted);
+  background: none;
 }
 
 /* ============================================================
    Responsive
    ============================================================ */
 @media (max-width: 600px) {
+  #container {
+    padding: 0 1rem;
+  }
+
   #header {
-    padding: var(--space-4);
-    flex-wrap: wrap;
-  }
-
-  #header h1 {
-    font-size: 1.5rem;
-  }
-
-  #nav {
-    padding: 0 var(--space-4) var(--space-3);
+    padding: 1.5rem 0 1rem;
   }
 
   #nav ul {
-    gap: var(--space-4);
-  }
-
-  #main {
-    padding: var(--space-8) var(--space-4) var(--space-12);
-  }
-}
-
-/* ============================================================
-   Print
-   ============================================================ */
-@media print {
-  * {
-    background: transparent !important;
-    color: #000 !important;
-    box-shadow: none !important;
-  }
-
-  #header,
-  #nav,
-  #footer {
-    display: none;
-  }
-
-  a[href]:after {
-    content: " (" attr(href) ")";
+    gap: 1rem;
   }
 }

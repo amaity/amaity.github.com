@@ -1,71 +1,70 @@
-<!DOCTYPE html>
-<html lang="en">
+<!--
+To change this template use Tools | Templates.
+-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>PSSE — Getting Started — avamaity</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Prelims</title>
     <link rel="stylesheet" href="../css/psse.css">
+    
 </head>
 <body>
     <div id="container">
         <div id="header">
-            <h1><a href="../index.html">avamaity</a></h1>
+            <h1><img width="75px" src="../img/baba.svg">avamaity </h1>
         </div>
-        <div id="nav">
-            <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="../pages/pidx.html">Blog</a></li>
-                <li class="active"><a href="widx.html">Work</a></li>
-            </ul>
-        </div>
-        <div id="main">
-            <div class="article-header">
-                <span class="article-tag">Python</span>
-                <time class="article-date" datetime="2017-01-08">2017-01-08</time>
-                <h1 class="article-title">PSSE — Getting Started</h1>
-                <p class="article-subtitle">Connecting the PSSE power systems engine through Python and running a basic load flow analysis.</p>
+        <div id="content">
+            <div id="nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../pages/pidx.html">Blog</a></li>
+                    <li><a href="widx.html">Work</a></li>
+                </ul>
             </div>
-
-            <p>So you want to run PSSE through Python? Here is a simple way to begin with.
-                Let's use the following example file in the PSSE example
-                directory: <code>savnw.sav</code>.
-            </p>
-
-            <h2>Connect the Engine</h2>
-            <code class="prettyprint lang-py">import os, sys
-PSSE_LOCATION = r"C:\Program Files (x86)\PTI\PSSE33\PSSBIN"
-sys.path.append(PSSE_LOCATION)
-os.environ['PATH'] = os.environ['PATH'] + ';' + PSSE_LOCATION
-import psspy
-import redirect
-redirect.psse2py()</code>
-
-            <h2>Load the Case File</h2>
-            <p>Feed in the case file. Note the location of the file.</p>
-            <code class="prettyprint lang-py">import psspy, redirect
-SAVFILE_LOCATION = r"C:\Program Files (x86)\PTI\PSSE33\EXAMPLE\\"
-CASE = r"savnw.sav"
-psspy.case(SAVFILE_LOCATION + CASE)</code>
-
-            <h2>Run the Power Flow</h2>
-            <p>Run the Full Newton–Raphson solution. You should get the full powerflow output in your program console.</p>
-            <code class="prettyprint lang-py">psspy.fnsl((1,0,1,0,0,0,99,1))
-psspy.inibus(0)
-psspy.pout()</code>
-
-            <p>
-                The easiest way to run the above code is to fire up <strong>IDLE (Python GUI)</strong>,
-                available from your Windows Start menu in the Python 2.7 folder.
-                Click <strong>New Window</strong> in the File menu, paste the code, save it as <code>test.py</code>,
-                and run it with <strong>Run &rarr; Run Module</strong>. If all goes as described,
-                a powerflow output in 132-column format will appear in the IDLE console.
-            </p>
+            <div id="main">
+                <h2>PSSE - Getting started</h2>
+                <p>So you want to run PSSE through python? Here is a simple way to begin with. 
+                    Let's use the following example file in the PSSE example 
+                    directory - <span style="color: blue">savnw.sav</span>.
+                </p>
+                
+                <p>Connect the PSSE engine like so:</p>
+                <code class="prettyprint lang-py">
+                    import os, sys <br/>
+                    PSSE_LOCATION = r"C:\Program Files (x86)\PTI\PSSE33\PSSBIN" <br/>
+                    sys.path.append(PSSE_LOCATION) <br/>
+                    os.environ['PATH'] = os.environ['PATH'] + ';' + PSSE_LOCATION <br/>
+                    import psspy <br/>
+                    import redirect <br/>
+                    redirect.psse2py()
+                </code>
+                <p>Feed in the case file. Note the location of the file.</p>
+                <code class="prettyprint lang-py">
+                    import psspy, redirect <br/>
+                    SAVFILE_LOCATION = r"C:\Program Files (x86)\PTI\PSSE33\EXAMPLE\\" <br/>
+                    CASE = r"savnw.sav" <br/>
+                    psspy.case(SAVFILE_LOCATION + CASE) <br/>
+                </code>
+                <p>Run the Full Newton Raphson solution. You should get the full powerflow output in your program console.</p>
+                <code class="prettyprint lang-py">
+                    psspy.fnsl((1,0,1,0,0,0,99,1)) <br/>
+                    psspy.inibus(0) <br/>
+                    psspy.pout() 
+                </code>
+                <p>
+                    The easiest way to run the above code would be to fire up <span style="color: #ff0000">idle (python GUI)</span>, 
+                    which is available from your Windows startup menu in the <span style="color: #ff0000">Python 2.7</span> folder. 
+                    Click <span style="color: #ff0000">New Window</span> in the file menu of your idle (python GUI) editor, copy paste the 
+                    above code in this new window, save it with an appropriate name say - test.py. Run the code by clicking 
+                    <span style="color: #ff0000">Run Module</span> from the Run menu. If all goes exactly as described, a powerflow 
+                    output in 132 columns format will be displayed in the idle console.
+                </p>
+            </div>
         </div>
         <div id="footer">
-            <p>&copy; Amitava Maity &mdash; <a href="../index.html">avamaity</a></p>
+            <a href="https://twitter.com/intent/tweet?screen_name=avamaity" class="twitter-mention-button" data-size="large" data-show-count="false">Tweet to @avamaity</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>        
         </div>
     </div>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 </body>
 </html>

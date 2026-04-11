@@ -5,110 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>avamaity</title>
     <meta name="description" content="Personal site of Amitava Maity — python, books, and random ramblings.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="css/main.css">
 </head>
-<body id="page-home">
+<body class="body">
 
-    <header class="site-header">
-        <a href="index.html" class="wordmark">avamaity</a>
-        <nav class="site-nav">
-            <ul>
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="./pages/pidx.html">Blog</a></li>
-                <li><a href="./work/widx.html">Work</a></li>
-            </ul>
-        </nav>
+    <header class="mainheader">
+        <h1><img src="img/baba.svg" alt="logo">avamaity</h1>
     </header>
 
-    <section class="hero">
-        <div class="container-full">
-            <h1>Amitava Maity</h1>
-            <p class="subtitle">Power systems &nbsp;/&nbsp; Python &nbsp;/&nbsp; Books</p>
-            <div class="data-card">
-                name&nbsp;&nbsp;&nbsp;&nbsp;: It's all over this page<br>
-                email&nbsp;&nbsp;&nbsp;: amaity at rediffmail.com<br>
-                twitter&nbsp;: @avamaity<br>
-                level&nbsp;&nbsp;&nbsp;: novice<br>
-                work&nbsp;&nbsp;&nbsp;&nbsp;: power system analyst
-            </div>
-        </div>
-    </section>
+    <nav>
+        <ul>
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="./pages/pidx.html">Blog</a></li>
+            <li><a href="./work/widx.html">Work</a></li>
+        </ul>
+    </nav>
 
-    <section class="intro-grid">
-        <div class="intro-grid-item">
-            <h3>Why Python?</h3>
-            <p>I write code from time to time for fun. Every snippet has one thing in common: <code>#! /usr/local/bin python</code>. Converting examples from across the web and books into Python is the exercise.</p>
+    <article class="content">
+        <h1>Hello World!</h1>
+        <p>
+            You have reached the home page of Amitava Maity.
+        </p>
+        <h2>Who?</h2>
+        <p>
+            My basic id can be summed up with the following dataset:
+        </p>
+        <div class="codebox">
+            name : It's all over this page<br>
+            email : amaity at rediffmail.com<br>
+            tweet : @avamaity<br>
+            programming level : novice<br>
+            profession : power system analyst
         </div>
-        <div class="intro-grid-item">
-            <h3>Why Books?</h3>
-            <p>Reading is thinking with someone else's mind. I keep a list of everything I've read and a running project to work through the hundred most influential books since the Second World War.</p>
+        <p>
+            The rest is rather insignificant. Should you like to know more, here is my somewhat <a href="http://in.linkedin.com/pub/amitava-maity/50/964/9b9/">outdated profile</a>.
+        </p>
+        <h2>Why?</h2>
+        <p>
+            Because I write code from time to time for fun. And all those snippets have this in common:
+        </p>
+        <div class="codebox">
+            #! /usr/local/bin python
         </div>
-        <div class="intro-grid-item">
-            <h3>Why this site?</h3>
-            <p>Python, books, and random ramblings. The design is minimal by intention — the content is the point. Have a look around.</p>
-        </div>
-    </section>
+        <p>
+            This is my effort to convert all the examples on the web and in the books that interest me into python. It also gives me the
+            opportunity to talk about books. So this is all about python, books and random ramblings.
+        </p>
+        <h2>Well ...</h2>
+        <p>
+            The design of this page is to say the least — minimal. Have a look around.
+        </p>
+    </article>
 
-    <section class="recent-strip">
-        <h2 class="strip-label">Recent Writing</h2>
-        <article class="post-card">
-            <div class="post-meta">
-                <span class="post-tag">Art History</span>
-                <time class="post-date">2020-07-28</time>
-            </div>
-            <h2><a href="./pages/sindh.html">The Land of Two Rivers</a></h2>
-            <p class="post-subtitle">On the paintings of Balochistan and Sindh, and the difficulty of accessing South Asian art.</p>
-        </article>
-        <article class="post-card">
-            <div class="post-meta">
-                <span class="post-tag">Art History</span>
-                <time class="post-date">2020-05-19</time>
-            </div>
-            <h2><a href="./pages/indianpaint.html">A Brief History of Indian Paintings</a></h2>
-            <p class="post-subtitle">A loose translation of Bharater Chitrakala by Sri Ashoke Mitra — from cave art to the medieval period.</p>
-        </article>
-        <article class="post-card">
-            <div class="post-meta">
-                <span class="post-tag">Reading</span>
-                <time class="post-date">2019-04-24</time>
-            </div>
-            <h2><a href="./pages/books.html">Fiction and Non-fiction</a></h2>
-            <p class="post-subtitle">A running list of every book I've read — over a hundred titles, fiction and non-fiction.</p>
-        </article>
-    </section>
-
-    <section class="recent-strip">
-        <h2 class="strip-label">Recent Work</h2>
-        <article class="work-card">
-            <div class="post-meta">
-                <span class="post-tag">Python</span>
-                <time class="post-date">2017-01-08</time>
-            </div>
-            <h2><a href="./work/psse-prelim.html">PSSE — Getting Started</a></h2>
-            <p class="post-subtitle">Connecting the PSSE power systems engine through Python and running a basic load flow.</p>
-        </article>
-        <article class="work-card">
-            <div class="post-meta">
-                <span class="post-tag">Python</span>
-                <time class="post-date">2016-09-18</time>
-            </div>
-            <h2><a href="./work/rawfile.html">What Are Your Power System Elements?</a></h2>
-            <p class="post-subtitle">A Python script that reads a PSSE raw file and counts every element type in the network.</p>
-        </article>
-        <article class="work-card">
-            <div class="post-meta">
-                <span class="post-tag">Visualization</span>
-                <time class="post-date">2015-02-25</time>
-            </div>
-            <h2><a href="./work/netviz.html">Network Visualization Proposal</a></h2>
-            <p class="post-subtitle">A proposal for browser-based power system diagrams using HTML5, SVG, and D3.</p>
-        </article>
-    </section>
-
-    <footer class="site-footer">
-        <p>&copy; Amitava Maity &mdash; <a href="index.html">avamaity</a></p>
+    <footer class="mainfooter">
+        <a href="https://twitter.com/intent/tweet?screen_name=avamaity" class="twitter-mention-button" data-size="large" data-show-count="false">Tweet to @avamaity</a>
+        <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
     </footer>
 
 </body>

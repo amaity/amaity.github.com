@@ -4,15 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Page Not Found — avamaity</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=Barlow+Condensed:wght@700&family=Lora:wght@400&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         body {
-            font-family: 'Lora', Georgia, serif;
-            background: #0F0E0A;
-            color: #7A6E5F;
+            font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+            background: #fafafa;
+            color: #1a1a1a;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -22,65 +19,62 @@
         .container {
             max-width: 480px;
             width: 100%;
-            position: relative;
-        }
-        .ghost-number {
-            font-family: 'Playfair Display', serif;
-            font-weight: 900;
-            font-size: clamp(6rem, 20vw, 10rem);
-            color: #E07B39;
-            opacity: 0.18;
-            line-height: 1;
-            margin-bottom: -1.5rem;
-            letter-spacing: -0.04em;
-            user-select: none;
         }
         h1 {
-            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 5rem;
             font-weight: 700;
-            font-size: 1.75rem;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            color: #F5F0E8;
+            color: #e5e7eb;
+            line-height: 1;
             margin-bottom: 1rem;
         }
-        p {
-            font-family: 'Lora', Georgia, serif;
-            color: #7A6E5F;
+        h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
             margin-bottom: 0.75rem;
-            line-height: 1.7;
-            font-size: 0.9375rem;
+        }
+        p {
+            color: #6b7280;
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
         }
         ul {
-            list-style: none;
-            padding: 0;
-            margin: 0.5rem 0 1.5rem;
-            color: #7A6E5F;
-            font-size: 0.9rem;
-        }
-        ul li::before {
-            content: '— ';
-            color: #E07B39;
+            list-style: disc;
+            padding-left: 1.5rem;
+            margin: 0.75rem 0 1.5rem;
+            color: #6b7280;
         }
         a {
-            color: #E07B39;
+            color: #2563eb;
             text-decoration: none;
-            font-family: 'Barlow Condensed', sans-serif;
-            font-weight: 700;
+        }
+        a:hover { text-decoration: underline; }
+
+        form { display: flex; gap: 0.5rem; margin-top: 1rem; }
+        input[type="text"] {
+            flex: 1;
+            border: 1px solid #e5e7eb;
+            border-radius: 4px;
+            padding: 0.5rem 0.75rem;
             font-size: 0.9rem;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
+            outline: none;
         }
-        a:hover {
-            color: #F5F0E8;
-            text-decoration: underline;
+        input[type="text"]:focus { border-color: #2563eb; }
+        input[type="submit"] {
+            background: #2563eb;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            cursor: pointer;
         }
+        input[type="submit"]:hover { background: #1d4ed8; }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="ghost-number">404</div>
-        <h1>Page not found</h1>
+        <h1>404</h1>
+        <h2>Page not found</h2>
         <p>Sorry, the page you were looking for does not exist.</p>
         <p>It may be the result of:</p>
         <ul>
@@ -88,6 +82,10 @@
             <li>an out-of-date link</li>
         </ul>
         <p><a href="/">Go back home</a></p>
+        <script>
+            var GOOG_FIXURL_LANG = (navigator.language || '').slice(0,2), GOOG_FIXURL_SITE = location.host;
+        </script>
+        <script src="//linkhelp.clients.google.com/tbproxy/lh/wm/fixurl.js"></script>
     </div>
 </body>
 </html>
